@@ -6,6 +6,7 @@ import Stats from './components/Stats';
 import Timeline from './components/Timeline';
 import Expertise from './components/Expertise';
 import Focus from './components/Focus';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
@@ -23,6 +24,7 @@ export default function App() {
         <Timeline />
         <Expertise />
         <Focus />
+        <Blog />
         <Contact />
       </main>
       <Footer />

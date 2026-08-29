@@ -6,7 +6,7 @@ export const portfolioData = {
     department: "Inland Revenue Department · Ministry of Finance",
     service: "Nepal Administrative / Revenue Service",
     jurisdiction: "Federal Tax Governance",
-    location: "Kathmandu, Nepal",
+    location: "Damauli, Nepal",
     email: "saugat.baral@ird.gov.np",
     secondaryEmail: "saugatrajbaral@gmail.com",
     phone: "+977 (01) 4410000",
@@ -17,9 +17,9 @@ export const portfolioData = {
     ],
     aside: {
       designation: "Tax Officer (Gazetted Officer)",
-      office: "Inland Revenue Department (IRD)",
+      office: "Inland Revenue Office, Damauli",
       jurisdiction: "Federal Tax Administration",
-      region: "Kathmandu, Nepal"
+      region: "Damauli, Nepal"
     }
   },
 
@@ -66,7 +66,7 @@ export const portfolioData = {
     {
       year: "2023 — Present",
       role: "Tax Officer",
-      place: "Inland Revenue Office · Ministry of Finance, GoN",
+      place: "Inland Revenue Office, Damauli · Ministry of Finance, GoN",
       desc: "Directing corporate tax assessment, taxpayer grievance handling, audit investigations, and modernizing revenue collection systems under the Inland Revenue Act."
     },
     {

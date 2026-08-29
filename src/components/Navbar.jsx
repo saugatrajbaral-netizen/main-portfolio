@@ -13,6 +13,7 @@ export default function Navbar({ onOpenResume }) {
     { label: 'Timeline', href: '#timeline' },
     { label: 'Expertise', href: '#expertise' },
     { label: 'Focus Areas', href: '#focus' },
+    { label: 'Commentary', href: '#blog' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -20,7 +21,7 @@ export default function Navbar({ onOpenResume }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
 
-      const sections = ['hero', 'about', 'record', 'timeline', 'expertise', 'focus', 'contact'];
+      const sections = ['hero', 'about', 'record', 'timeline', 'expertise', 'focus', 'blog', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
