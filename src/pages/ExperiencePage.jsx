@@ -1,38 +1,29 @@
 import React from 'react';
-import { Building2, MapPin, CheckCircle2, ChevronRight, Briefcase } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import { Building2, MapPin, CheckCircle2, Calendar, Briefcase, ChevronRight } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
 
-export default function Timeline({ lang = 'en' }) {
+export default function ExperiencePage({ lang = 'en' }) {
   const portfolio = getPortfolioData(lang);
   const { journey } = portfolio;
 
   return (
-    <section id="experience" className="journey-editorial-section section-pad">
-      <div className="container-wide">
-        <div className="section-head-editorial">
-          <div className="section-kicker">
-            <span className="eyebrow">
-              {lang === 'np' ? 'प्रशासनिक अनुभव' : 'Career Progression'}
-            </span>
-          </div>
-          <h2 className="section-title">
-            {lang === 'np' ? (
-              <>व्यावसायिक यात्रा तथा <span className="text-accent">जिम्मेवारी</span></>
-            ) : (
-              <>Professional <span className="text-accent">Journey</span></>
-            )}
-          </h2>
-          <p className="section-lead">
-            {lang === 'np'
-              ? 'नेपाल सरकारको राजस्व सेवा र प्रादेशिक प्रशासनिक संयन्त्रमा सम्पादन गरिएका प्रमुख दायित्वहरू।'
-              : 'Chronological timeline of institutional leadership, statutory revenue enforcement, and public administration under the Government of Nepal.'}
-          </p>
-        </div>
+    <div className="page-chapter-view experience-chapter-page">
+      <PageHeader
+        chapter={lang === 'np' ? 'अनुभव' : 'Experience'}
+        kicker={lang === 'np' ? 'दोस्रो अध्याय' : 'Chapter 2 · Service History'}
+        title={lang === 'np' ? 'व्यावसायिक यात्रा तथा प्रशासनिक अनुभव' : 'Professional Journey & Experience'}
+        subtitle={lang === 'np'
+          ? 'नेपाल सरकारको अर्थ मन्त्रालय तथा प्रादेशिक प्रशासनिक संरचनामा सम्पादन गरिएका जिम्मेवारीहरूको कालक्रमिक विवरण।'
+          : 'Chronological timeline of institutional leadership, statutory revenue enforcement, and provincial public finance administration.'}
+        lang={lang}
+      />
 
+      <div className="container-narrow chapter-content-body">
         <div className="editorial-journey-timeline">
           {journey.map((item, idx) => (
-            <div key={item.id || idx} className="journey-node">
-              {/* Timeline Spine Marker */}
+            <article key={item.id || idx} className="journey-node">
+              {/* Timeline Spine */}
               <div className="journey-spine">
                 <div className="journey-bullet-ring">
                   <div className="journey-bullet-dot" />
@@ -47,7 +38,7 @@ export default function Timeline({ lang = 'en' }) {
                     <span className={`journey-period-pill ${item.period === 'Current' || item.period === 'हाल कार्यरत' ? 'current' : 'previous'}`}>
                       {item.period}
                     </span>
-                    <h3 className="journey-role">{item.role}</h3>
+                    <h2 className="journey-role">{item.role}</h2>
                     <div className="journey-institution">{item.institution}</div>
                   </div>
 
@@ -66,9 +57,9 @@ export default function Timeline({ lang = 'en' }) {
                 <p className="journey-overview">{item.overview}</p>
 
                 <div className="journey-responsibilities-box">
-                  <h4 className="responsibilities-title">
+                  <h3 className="responsibilities-title">
                     {lang === 'np' ? 'प्रमुख जिम्मेवारी तथा कार्यक्षेत्र:' : 'Key Responsibilities & Professional Areas:'}
-                  </h4>
+                  </h3>
                   <div className="responsibilities-grid">
                     {item.responsibilities.map((resp, rIdx) => (
                       <div key={rIdx} className="responsibility-item">
@@ -79,10 +70,10 @@ export default function Timeline({ lang = 'en' }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PageHeader from '../components/PageHeader';
 import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldCheck, ExternalLink, Globe } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
 
-export default function Contact({ lang = 'en' }) {
+export default function ContactPage({ lang = 'en' }) {
   const portfolio = getPortfolioData(lang);
   const { personal } = portfolio;
 
@@ -52,28 +53,18 @@ export default function Contact({ lang = 'en' }) {
   };
 
   return (
-    <section id="contact" className="contact-editorial-section section-pad">
-      <div className="container-wide">
-        <div className="section-head-editorial">
-          <div className="section-kicker">
-            <span className="eyebrow">
-              {lang === 'np' ? 'सम्पर्क तथा संवाद' : 'Correspondence'}
-            </span>
-          </div>
-          <h2 className="section-title">
-            {lang === 'np' ? (
-              <>सम्पर्क तथा <span className="text-accent">संवाद</span></>
-            ) : (
-              <>Let's <span className="text-accent">Connect</span></>
-            )}
-          </h2>
-          <p className="section-lead">
-            {lang === 'np'
-              ? 'व्यावसायिक, अनुसन्धान, नीतिगत तथा सार्वजनिक सेवा सम्बन्धी पत्राचारका लागि।'
-              : 'For professional, research, policy and public-service related correspondence.'}
-          </p>
-        </div>
+    <div className="page-chapter-view contact-chapter-page">
+      <PageHeader
+        chapter={lang === 'np' ? 'सम्पर्क' : 'Contact'}
+        kicker={lang === 'np' ? 'अन्तिम खण्ड' : 'Correspondence & Inquiries'}
+        title={lang === 'np' ? 'सम्पर्क तथा नीतिगत संवाद' : 'Connect & Correspondence'}
+        subtitle={lang === 'np'
+          ? 'व्यावसायिक, अनुसन्धान, नीतिगत तथा सार्वजनिक सेवा सम्बन्धी पत्राचारका लागि सम्पर्क विवरण र संवाद फारम।'
+          : 'Official channels for institutional inquiries, academic research collaboration, and fiscal policy correspondence.'}
+        lang={lang}
+      />
 
+      <div className="container-wide chapter-content-body">
         <div className="contact-editorial-grid">
           {/* Left Column: Official Contact Channels */}
           <div className="contact-info-col">
@@ -152,99 +143,41 @@ export default function Contact({ lang = 'en' }) {
                     rel="noopener noreferrer"
                     className="social-pill-link"
                   >
-                    X / Twitter
+                    Twitter / X
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://scholar.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-pill-link"
                   >
-                    Facebook
+                    Google Scholar
                   </a>
                 </div>
+              </div>
+
+              <div className="contact-card-footer-note">
+                <ShieldCheck size={14} className="note-shield-icon" />
+                <span>
+                  {lang === 'np'
+                    ? 'सार्वजनिक सेवा आचारसंहिता तथा गोपनियता मापदण्ड बमोजिम सुरक्षित पत्राचार।'
+                    : 'Institutional correspondence adhered to civil service standards of discretion and security.'}
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Contact Form */}
+          {/* Right Column: Clean Editorial Contact Form */}
           <div className="contact-form-col">
-            <form onSubmit={handleSubmit} className="editorial-contact-form" noValidate>
-              {/* Spam Honeypot */}
-              <input
-                type="text"
-                name="honeypot"
-                value={formData.honeypot}
-                onChange={handleChange}
-                style={{ display: 'none' }}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-
-              <div className="form-group-row">
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">
-                    {lang === 'np' ? 'तपाईंको पूरा नाम *' : 'Your Full Name *'}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder={lang === 'np' ? 'उदा. राम शर्मा' : 'e.g. Ram Sharma'}
-                    className="form-input"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">
-                    {lang === 'np' ? 'इमेल ठेगाना *' : 'Email Address *'}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder={lang === 'np' ? 'उदा. ram@example.com' : 'e.g. ram@example.com'}
-                    className="form-input"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">
-                  {lang === 'np' ? 'विषय' : 'Subject'}
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder={lang === 'np' ? 'पत्राचारको विषय...' : 'Subject of correspondence...'}
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">
-                  {lang === 'np' ? 'सन्देश *' : 'Message *'}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder={lang === 'np' ? 'तपाईंको सन्देश यहाँ लेख्नुहोस्...' : 'Write your message here...'}
-                  className="form-textarea"
-                  required
-                />
-              </div>
+            <div className="contact-form-card">
+              <h3 className="form-card-title">
+                {lang === 'np' ? 'सन्देश पठाउनुहोस्' : 'Send a Message'}
+              </h3>
+              <p className="form-card-subtitle">
+                {lang === 'np'
+                  ? 'कुनै जिज्ञासा, नीतिगत विचार वा सहकार्यका लागि तलको फारम प्रयोग गर्नुहोस्।'
+                  : 'Fill in the details below to initiate direct communication or share research insights.'}
+              </p>
 
               {status.message && (
                 <div className={`form-feedback-alert ${status.type}`}>
@@ -253,22 +186,102 @@ export default function Contact({ lang = 'en' }) {
                 </div>
               )}
 
-              <button
-                type="submit"
-                disabled={submitting}
-                className="button button-primary form-submit-btn"
-              >
-                <Send size={15} />
-                <span>
-                  {submitting
-                    ? (lang === 'np' ? 'पठाउँदै...' : 'Sending...')
-                    : (lang === 'np' ? 'सन्देश पठाउनुहोस्' : 'Send Message')}
-                </span>
-              </button>
-            </form>
+              <form onSubmit={handleSubmit} className="editorial-contact-form">
+                {/* Spam Protection Field (Hidden) */}
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                  style={{ display: 'none' }}
+                />
+
+                <div className="form-row-dual">
+                  <div className="form-field-group">
+                    <label htmlFor="contact-name" className="form-label">
+                      {lang === 'np' ? 'तपाईंको पूरा नाम *' : 'Full Name *'}
+                    </label>
+                    <input
+                      type="text"
+                      id="contact-name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={lang === 'np' ? 'जस्तै: राम शर्मा' : 'e.g., Dr. Jane Doe'}
+                      required
+                      className="form-input"
+                    />
+                  </div>
+
+                  <div className="form-field-group">
+                    <label htmlFor="contact-email" className="form-label">
+                      {lang === 'np' ? 'इमेल ठेगाना *' : 'Email Address *'}
+                    </label>
+                    <input
+                      type="email"
+                      id="contact-email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="name@organization.gov.np"
+                      required
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-field-group">
+                  <label htmlFor="contact-subject" className="form-label">
+                    {lang === 'np' ? 'विषय' : 'Subject'}
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder={lang === 'np' ? 'जस्तै: कर नीति सम्बन्धी छलफल' : 'e.g., Fiscal Policy Research Collaboration'}
+                    className="form-input"
+                  />
+                </div>
+
+                <div className="form-field-group">
+                  <label htmlFor="contact-message" className="form-label">
+                    {lang === 'np' ? 'सन्देश वा विवरण *' : 'Message *'}
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder={lang === 'np' ? 'तपाईंको सन्देश यहाँ लेख्नुहोस्...' : 'Write your detailed message here...'}
+                    required
+                    className="form-textarea"
+                  />
+                </div>
+
+                <div className="form-actions-bar">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn btn-primary form-submit-btn"
+                  >
+                    <Send size={15} />
+                    <span>
+                      {submitting
+                        ? (lang === 'np' ? 'पठाउँदै...' : 'Sending...')
+                        : (lang === 'np' ? 'सन्देश पठाउनुहोस्' : 'Dispatch Message')}
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

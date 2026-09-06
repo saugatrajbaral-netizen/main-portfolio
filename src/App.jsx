@@ -1,38 +1,168 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Stats from './components/Stats';
-import Timeline from './components/Timeline';
-import Expertise from './components/Expertise';
-import Focus from './components/Focus';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import ResumeModal from './components/ResumeModal';
+import NationalSymbolsModal from './components/NationalSymbolsModal';
+import PatrioticBackground from './components/PatrioticBackground';
+
+// Multi-Page Routes
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ExperiencePage from './pages/ExperiencePage';
+import EducationPage from './pages/EducationPage';
+import ResearchPage from './pages/ResearchPage';
+import ArticleDetailPage from './pages/ArticleDetailPage';
+import PublicationsPage from './pages/PublicationsPage';
+import MediaPage from './pages/MediaPage';
+import CvPage from './pages/CvPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
+  const [lang, setLang] = useState('en'); // 'en' | 'np'
 
   return (
-    <div className="site-shell">
-      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
-      <main>
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
-        <About />
-        <Stats />
-        <Timeline />
-        <Expertise />
-        <Focus />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
+    <Router>
+      <ScrollToTop />
+      <div className="site-shell">
+        {/* Subtle Government of Nepal Background Theme (Himalayas, Map, Lattice & Nodes) */}
+        <PatrioticBackground />
 
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
-    </div>
+        {/* Sticky Header with Route Navigation & Live Digital Clock */}
+        <Navbar
+          onOpenResume={() => setIsResumeOpen(true)}
+          lang={lang}
+          setLang={setLang}
+        />
+
+        {/* Route-driven Multi-Page Content */}
+        <main className="site-main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  lang={lang}
+                  onOpenResume={() => setIsResumeOpen(true)}
+                  onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <AboutPage
+                  lang={lang}
+                  onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/experience"
+              element={
+                <ExperiencePage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/education"
+              element={
+                <EducationPage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/research"
+              element={
+                <ResearchPage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/research/:slug"
+              element={
+                <ArticleDetailPage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/publications"
+              element={
+                <PublicationsPage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/media"
+              element={
+                <MediaPage
+                  lang={lang}
+                />
+              }
+            />
+            <Route
+              path="/cv"
+              element={
+                <CvPage
+                  lang={lang}
+                  onOpenResume={() => setIsResumeOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <ContactPage
+                  lang={lang}
+                />
+              }
+            />
+            {/* Fallback route */}
+            <Route
+              path="*"
+              element={
+                <Home
+                  lang={lang}
+                  onOpenResume={() => setIsResumeOpen(true)}
+                  onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                />
+              }
+            />
+          </Routes>
+        </main>
+
+        {/* Editorial Institutional Footer */}
+        <Footer
+          onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+          lang={lang}
+        />
+
+        {/* Interactive Full CV Reader Modal */}
+        <ResumeModal
+          isOpen={isResumeOpen}
+          onClose={() => setIsResumeOpen(false)}
+          onOpenNationalSymbols={() => {
+            setIsResumeOpen(false);
+            setIsSymbolsOpen(true);
+          }}
+          lang={lang}
+        />
+
+        {/* National Symbols Civic Modal */}
+        <NationalSymbolsModal
+          isOpen={isSymbolsOpen}
+          onClose={() => setIsSymbolsOpen(false)}
+          lang={lang}
+        />
+      </div>
+    </Router>
   );
 }

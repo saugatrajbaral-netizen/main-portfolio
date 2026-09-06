@@ -1,54 +1,46 @@
 import React from 'react';
-import { Scale, FileSpreadsheet, SearchCheck, Laptop, ShieldAlert, Landmark, Layers } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { ArrowUpRight, Compass, Sparkles } from 'lucide-react';
+import { getPortfolioData } from '../data/portfolioData';
 
-export default function Expertise() {
-  const { expertise } = portfolioData;
-
-  const renderIcon = (iconName) => {
-    switch (iconName) {
-      case 'Scale':
-        return <Scale size={24} className="expertise-icon" />;
-      case 'FileSpreadsheet':
-        return <FileSpreadsheet size={24} className="expertise-icon" />;
-      case 'SearchCheck':
-        return <SearchCheck size={24} className="expertise-icon" />;
-      case 'Laptop':
-        return <Laptop size={24} className="expertise-icon" />;
-      case 'ShieldAlert':
-        return <ShieldAlert size={24} className="expertise-icon" />;
-      case 'Landmark':
-        return <Landmark size={24} className="expertise-icon" />;
-      default:
-        return <Layers size={24} className="expertise-icon" />;
-    }
-  };
+export default function Expertise({ lang = 'en' }) {
+  const portfolio = getPortfolioData(lang);
+  const { areasOfInterest } = portfolio;
 
   return (
-    <section id="expertise" className="expertise-section section-pad">
+    <section id="interests" className="interests-editorial-section section-pad">
       <div className="container-wide">
-        <div className="expertise-grid">
-          <div>
-            <div className="section-kicker">
-              <span className="eyebrow">Professional Competencies</span>
-            </div>
-            <h2 className="section-title">
-              Areas of <span style={{ color: 'var(--gov-blue)' }}>Fiscal & Regulatory</span> Expertise
-            </h2>
-            <p className="section-lead">
-              Extensive technical knowledge encompassing statutory tax interpretation, risk-based auditing, digital revenue administration, and public expenditure monitoring.
-            </p>
+        <div className="section-head-editorial">
+          <div className="section-kicker">
+            <span className="eyebrow">
+              {lang === 'np' ? 'प्राज्ञिक तथा नीतिगत रुचि' : 'Policy & Scholarly Focus'}
+            </span>
           </div>
+          <h2 className="section-title">
+            {lang === 'np' ? (
+              <>नीतिगत तथा व्यावसायिक <span className="text-accent">रुचिका क्षेत्रहरू</span></>
+            ) : (
+              <>Areas of <span className="text-accent">Interest</span></>
+            )}
+          </h2>
+          <p className="section-lead">
+            {lang === 'np'
+              ? 'कर कानुन, वित्तीय नीति, डिजिटल सरकार र दिगो आर्थिक विकासलाई दिशा दिने प्रमुख क्षेत्रहरू।'
+              : 'Scholarly, regulatory, and policy domains at the forefront of modern fiscal governance and public administration.'}
+          </p>
+        </div>
 
-          <div className="expertise-list">
-            {expertise.map((item, idx) => (
-              <div key={idx} className="expertise-card">
-                {renderIcon(item.icon)}
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+        {/* Sophisticated Editorial Grid */}
+        <div className="interests-editorial-grid">
+          {areasOfInterest.map((interest, idx) => (
+            <div key={idx} className="interest-item-box">
+              <div className="interest-item-header">
+                <span className="interest-number">{String(idx + 1).padStart(2, '0')}</span>
+                <h3 className="interest-name">{interest.name}</h3>
               </div>
-            ))}
-          </div>
+              <p className="interest-desc">{interest.desc}</p>
+              <div className="interest-item-border-accent" />
+            </div>
+          ))}
         </div>
       </div>
     </section>

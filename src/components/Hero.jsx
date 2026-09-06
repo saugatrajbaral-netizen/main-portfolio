@@ -1,9 +1,12 @@
 import React from 'react';
-import { ArrowDown, FileText, Mail, ChevronRight, ShieldCheck } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { ArrowDown, FileText, ChevronRight, MapPin, Building, ShieldCheck, Download, Sparkles } from 'lucide-react';
+import NepalEmblem from './NepalEmblem';
+import DigitalClock from './DigitalClock';
+import { getPortfolioData } from '../data/portfolioData';
 
-export default function Hero({ onOpenResume }) {
-  const { personal } = portfolioData;
+export default function Hero({ onOpenResume, lang = 'en' }) {
+  const portfolio = getPortfolioData(lang);
+  const { personal } = portfolio;
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -14,65 +17,142 @@ export default function Hero({ onOpenResume }) {
   };
 
   return (
-    <section id="hero" className="hero">
-      <div className="hero-grid" aria-hidden="true"></div>
+    <section id="hero" className="hero-editorial-section">
+      {/* Background Subtle Lines & National Emblem Watermark */}
+      <div className="hero-editorial-grid" aria-hidden="true" />
+      <div className="hero-watermark-emblem" aria-hidden="true">
+        <NepalEmblem size={520} variant="white" />
+      </div>
 
-      <div className="container-wide hero-content">
-        <div className="hero-kicker">
-          <span>Government of Nepal · Ministry of Finance</span>
+      <div className="container-wide hero-editorial-container">
+        <div className="hero-editorial-layout">
+          {/* Left Column: Typography & Narrative */}
+          <div className="hero-editorial-text-col">
+            {/* Kicker Tag */}
+            <div className="hero-official-badge">
+              <div className="badge-emblem">
+                <NepalEmblem size={22} variant="full" />
+              </div>
+              <span className="badge-text">
+                {lang === 'np' ? 'नेपाल सरकार · अर्थ मन्त्रालय' : 'Government of Nepal · Ministry of Finance'}
+              </span>
+            </div>
+
+            {/* Officer Name */}
+            <div className="hero-officer-name">
+              <span>{personal.name}</span>
+              {lang === 'en' && <span className="nepali-subname">({personal.nepaliName})</span>}
+            </div>
+
+            {/* Large Headline */}
+            <h1 className="hero-editorial-headline">
+              {personal.headline}
+            </h1>
+
+            {/* Supporting Tagline */}
+            <p className="hero-editorial-supporting">
+              {personal.supportingText}
+            </p>
+
+            {/* Explanatory Paragraph */}
+            <p className="hero-editorial-paragraph">
+              {personal.heroParagraph}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="hero-editorial-actions">
+              <a
+                href="#about"
+                className="button button-primary"
+                onClick={(e) => scrollToSection(e, '#about')}
+              >
+                <span>{lang === 'np' ? 'मेरो कार्य अन्वेषण गर्नुहोस्' : 'Explore My Work'}</span>
+                <ChevronRight size={15} />
+              </a>
+
+              <button
+                type="button"
+                className="button button-secondary"
+                onClick={onOpenResume}
+              >
+                <FileText size={15} />
+                <span>{lang === 'np' ? 'व्यक्तिगत विवरण (CV)' : 'Download CV'}</span>
+              </button>
+            </div>
+
+            {/* Live Jurisdictional Tag */}
+            <div className="hero-status-strip">
+              <div className="status-item">
+                <MapPin size={13} className="text-accent" />
+                <span>{lang === 'np' ? 'आन्तरिक राजस्व कार्यालय, दमौली' : 'Inland Revenue Office, Damauli'}</span>
+              </div>
+              <span className="status-divider">•</span>
+              <div className="status-item">
+                <ShieldCheck size={13} className="text-gov-blue" />
+                <span>{lang === 'np' ? 'राजपत्राङ्कित तृतीय श्रेणी' : 'Gazetted Third-Class'}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Sophisticated Rectangular Editorial Portrait */}
+          <div className="hero-editorial-portrait-col">
+            <div className="editorial-portrait-wrapper">
+              {/* Subtle Red Vertical Accent Line */}
+              <div className="portrait-red-accent-line" aria-hidden="true" />
+              
+              {/* Rectangular Portrait Container */}
+              <div className="editorial-portrait-frame">
+                <img
+                  src="/saugat-baral.jpg"
+                  alt={`Portrait of ${personal.name}`}
+                  className="editorial-portrait-image"
+                  loading="eager"
+                  onError={(e) => {
+                    // Fallback to stylized editorial placeholder
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextElementSibling) {
+                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                    }
+                  }}
+                />
+                
+                {/* Fallback Placeholder Frame */}
+                <div className="editorial-portrait-placeholder" style={{ display: 'none' }}>
+                  <NepalEmblem size={80} variant="full" />
+                  <div className="placeholder-title">{personal.name}</div>
+                  <div className="placeholder-role">{personal.role}</div>
+                </div>
+
+                {/* Institutional Overlay Ribbon */}
+                <div className="portrait-institutional-ribbon">
+                  <div className="ribbon-emblem">
+                    <NepalEmblem size={18} variant="full" />
+                  </div>
+                  <div className="ribbon-text">
+                    <span className="ribbon-title">{personal.aside.designation}</span>
+                    <span className="ribbon-sub">{personal.aside.office}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Digital Live Clock Card below portrait */}
+              <div className="portrait-live-clock-card">
+                <DigitalClock variant="badge" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 className="hero-title">
-          {personal.name}
-          <span>Tax Officer & Public Finance Practitioner</span>
-        </h1>
-
-        <div className="hero-rule" aria-hidden="true"></div>
-
-        <p className="hero-intro">{personal.intro}</p>
-
-        <div className="hero-actions">
+        {/* Scroll Cue */}
+        <div className="hero-scroll-indicator">
           <a
             href="#about"
-            className="button button-primary"
             onClick={(e) => scrollToSection(e, '#about')}
+            className="scroll-indicator-link"
           >
-            <span>Official Profile</span>
-            <ChevronRight size={14} />
+            <span>{lang === 'np' ? 'थप अध्ययनका लागि स्क्रोल गर्नुहोस्' : 'Scroll to explore'}</span>
+            <ArrowDown size={13} />
           </a>
-
-          <button
-            type="button"
-            className="button button-secondary"
-            onClick={onOpenResume}
-          >
-            <FileText size={14} />
-            <span>Curriculum Vitae</span>
-          </button>
-
-          <a
-            href="#contact"
-            className="button button-secondary"
-            onClick={(e) => scrollToSection(e, '#contact')}
-          >
-            <Mail size={14} />
-            <span>Contact Office</span>
-          </a>
-        </div>
-
-        <aside className="hero-aside">
-          <strong>{personal.aside.designation}</strong>
-          <div>{personal.aside.office}</div>
-          <div>{personal.aside.jurisdiction}</div>
-          <div style={{ color: '#ffffff', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <ShieldCheck size={13} color="#dc143c" />
-            <span>{personal.aside.region}</span>
-          </div>
-        </aside>
-
-        <div className="scroll-cue">
-          <span>Scroll to explore</span>
-          <ArrowDown size={12} />
         </div>
       </div>
     </section>

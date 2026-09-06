@@ -1,123 +1,192 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, FileText } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import NepalEmblem from './NepalEmblem';
+import DigitalClock from './DigitalClock';
+import { getPortfolioData } from '../data/portfolioData';
 
-export default function Navbar({ onOpenResume }) {
+export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+
+  const portfolio = getPortfolioData(lang);
+  const { personal } = portfolio;
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Record', href: '#record' },
-    { label: 'Timeline', href: '#timeline' },
-    { label: 'Expertise', href: '#expertise' },
-    { label: 'Focus Areas', href: '#focus' },
-    { label: 'Commentary', href: '#blog' },
-    { label: 'Contact', href: '#contact' }
+    { labelEn: 'Home', labelNp: 'गृहपृष्ठ', to: '/' },
+    { labelEn: 'About', labelNp: 'परिचय', to: '/about' },
+    { labelEn: 'Experience', labelNp: 'कार्य अनुभव', to: '/experience' },
+    { labelEn: 'Education', labelNp: 'शिक्षा', to: '/education' },
+    { labelEn: 'Research', labelNp: 'अनुसन्धान', to: '/research' },
+    { labelEn: 'Publications', labelNp: 'प्रकाशनहरू', to: '/publications' },
+    { labelEn: 'Talks & Media', labelNp: 'मिडिया', to: '/media' },
+    { labelEn: 'CV', labelNp: 'विवरण (CV)', to: '/cv' },
+    { labelEn: 'Contact', labelNp: 'सम्पर्क', to: '/contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-
-      const sections = ['hero', 'about', 'record', 'timeline', 'expertise', 'focus', 'blog', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 25);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
+  const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container-wide header-inner">
-        <a href="#hero" className="brand" onClick={(e) => handleNavClick(e, '#hero')}>
-          <div className="brand-mark">SRB</div>
-          <div className="brand-copy">
-            <span className="brand-name">{portfolioData.personal.name}</span>
-            <span className="brand-role">Tax Officer · Government of Nepal</span>
-          </div>
-        </a>
+      {/* Live Time Ribbon (Nepali & English Time Only) */}
+      <div className="gov-top-ribbon">
+        <div className="container-wide gov-top-inner-clean">
+          <DigitalClock variant="compact" />
+        </div>
+      </div>
 
+      <div className="container-wide header-inner">
+        {/* Brand Left: Officer Name & Designation */}
+        <Link to="/" className="brand" onClick={closeMobileMenu}>
+          <div className="brand-mark">
+            <NepalEmblem size={28} variant="full" />
+          </div>
+          <div className="brand-copy">
+            <span className="brand-name">{personal.name}</span>
+            <span className="brand-role">
+              {lang === 'np' ? 'कर अधिकृत | नेपाल सरकार' : 'Tax Officer | Government of Nepal'}
+            </span>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation with Crimson Active-State Underline/Dot */}
         <nav className="desktop-nav">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`nav-link ${activeSection === item.href.replace('#', '') ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, item.href)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const currentLabel = lang === 'np' ? item.labelNp : item.labelEn;
+
+            return (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === '/'}
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span className="nav-primary-label">{currentLabel}</span>
+                    {isActive && <span className="nav-active-dot" />}
+                  </>
+                )}
+              </NavLink>
+            );
+          })}
         </nav>
 
+        {/* Header Actions: Language Switcher & CV Button */}
         <div className="header-actions">
-          <button
-            type="button"
-            className="header-contact"
-            onClick={onOpenResume}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+          {/* Dual Language Switcher */}
+          {setLang && (
+            <div className="language-tab-switcher" role="group" aria-label="Language Selector">
+              <button
+                type="button"
+                className={`lang-tab-btn ${lang === 'en' ? 'active' : ''}`}
+                onClick={() => setLang('en')}
+                title="View website in English"
+              >
+                <span className="lang-flag">🇬🇧</span>
+                <span>EN</span>
+              </button>
+              <button
+                type="button"
+                className={`lang-tab-btn ${lang === 'np' ? 'active' : ''}`}
+                onClick={() => setLang('np')}
+                title="नेपाली भाषामा हेर्नुहोस्"
+              >
+                <span className="lang-flag">🇳🇵</span>
+                <span>नेपाली</span>
+              </button>
+            </div>
+          )}
+
+          <Link
+            to="/cv"
+            className="header-cv-btn"
+            title="Curriculum Vitae"
+            onClick={closeMobileMenu}
           >
             <FileText size={13} />
-            <span>Curriculum Vitae</span>
-          </button>
+            <span>{lang === 'np' ? 'CV' : 'CV'}</span>
+          </Link>
 
+          {/* Mobile Hamburger Toggle */}
           <button
+            type="button"
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Drawer Panel */}
       {mobileMenuOpen && (
         <div className="mobile-panel">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="nav-link"
-              onClick={(e) => handleNavClick(e, item.href)}
+          {/* Mobile Language Switcher */}
+          {setLang && (
+            <div className="mobile-lang-bar">
+              <button
+                type="button"
+                className={`mobile-lang-btn ${lang === 'en' ? 'active' : ''}`}
+                onClick={() => {
+                  setLang('en');
+                  closeMobileMenu();
+                }}
+              >
+                <span>🇬🇧 English</span>
+              </button>
+              <button
+                type="button"
+                className={`mobile-lang-btn ${lang === 'np' ? 'active' : ''}`}
+                onClick={() => {
+                  setLang('np');
+                  closeMobileMenu();
+                }}
+              >
+                <span>🇳🇵 नेपाली</span>
+              </button>
+            </div>
+          )}
+
+          <div className="mobile-nav-links">
+            {navItems.map((item) => {
+              const currentLabel = lang === 'np' ? item.labelNp : item.labelEn;
+              const subLabel = lang === 'np' ? item.labelEn : item.labelNp;
+              return (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === '/'}
+                  className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMobileMenu}
+                >
+                  <span className="mobile-nav-main">{currentLabel}</span>
+                  <span className="mobile-nav-sub">{subLabel}</span>
+                </NavLink>
+              );
+            })}
+
+            <Link
+              to="/cv"
+              className="mobile-cv-action-btn"
+              onClick={closeMobileMenu}
             >
-              {item.label}
-            </a>
-          ))}
-          <button
-            type="button"
-            className="nav-link"
-            style={{ textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', color: '#dc143c' }}
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenResume();
-            }}
-          >
-            View Curriculum Vitae (CV) →
-          </button>
+              <FileText size={15} />
+              <span>{lang === 'np' ? 'पूरा व्यक्तिगत विवरण (CV) हेर्नुहोस्' : 'View Full Curriculum Vitae (CV)'}</span>
+            </Link>
+          </div>
         </div>
       )}
     </header>
