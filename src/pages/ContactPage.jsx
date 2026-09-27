@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ShieldCheck, Paperclip, FileText, Loader2, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ShieldCheck, Paperclip, FileText, Loader2, ExternalLink, X } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
 
 const RECIPIENT_EMAIL = 'saugatrajbaral@gmail.com';
@@ -17,8 +17,7 @@ export default function ContactPage({ lang = 'en' }) {
     message: '',
     honeypot: '' // Spam protection
   });
-  const [hasAttachment, setHasAttachment] = useState(true);
-  const [attachmentName, setAttachmentName] = useState('saugat-raj-baral-cv.pdf');
+  const [customFile, setCustomFile] = useState(null);
   const [status, setStatus] = useState({ type: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
 
@@ -28,9 +27,12 @@ export default function ContactPage({ lang = 'en' }) {
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setAttachmentName(e.target.files[0].name);
-      setHasAttachment(true);
+      setCustomFile(e.target.files[0]);
     }
+  };
+
+  const handleRemoveFile = () => {
+    setCustomFile(null);
   };
 
   const handleSubmit = async (e) => {
@@ -59,7 +61,7 @@ export default function ContactPage({ lang = 'en' }) {
         email: formData.email,
         message: formData.message,
         recipient: RECIPIENT_EMAIL,
-        attachment: hasAttachment ? attachmentName : 'None',
+        attachment: customFile ? customFile.name : 'None',
         _template: 'table',
         _captcha: 'false'
       };
@@ -327,28 +329,37 @@ export default function ContactPage({ lang = 'en' }) {
                   />
                 </div>
 
-                {/* Attachment Section */}
+                {/* Attachment Section (Optional custom file only, no auto-attached CV) */}
                 <div className="email-attachment-box" style={{ margin: '6px 0 10px' }}>
                   <div className="attachment-header">
                     <span className="attachment-label">
                       <Paperclip size={13} />
-                      {lang === 'np' ? 'संलग्न कागजात:' : 'Attached Document:'}
+                      {lang === 'np' ? 'कागजात संलग्न गर्नुहोस् (ऐच्छिक):' : 'Attach Document (Optional):'}
                     </span>
                     <label className="upload-custom-link">
                       <input
                         type="file"
                         onChange={handleFileChange}
                         style={{ display: 'none' }}
-                        accept=".pdf,.doc,.docx,.png,.jpg"
+                        accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
                       />
-                      {lang === 'np' ? 'अन्य फाइल थप्नुहोस्' : 'Attach different file'}
+                      {lang === 'np' ? 'फाइल छान्नुहोस्' : 'Choose File'}
                     </label>
                   </div>
-                  <div className="attachment-pill">
-                    <FileText size={13} className="attachment-file-icon" />
-                    <span>{attachmentName}</span>
-                    <span className="attachment-auto-tag">{lang === 'np' ? 'स्वत: संलग्न' : 'Auto-attached'}</span>
-                  </div>
+                  {customFile && (
+                    <div className="attachment-pill">
+                      <FileText size={13} className="attachment-file-icon" />
+                      <span>{customFile.name}</span>
+                      <button
+                        type="button"
+                        onClick={handleRemoveFile}
+                        style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#ef4444', display: 'inline-flex', alignItems: 'center', marginLeft: 'auto', padding: '2px' }}
+                        title={lang === 'np' ? 'हटाउनुहोस्' : 'Remove file'}
+                      >
+                        <X size={13} />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Server-side Security Note */}

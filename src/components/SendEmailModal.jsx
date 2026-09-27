@@ -18,8 +18,6 @@ export default function SendEmailModal({
   const [message, setMessage] = useState(initialMessage || '');
   const [fromEmail, setFromEmail] = useState(senderEmail || '');
   const [fromName, setFromName] = useState(senderName || '');
-  const [hasAttachment, setHasAttachment] = useState(true);
-  const [attachmentName, setAttachmentName] = useState('saugat-raj-baral-cv.pdf');
   const [customFile, setCustomFile] = useState(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,6 +31,7 @@ export default function SendEmailModal({
       setFromName(senderName || '');
       setStatus({ type: '', text: '' });
       setIsSubmitting(false);
+      setCustomFile(null);
     }
   }, [isOpen, initialSubject, initialMessage, senderName, senderEmail, lang]);
 
@@ -41,9 +40,11 @@ export default function SendEmailModal({
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setCustomFile(e.target.files[0]);
-      setAttachmentName(e.target.files[0].name);
-      setHasAttachment(true);
     }
+  };
+
+  const handleRemoveFile = () => {
+    setCustomFile(null);
   };
 
   const handleSendEmail = async (e) => {
@@ -67,7 +68,7 @@ export default function SendEmailModal({
         email: fromEmail || 'correspondent@portfolio.local',
         message: message,
         recipient: RECIPIENT_EMAIL,
-        attachment: hasAttachment ? attachmentName : 'None',
+        attachment: customFile ? customFile.name : 'None',
         _template: 'table',
         _captcha: 'false'
       };
@@ -229,26 +230,31 @@ export default function SendEmailModal({
             />
           </div>
 
-          {/* Attachment Field */}
+          {/* Attachment Field (Optional custom file only, no auto-attached CV) */}
           <div className="email-attachment-box">
             <div className="attachment-header">
               <span className="attachment-label">
                 <Paperclip size={13} />
-                <span>{lang === 'np' ? 'संलग्न कागजात (Attachment):' : 'Attachment:'}</span>
+                <span>{lang === 'np' ? 'कागजात संलग्न गर्नुहोस् (ऐच्छिक):' : 'Attach Document (Optional):'}</span>
               </span>
               <label className="upload-custom-link">
-                <span>{lang === 'np' ? 'अन्य फाइल थप्नुहोस्' : 'Change file'}</span>
-                <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
+                <span>{lang === 'np' ? 'फाइल छान्नुहोस्' : 'Choose File'}</span>
+                <input type="file" onChange={handleFileChange} style={{ display: 'none' }} accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" />
               </label>
             </div>
 
-            {hasAttachment && (
+            {customFile && (
               <div className="attachment-pill">
                 <FileText size={14} className="attachment-file-icon" />
-                <span className="attachment-file-name">{attachmentName}</span>
-                <span className="attachment-auto-tag">
-                  {customFile ? 'Custom Upload' : (lang === 'np' ? 'स्वत: संलग्न' : 'Auto-Attached')}
-                </span>
+                <span className="attachment-file-name">{customFile.name}</span>
+                <button
+                  type="button"
+                  onClick={handleRemoveFile}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#ef4444', display: 'inline-flex', alignItems: 'center', marginLeft: 'auto', padding: '2px' }}
+                  title={lang === 'np' ? 'हटाउनुहोस्' : 'Remove file'}
+                >
+                  <X size={13} />
+                </button>
               </div>
             )}
           </div>
