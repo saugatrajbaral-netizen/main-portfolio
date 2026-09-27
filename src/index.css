@@ -1049,14 +1049,15 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 8%;
+  transform: scale(1.03);
   display: block;
   filter: brightness(1.03) contrast(1.02) saturate(1.02);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .editorial-portrait-frame:hover .editorial-portrait-image {
-  transform: scale(1.02);
+  transform: scale(1.06);
   filter: brightness(1.05) contrast(1.02) saturate(1.04);
 }
 
@@ -4220,7 +4221,7 @@ a {
 .home-cover-portrait-col {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .officer-profile-composite {
@@ -4362,13 +4363,14 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: 50% 8%;
+  transform: scale(1.03);
   display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .officer-profile-composite:hover .profile-real-image {
-  transform: scale(1.02);
+  transform: scale(1.06);
 }
 
 .profile-img-light-gradient {
@@ -13053,7 +13055,7 @@ a {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: flex-start;
   animation: aboutHeroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -13072,19 +13074,21 @@ a {
 .about-portrait-col {
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: flex-start;
+  position: sticky;
+  top: 96px;
 }
 
 .about-portrait-showcase {
   position: relative;
   width: 100%;
-  max-width: 285px;
-  border-radius: 12px;
+  max-width: 295px;
+  border-radius: 14px;
   background: var(--card-bg, #ffffff);
-  border: 1px solid rgba(12, 35, 64, 0.1);
+  border: 1px solid rgba(12, 35, 64, 0.12);
   box-shadow: 
-    0 14px 34px -10px rgba(0, 35, 80, 0.08),
-    0 2px 6px rgba(0, 0, 0, 0.02);
+    0 16px 38px -10px rgba(0, 35, 80, 0.10),
+    0 2px 8px rgba(0, 0, 0, 0.03);
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
@@ -13107,7 +13111,7 @@ a {
 .portrait-image-frame {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 360px;
   overflow: hidden;
   background: #f1f5f9;
   display: flex;
@@ -13119,13 +13123,14 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: 50% 8%;
+  transform: scale(1.03);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   filter: contrast(1.02) brightness(1.03) saturate(1.02);
 }
 
 .about-portrait-showcase:hover .portrait-main-img {
-  transform: scale(1.02);
+  transform: scale(1.06);
   filter: contrast(1.02) brightness(1.05) saturate(1.04);
 }
 
@@ -13137,12 +13142,12 @@ a {
 }
 
 .portrait-caption-strip {
-  padding: 10px 14px;
+  padding: 12px 16px;
   background: var(--card-bg, #ffffff);
   border-top: 1px solid rgba(12, 35, 64, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 [data-theme='dark'] .portrait-caption-strip {
@@ -13152,10 +13157,11 @@ a {
 
 .caption-officer-name {
   font-family: var(--app-font-serif, "Cinzel", Georgia, serif);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary, #0c2340);
   letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 [data-theme='dark'] .caption-officer-name {
@@ -13163,7 +13169,7 @@ a {
 }
 
 .caption-officer-role {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--gov-blue, #003893);
 }
