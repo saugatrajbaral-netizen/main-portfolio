@@ -96,7 +96,6 @@ export default function DigitalClock({ variant = 'compact' }) {
       
       {/* Nepali Date, Day & Time */}
       <div className="topbar-date-group nepali-group">
-        <span className="topbar-flag-icon" aria-hidden="true">🇳🇵</span>
         <span className="topbar-date-text">{nepaliDateStr}</span>
         <span className="topbar-time-text">({nepaliHours}:{nepaliMinutes}:{nepaliSeconds} {nepaliAmPm})</span>
       </div>
@@ -105,7 +104,6 @@ export default function DigitalClock({ variant = 'compact' }) {
 
       {/* English Date, Day & Time */}
       <div className="topbar-date-group english-group">
-        <span className="topbar-flag-icon" aria-hidden="true">🇬🇧</span>
         <span className="topbar-date-text">{englishDateStr}</span>
         <span className="topbar-time-text">({formattedHours}:{minutes}:{seconds} {ampm} NST)</span>
       </div>
