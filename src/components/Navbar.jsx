@@ -130,7 +130,7 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
         {/* Brand Left: Officer Name & Designation */}
         <Link to="/" className="brand" onClick={closeMobileMenu}>
           <div className="brand-mark">
-            <NepalEmblem size={28} variant="full" />
+            <NepalEmblem size={24} variant="full" />
           </div>
           <div className="brand-copy">
             <span className="brand-name">{personal.name}</span>

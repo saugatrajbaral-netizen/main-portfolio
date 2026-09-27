@@ -21,7 +21,7 @@ export default function Footer({ onOpenNationalSymbols, lang = 'en' }) {
           {/* Left Brand Col */}
           <div className="footer-brand-col">
             <Link to="/" className="footer-brand-header">
-              <NepalEmblem size={24} variant="full" />
+              <NepalEmblem size={20} variant="full" />
               <div>
                 <span className="footer-name">{personal.name}</span>
                 <span className="footer-role">

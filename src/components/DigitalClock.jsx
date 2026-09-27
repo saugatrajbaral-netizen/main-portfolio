@@ -1,5 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
+import NepaliDateRaw from 'nepali-date-converter';
+
+const NepaliDate = NepaliDateRaw?.default || NepaliDateRaw;
+
+const NEPALI_DAYS_NP = [
+  'आइतबार', 'सोमबार', 'मङ्गलबार', 'बुधबार', 'बिहीबार', 'शुक्रबार', 'शनिबार'
+];
+
+const NEPALI_MONTHS_NP = [
+  'बैशाख', 'जेठ', 'असार', 'साउन', 'भाद्र', 'असोज',
+  'कार्तिक', 'मंसिर', 'पुष', 'माघ', 'फागुन', 'चैत'
+];
+
+const GREGORIAN_MONTHS_EN = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+const NEPALI_DAYS_EN = [
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+];
 
 const toNepaliDigits = (numOrStr) => {
   const nepaliDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
@@ -33,26 +54,61 @@ export default function DigitalClock({ variant = 'compact' }) {
   const seconds = String(now.getSeconds()).padStart(2, '0');
   const nepaliSeconds = toNepaliDigits(seconds);
 
+  // Nepali Date & Day Calculation (Bikram Sambat)
+  let nepaliDateStr = '';
+  try {
+    const nepDate = new NepaliDate(now);
+    const bsYear = nepDate.getYear();
+    const bsMonthIdx = nepDate.getMonth();
+    const bsDay = nepDate.getDate();
+    const dayOfWeekIdx = now.getDay();
+
+    const nepaliDay = NEPALI_DAYS_NP[dayOfWeekIdx] || '';
+    const nepaliMonth = NEPALI_MONTHS_NP[bsMonthIdx] || '';
+    nepaliDateStr = `${nepaliDay}, ${toNepaliDigits(bsDay)} ${nepaliMonth} ${toNepaliDigits(bsYear)}`;
+  } catch (e) {
+    nepaliDateStr = `${toNepaliDigits(now.getDate())} गते`;
+  }
+
+  // English Date & Day Calculation (Gregorian AD)
+  const dayOfWeekIdx = now.getDay();
+  const englishDay = NEPALI_DAYS_EN[dayOfWeekIdx] || '';
+  const englishMonth = GREGORIAN_MONTHS_EN[now.getMonth()] || '';
+  const englishDateStr = `${englishDay}, ${now.getDate()} ${englishMonth} ${now.getFullYear()}`;
+
   if (variant === 'badge') {
     return (
       <div className="digital-clock-clean-badge" title="Live Time (Nepal Standard Time)">
         <div className="clean-badge-inner">
-          <Clock size={13} className="clock-icon-live" />
-          <span className="clean-badge-nepali">{nepaliHours}:{nepaliMinutes}:{nepaliSeconds} {nepaliAmPm}</span>
+          <Clock size={12} className="clock-icon-live" />
+          <span className="clean-badge-nepali">{nepaliDateStr} · {nepaliHours}:{nepaliMinutes} {nepaliAmPm}</span>
           <span className="clean-badge-divider">|</span>
-          <span className="clean-badge-en">{formattedHours}:{minutes}:{seconds} {ampm} NST</span>
+          <span className="clean-badge-en">{englishDateStr} · {formattedHours}:{minutes} {ampm} NST</span>
         </div>
       </div>
     );
   }
 
-  // Compact / Topbar Format: ONLY time in Nepali and English
+  // Compact / Topbar Format: Full Nepali and English Date with Day and Time
   return (
-    <div className="digital-clock-clean-topbar" title="नेपाल मानक समय · Live NST (UTC+5:45)">
+    <div className="digital-clock-clean-topbar" title="नेपाल मानक समय · Nepal Standard Time (UTC+05:45)">
       <span className="live-clock-pulse" aria-hidden="true" />
-      <span className="clean-clock-nepali">{nepaliHours}:{nepaliMinutes}:{nepaliSeconds} {nepaliAmPm}</span>
-      <span className="clean-clock-sep">•</span>
-      <span className="clean-clock-en">{formattedHours}:{minutes}:{seconds} {ampm} NST</span>
+      
+      {/* Nepali Date, Day & Time */}
+      <div className="topbar-date-group nepali-group">
+        <span className="topbar-flag-icon" aria-hidden="true">🇳🇵</span>
+        <span className="topbar-date-text">{nepaliDateStr}</span>
+        <span className="topbar-time-text">({nepaliHours}:{nepaliMinutes}:{nepaliSeconds} {nepaliAmPm})</span>
+      </div>
+
+      <span className="topbar-date-sep" aria-hidden="true">•</span>
+
+      {/* English Date, Day & Time */}
+      <div className="topbar-date-group english-group">
+        <span className="topbar-flag-icon" aria-hidden="true">🇬🇧</span>
+        <span className="topbar-date-text">{englishDateStr}</span>
+        <span className="topbar-time-text">({formattedHours}:{minutes}:{seconds} {ampm} NST)</span>
+      </div>
     </div>
   );
 }
