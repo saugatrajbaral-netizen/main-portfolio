@@ -27,6 +27,7 @@
 @import './styles/cv.css';
 @import './styles/contact.css';
 @import './styles/civic.css';
+@import './styles/taxpayer.css';
 
 /* 7. Responsive Media Queries & Print Styles */
 @import './styles/responsive.css';

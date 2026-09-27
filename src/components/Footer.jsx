@@ -49,6 +49,8 @@ export default function Footer({ onOpenNationalSymbols, lang = 'en' }) {
             <span className="footer-nav-bullet" aria-hidden="true">•</span>
             <Link to="/media">{lang === 'np' ? 'मिडिया' : 'Media'}</Link>
             <span className="footer-nav-bullet" aria-hidden="true">•</span>
+            <Link to="/taxpayer-education">{lang === 'np' ? 'करदाता शिक्षा' : 'Tax Education'}</Link>
+            <span className="footer-nav-bullet" aria-hidden="true">•</span>
             <Link to="/contact">{lang === 'np' ? 'सम्पर्क' : 'Contact'}</Link>
           </nav>
 

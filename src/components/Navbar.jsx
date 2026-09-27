@@ -240,6 +240,19 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
             )}
           </NavLink>
 
+          {/* Taxpayer Education Link */}
+          <NavLink
+            to="/taxpayer-education"
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+          >
+            {({ isActive }) => (
+              <>
+                <span className="nav-primary-label">{lang === 'np' ? 'करदाता शिक्षा' : 'Taxpayer Education'}</span>
+                {isActive && <span className="nav-active-dot" />}
+              </>
+            )}
+          </NavLink>
+
           {/* Contact */}
           <NavLink
             to="/contact"
@@ -403,6 +416,16 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
             >
               <span className="mobile-nav-main">{lang === 'np' ? 'विवरण (CV)' : 'Curriculum Vitae (CV)'}</span>
               <span className="mobile-nav-sub">{lang === 'np' ? 'CV' : 'विवरण (CV)'}</span>
+            </NavLink>
+
+            {/* Taxpayer Education */}
+            <NavLink
+              to="/taxpayer-education"
+              className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              <span className="mobile-nav-main">{lang === 'np' ? 'करदाता शिक्षा' : 'Taxpayer Education'}</span>
+              <span className="mobile-nav-sub">{lang === 'np' ? 'Tax Guidance' : 'कर मार्गदर्शन तथा क्यालकुलेटर'}</span>
             </NavLink>
 
             {/* Contact */}

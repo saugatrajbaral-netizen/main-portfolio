@@ -18,6 +18,7 @@ import PublicationsPage from './pages/PublicationsPage';
 import MediaPage from './pages/MediaPage';
 import CvPage from './pages/CvPage';
 import ContactPage from './pages/ContactPage';
+import TaxpayerEducationPage from './pages/TaxpayerEducationPage';
 
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -160,6 +161,14 @@ export default function App() {
                 <CvPage
                   lang={lang}
                   onOpenResume={() => setIsResumeOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/taxpayer-education"
+              element={
+                <TaxpayerEducationPage
+                  lang={lang}
                 />
               }
             />
