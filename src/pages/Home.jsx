@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, FileText, BookOpen, Briefcase, UserCheck, Scale } from 'lucide-react';
 import NepalEmblem from '../components/NepalEmblem';
+import HomeParallaxEmblem from '../components/HomeParallaxEmblem';
 import OfficerProfileFrame from '../components/OfficerProfileFrame';
 import { getPortfolioData } from '../data/portfolioData';
 import { MEDIA_ARCHIVE_ITEMS } from '../data/mediaData';
@@ -12,6 +13,9 @@ export default function Home({ lang = 'en' }) {
 
   return (
     <div className="home-cover-page">
+      {/* 3D Parallax Nepal Emblem Layer */}
+      <HomeParallaxEmblem lang={lang} />
+
       <div className="container-wide home-cover-container">
         <div className="home-cover-layout">
           {/* Left Column: Minimal Typography & Editorial Gateway */}
