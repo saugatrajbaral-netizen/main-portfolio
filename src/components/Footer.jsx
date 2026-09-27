@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NepalEmblem from './NepalEmblem';
+import { NepalFlagIcon } from './Flags';
 import WebsiteViewCounter from './WebsiteViewCounter';
 import { ArrowUp, Sparkles } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
@@ -63,7 +64,7 @@ export default function Footer({ onOpenNationalSymbols, lang = 'en' }) {
                 title={lang === 'np' ? 'नेपालका राष्ट्रिय चिन्हहरू हेर्नुहोस्' : 'National Symbols of Nepal'}
                 aria-label="National Symbols of Nepal"
               >
-                <span className="symbols-flag-badge" aria-hidden="true">🇳🇵</span>
+                <NepalFlagIcon size={13} className="symbols-flag-badge" />
                 <span className="symbols-btn-label">{lang === 'np' ? 'चिन्हहरू' : 'Symbols'}</span>
                 <Sparkles size={11} className="symbols-sparkle-icon" aria-hidden="true" />
               </button>

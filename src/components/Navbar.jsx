@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import NepalEmblem from './NepalEmblem';
 import DigitalClock from './DigitalClock';
+import { UsFlagIcon, NepalFlagIcon } from './Flags';
 import { getPortfolioData } from '../data/portfolioData';
 
 export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
@@ -264,7 +265,7 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
                 onClick={() => setLang('en')}
                 title="View website in English"
               >
-                <span className="lang-flag">🇬🇧</span>
+                <UsFlagIcon size={14} className="lang-flag-svg" />
                 <span>EN</span>
               </button>
               <button
@@ -273,7 +274,7 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
                 onClick={() => setLang('np')}
                 title="नेपाली भाषामा हेर्नुहोस्"
               >
-                <span className="lang-flag">🇳🇵</span>
+                <NepalFlagIcon size={14} className="lang-flag-svg" />
                 <span>नेपाली</span>
               </button>
             </div>
@@ -316,7 +317,8 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
                   closeMobileMenu();
                 }}
               >
-                <span>🇬🇧 English</span>
+                <UsFlagIcon size={15} />
+                <span>English (EN)</span>
               </button>
               <button
                 type="button"
@@ -326,7 +328,8 @@ export default function Navbar({ onOpenResume, lang = 'en', setLang }) {
                   closeMobileMenu();
                 }}
               >
-                <span>🇳🇵 नेपाली</span>
+                <NepalFlagIcon size={15} />
+                <span>नेपाली (NP)</span>
               </button>
             </div>
           )}
