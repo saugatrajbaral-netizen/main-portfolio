@@ -189,7 +189,7 @@ a {
 }
 
 /* ==========================================================================
-   STICKY HEADER & NAVIGATION (ATTRACTIVE & BLENDS WITH CANVAS)
+   FLOATING MENU HEADER ON SCROLL (PREMIUM GLASS ISLAND)
    ========================================================================== */
 .site-header {
   position: sticky;
@@ -198,30 +198,47 @@ a {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(12, 35, 64, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 
+    top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.96);
+  top: 14px;
+  width: min(1200px, calc(100% - 32px));
+  margin-inline: auto;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(12, 35, 64, 0.12);
   box-shadow: 
-    0 10px 30px -10px rgba(0, 31, 63, 0.12),
-    0 1px 3px rgba(0, 0, 0, 0.03);
-  border-bottom-color: rgba(12, 35, 64, 0.14);
+    0 20px 45px -12px rgba(0, 31, 63, 0.22),
+    0 4px 14px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
 
 [data-theme='dark'] .site-header {
-  background: rgba(7, 21, 43, 0.90);
+  background: rgba(7, 21, 43, 0.94);
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme='dark'] .site-header.scrolled {
-  background: rgba(7, 21, 43, 0.97);
-  box-shadow: 0 10px 32px -10px rgba(0, 0, 0, 0.7);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
+  background: rgba(7, 21, 43, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 20px 48px -12px rgba(0, 0, 0, 0.75),
+    0 4px 14px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 }
 
 /* Live Date, Day & Time Top Ribbon (English & Nepali Date with Day) */
@@ -231,6 +248,25 @@ a {
   font-size: 10px;
   padding-block: 4px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 40px;
+  opacity: 1;
+}
+
+.site-header.scrolled .gov-top-ribbon {
+  max-height: 0;
+  opacity: 0;
+  padding-block: 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .site-header.scrolled {
+    top: 8px;
+    width: calc(100% - 16px);
+    border-radius: 14px;
+  }
 }
 
 .gov-top-inner-clean {
@@ -7165,7 +7201,6 @@ a {
 }
 
 .site-main-content,
-.site-header,
 .site-editorial-footer {
   position: relative;
   z-index: 1;
@@ -13710,12 +13745,6 @@ a {
   position: relative;
   z-index: 2;
   flex: 1;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .site-footer {
