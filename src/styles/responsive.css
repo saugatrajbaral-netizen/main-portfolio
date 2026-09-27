@@ -1,0 +1,199 @@
+/* ==========================================================================
+   RESPONSIVENESS (MOBILE TO LARGE DESKTOP)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .editorial-portrait-wrapper {
+    max-width: 260px;
+    margin-inline: auto;
+  }
+
+  .editorial-credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .research-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visual-story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bibliography-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .symbols-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gov-top-dept {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .talks-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .responsibilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main-row {
+    flex-direction: column;
+  }
+
+  .footer-nav-col {
+    align-items: flex-start;
+  }
+
+  .footer-nav-links {
+    justify-content: flex-start;
+  }
+
+  .symbols-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-editorial-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-editorial-actions .button {
+    width: 100%;
+  }
+
+  .gov-top-motto {
+    display: none;
+  }
+
+  .visual-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-actions-row {
+    flex-direction: column;
+  }
+
+  .cv-btn {
+    width: 100%;
+  }
+}
+
+
+/* --- RESPONSIVE MEDIA QUERIES FOR MULTI-PAGE --- */
+@media (max-width: 1024px) {
+  .home-cover-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .home-cover-portrait-col {
+    order: -1;
+  }
+
+  .cover-portrait-frame-wrapper {
+    max-width: 320px;
+  }
+
+  .talks-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bibliography-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bibliography-action-col {
+    justify-self: flex-start;
+  }
+
+  .contact-chapter-page .contact-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cover-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-credentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-interests-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .talks-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-top-action-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cv-document-sheet {
+    padding: 32px 24px;
+  }
+
+  .cv-sheet-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row-dual {
+    grid-template-columns: 1fr;
+  }
+}

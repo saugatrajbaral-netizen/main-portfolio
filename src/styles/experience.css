@@ -1,0 +1,350 @@
+/* ==========================================================================
+   PROFESSIONAL JOURNEY (VERTICAL TIMELINE)
+   ========================================================================== */
+.journey-editorial-section {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.editorial-journey-timeline {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.journey-node {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.journey-node:last-child {
+  margin-bottom: 0;
+}
+
+.journey-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.journey-bullet-ring {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--crimson);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.journey-bullet-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.journey-line {
+  position: absolute;
+  top: 24px;
+  bottom: -28px;
+  width: 2px;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.journey-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.journey-card:hover {
+  background: #ffffff;
+  border-color: var(--navy);
+  box-shadow: var(--shadow-card);
+}
+
+.journey-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+.journey-period-pill {
+  display: inline-block;
+  font-family: var(--app-font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.journey-period-pill.current {
+  background: rgba(220, 20, 60, 0.1);
+  color: var(--crimson);
+}
+
+.journey-period-pill.previous {
+  background: #e2e8f0;
+  color: var(--text-muted);
+}
+
+.journey-role {
+  font-family: var(--app-font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.journey-institution {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gov-blue);
+}
+
+.journey-header-meta {
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.journey-office, .journey-jurisdiction {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.journey-overview {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.journey-responsibilities-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.responsibilities-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 14px;
+}
+
+.responsibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.resp-icon {
+  color: var(--crimson);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+
+/* --- 4. CHAPTER 2: EXPERIENCE TIMELINE STYLING --- */
+.editorial-journey-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-node {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 24px;
+  position: relative;
+}
+
+.journey-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-bullet-ring {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin-top: 8px;
+}
+
+.journey-bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--crimson);
+}
+
+.journey-line {
+  width: 2px;
+  flex-grow: 1;
+  background: var(--border-light);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.journey-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.journey-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.journey-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-bottom: 18px;
+}
+
+.journey-period-pill {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+
+.journey-period-pill.current {
+  background: var(--crimson-soft);
+  color: var(--crimson);
+  border: 1px solid var(--crimson-border);
+}
+
+.journey-period-pill.previous {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+}
+
+.journey-role {
+  font-family: var(--app-font-serif);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.journey-institution {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gov-blue);
+}
+
+.journey-header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.journey-office, .journey-jurisdiction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.journey-overview {
+  font-size: 0.96875rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.journey-responsibilities-box {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  border: 1px solid var(--border-light);
+}
+
+.responsibilities-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.responsibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.resp-icon {
+  color: var(--crimson);
+  flex-shrink: 0;
+  margin-top: 3px;
+}

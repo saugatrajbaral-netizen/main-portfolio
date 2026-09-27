@@ -1,0 +1,335 @@
+/* ==========================================================================
+   MINIMAL EDITORIAL FOOTER (COMPACT & SLIM)
+   ========================================================================== */
+/* ==========================================================================
+   COMPACT EXECUTIVE FOOTER (25% SIZE, SLEEK & COLOR-HARMONIZED)
+   ========================================================================== */
+.site-compact-footer {
+  position: relative;
+  background: linear-gradient(180deg, #07152b 0%, #030a14 100%);
+  color: #ffffff;
+  z-index: 2;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-accent-strip {
+  height: 2.5px;
+  width: 100%;
+  background: linear-gradient(90deg, #c41e3a 0%, #003893 35%, #d4af37 50%, #003893 65%, #c41e3a 100%);
+}
+
+.footer-compact-container {
+  padding-top: 14px;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Main Row: Brand Left, Quick Nav Center, Action Buttons Right */
+.footer-compact-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-compact-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.footer-compact-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.footer-compact-name {
+  font-family: var(--app-font-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.footer-compact-role {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #93c5fd;
+}
+
+/* Center Horizontal Nav Links */
+.footer-compact-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-compact-nav a {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-compact-nav a:hover {
+  color: #ffffff;
+}
+
+.footer-nav-bullet {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.625rem;
+}
+
+/* Right Actions: View Counter & Buttons */
+.footer-compact-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.footer-compact-symbols-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(196, 30, 58, 0.15);
+  border: 1px solid rgba(196, 30, 58, 0.4);
+  color: #fecdd3;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-compact-symbols-btn:hover {
+  background: var(--crimson, #c41e3a);
+  color: #ffffff;
+  border-color: var(--crimson, #c41e3a);
+  transform: translateY(-1px);
+}
+
+.symbols-flag-badge {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.footer-compact-top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-compact-top-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Sub-row: Copyright & Sanskrit Motto */
+.footer-compact-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.6875rem;
+  color: #64748b;
+  flex-wrap: wrap;
+}
+
+.footer-compact-copy {
+  color: #94a3b8;
+}
+
+.footer-compact-motto {
+  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
+  font-style: italic;
+  color: #fef08a;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .footer-compact-main-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .footer-compact-nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .footer-compact-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .footer-compact-sub-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-utility-bar {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+}
+
+
+
+/* --- ENHANCED FOOTER PATRIOTIC BACKGROUND --- */
+.site-editorial-footer {
+  position: relative;
+  background: linear-gradient(180deg, #061224 0%, #030a14 100%);
+  color: #f1f5f9;
+  border-top: 2px solid rgba(196, 30, 58, 0.45);
+  box-shadow: 0 -4px 24px rgba(0, 10, 25, 0.35);
+  overflow: hidden;
+}
+
+.site-editorial-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0 L48 24 L24 48 L0 24 Z' fill='none' stroke='%23ffffff' stroke-width='0.75'/%3E%3Ccircle cx='24' cy='24' r='4' fill='none' stroke='%23dc143c' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 96px 96px, 96px 96px, 48px 48px;
+  pointer-events: none;
+}
+
+.site-editorial-footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(0deg, rgba(2, 6, 12, 0.6) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   WEBSITE VIEW COUNT SECTION (FOOTER COUNTER - COMPACT PILL)
+   ========================================================================== */
+.website-views-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  margin: 0;
+  position: relative;
+}
+
+.website-views-card {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: center;
+}
+
+.website-views-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.views-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+.views-eye-icon {
+  stroke-width: 2;
+}
+
+.views-label-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  font-family: var(--app-font-sans, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif);
+}
+
+.views-count-digits {
+  font-family: var(--app-font-mono, 'Space Mono', monospace);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.views-live-pulse-dot {
+  width: 5.5px;
+  height: 5.5px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+  animation: viewsLivePulse 2.5s infinite;
+}
+
+@keyframes viewsLivePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+[data-theme='dark'] .website-views-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .views-count-digits {
+  color: #93c5fd;
+}
