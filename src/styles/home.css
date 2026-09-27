@@ -137,7 +137,8 @@
 /* Rectangular Portrait Frame */
 .editorial-portrait-wrapper {
   position: relative;
-  max-width: 275px;
+  width: 100%;
+  max-width: clamp(240px, 28vw, 320px);
   margin-left: auto;
 }
 
@@ -155,14 +156,16 @@
 .editorial-portrait-frame {
   position: relative;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
+  max-height: clamp(300px, 52vh, 440px);
   background: #f8fafc;
   border: 1px solid rgba(12, 35, 64, 0.1);
   box-shadow: 
     0 12px 30px -8px rgba(0, 31, 63, 0.08),
     0 2px 6px rgba(0, 0, 0, 0.02);
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: clamp(10px, 1.5vw, 14px);
 }
 
 .editorial-portrait-picture,

@@ -658,7 +658,7 @@
 .officer-profile-composite {
   position: relative;
   width: 100%;
-  max-width: 410px;
+  max-width: clamp(260px, 32vw, 420px);
   margin: 0 auto;
 }
 
@@ -775,16 +775,18 @@
 .profile-glass-frame {
   position: relative;
   background: #ffffff;
-  padding: 8px;
+  padding: clamp(6px, 1vw, 8px);
   border: 1px solid var(--border-light);
-  border-radius: 10px;
+  border-radius: clamp(8px, 1.2vw, 10px);
   box-shadow: 0 16px 40px rgba(0, 31, 63, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .profile-img-viewport {
   position: relative;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
+  max-height: clamp(300px, 52vh, 480px);
   overflow: hidden;
   border-radius: 6px;
   background: #f8fafc;
@@ -1599,7 +1601,7 @@
 
   .home-cover-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: clamp(32px, 5vw, 48px);
   }
 
   .home-cover-portrait-col {
@@ -1607,7 +1609,13 @@
   }
 
   .officer-profile-composite {
-    max-width: 340px;
+    max-width: min(340px, 85vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .officer-profile-composite {
+    max-width: min(290px, 90vw);
   }
 }
 
