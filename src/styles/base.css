@@ -72,6 +72,31 @@ a {
   text-decoration: none;
 }
 
+/* ==========================================================================
+   GLOBAL IMAGE PROTECTION (ANTI-DOWNLOAD, NO-DRAG, NO LONG-PRESS CONTEXT MENU)
+   ========================================================================== */
+img, 
+picture, 
+picture img,
+.profile-real-image, 
+.portrait-main-img, 
+.editorial-portrait-image,
+.photo-img,
+.thumb-img,
+.gallery-modal-img,
+.national-symbol-card-img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* Disables mobile long-press "Save Image" popup */
+}
+
 ::selection {
   background: rgba(220, 20, 60, 0.15);
   color: var(--navy);

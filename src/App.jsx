@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -23,6 +23,52 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [lang, setLang] = useState('en'); // 'en' | 'np'
+
+  // Global Image Protection: Disable right-click & drag on all images
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      const target = e.target;
+      if (
+        target.tagName === 'IMG' ||
+        target.tagName === 'PICTURE' ||
+        target.closest('picture') ||
+        target.closest('.profile-img-viewport') ||
+        target.closest('.portrait-image-frame') ||
+        target.closest('.editorial-portrait-frame') ||
+        target.closest('.about-portrait-showcase') ||
+        target.closest('.officer-profile-composite') ||
+        target.classList.contains('profile-real-image') ||
+        target.classList.contains('portrait-main-img') ||
+        target.classList.contains('editorial-portrait-image') ||
+        target.classList.contains('photo-img') ||
+        target.classList.contains('thumb-img')
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    const handleDragStart = (e) => {
+      const target = e.target;
+      if (
+        target.tagName === 'IMG' ||
+        target.tagName === 'PICTURE' ||
+        target.closest('picture') ||
+        target.closest('.profile-img-viewport') ||
+        target.closest('.portrait-image-frame') ||
+        target.closest('.editorial-portrait-frame')
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu, { capture: true });
+    document.addEventListener('dragstart', handleDragStart, { capture: true });
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu, { capture: true });
+      document.removeEventListener('dragstart', handleDragStart, { capture: true });
+    };
+  }, []);
 
   return (
     <Router>

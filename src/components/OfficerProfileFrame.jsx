@@ -123,6 +123,8 @@ export default function OfficerProfileFrame({
                 height={800}
                 loading="eager"
                 decoding="async"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </picture>
           </div>

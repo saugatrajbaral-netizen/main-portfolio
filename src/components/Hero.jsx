@@ -104,6 +104,8 @@ export default function Hero({ onOpenResume, lang = 'en' }) {
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
                     onError={(e) => {
                       // Fallback to stylized editorial placeholder
                       const picture = e.currentTarget.closest('picture');

@@ -35,6 +35,8 @@ export default function About({ lang = 'en' }) {
                     height={800}
                     loading="lazy"
                     decoding="async"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </picture>
                 <div className="portrait-subtle-glow" />
