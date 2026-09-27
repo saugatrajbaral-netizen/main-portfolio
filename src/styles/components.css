@@ -1601,21 +1601,47 @@
 
   .home-cover-layout {
     grid-template-columns: 1fr;
-    gap: clamp(32px, 5vw, 48px);
+    gap: clamp(24px, 4.5vw, 40px);
   }
 
   .home-cover-portrait-col {
     order: -1;
+    margin-top: 8px;
   }
 
   .officer-profile-composite {
-    max-width: min(340px, 85vw);
+    max-width: min(320px, 85vw);
   }
 }
 
 @media (max-width: 480px) {
+  .home-cover-portrait-col {
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
   .officer-profile-composite {
-    max-width: min(290px, 90vw);
+    max-width: min(275px, 88vw);
+  }
+
+  .art-himalaya-contour {
+    top: -24px;
+    left: -14px;
+    right: -14px;
+    width: calc(100% + 28px);
+  }
+
+  .art-nepal-map-trace {
+    bottom: -16px;
+    right: -16px;
+    width: 180px;
+  }
+
+  .art-digital-nodes-network {
+    top: -16px;
+    left: -16px;
+    width: calc(100% + 32px);
+    height: calc(100% + 32px);
   }
 }
 

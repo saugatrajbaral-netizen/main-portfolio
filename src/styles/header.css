@@ -660,3 +660,88 @@
   gap: 8px;
   cursor: pointer;
 }
+
+/* Mobile Header Layout (iPhone SE 375px & Small Phones) */
+@media (max-width: 640px) {
+  .header-inner {
+    height: 52px;
+    padding-inline: 14px;
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+    overflow: hidden;
+  }
+
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-role {
+    font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+  }
+
+  .header-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .language-tab-switcher {
+    padding: 2px;
+  }
+
+  .lang-tab-btn {
+    font-size: 10px;
+    padding: 2.5px 6px;
+    gap: 3px;
+  }
+
+  .header-cv-btn {
+    font-size: 10.5px;
+    padding: 4px 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    padding-inline: 10px;
+    gap: 6px;
+  }
+
+  .brand-role {
+    display: none; /* Hide subtitle on <=420px to keep clean 1-line brand without overlap */
+  }
+
+  .brand-name {
+    font-size: 12.5px;
+  }
+
+  .language-tab-switcher .lang-tab-btn {
+    padding: 2px 5px;
+    font-size: 9.5px;
+  }
+
+  .header-cv-btn {
+    padding: 3px 6px;
+    font-size: 9.5px;
+  }
+
+  .mobile-toggle {
+    padding: 4px;
+  }
+}
+
