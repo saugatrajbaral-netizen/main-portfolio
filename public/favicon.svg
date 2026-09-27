@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Linear Gradient (Executive Midnight Navy) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="50%" stop-color="#001f3f"/>
+      <stop offset="100%" stop-color="#030b17"/>
+    </linearGradient>
+
+    <!-- Accent Border Gradient (Nepal Crimson & Gold) -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c41e3a"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#003893"/>
+    </linearGradient>
+
+    <!-- Subtle Letter Gradient (Crisp White to Platinum) -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter for Monogram -->
+    <filter id="monogramShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Square Background -->
+  <rect x="16" y="16" width="480" height="480" rx="112" ry="112" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Accent Border -->
+  <rect x="16" y="16" width="480" height="480" rx="112" ry="112" fill="none" stroke="url(#borderGrad)" stroke-width="14" opacity="0.95"/>
+  
+  <!-- Inner Subtle Accent Ring -->
+  <rect x="28" y="28" width="456" height="456" rx="100" ry="100" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
+
+  <!-- Top Right Crimson Accent Dot -->
+  <circle cx="410" cy="102" r="14" fill="#c41e3a"/>
+
+  <!-- Sculpted Executive Monogram "S" -->
+  <text 
+    x="50%" 
+    y="55%" 
+    text-anchor="middle" 
+    dominant-baseline="central" 
+    font-family="'Playfair Display', 'Cinzel', 'Georgia', 'Times New Roman', serif" 
+    font-size="330" 
+    font-weight="800" 
+    fill="url(#textGrad)" 
+    filter="url(#monogramShadow)"
+    letter-spacing="-0.02em"
+  >S</text>
+</svg>
