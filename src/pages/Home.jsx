@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, FileText, BookOpen, Briefcase, UserCheck, Scale } from 'lucide-react';
 import NepalEmblem from '../components/NepalEmblem';
 import OfficerProfileFrame from '../components/OfficerProfileFrame';
-import DateTimeConverterUtility from '../components/DateTimeConverterUtility';
 import { getPortfolioData } from '../data/portfolioData';
 import { MEDIA_ARCHIVE_ITEMS } from '../data/mediaData';
 
@@ -83,11 +82,6 @@ export default function Home({ lang = 'en' }) {
               lang={lang}
             />
           </div>
-        </div>
-
-        {/* Live Date & Time + AD/BS Date Converter Utility */}
-        <div className="home-utility-wrapper">
-          <DateTimeConverterUtility lang={lang} />
         </div>
 
         {/* Media & Public Interest Highlights Preview */}

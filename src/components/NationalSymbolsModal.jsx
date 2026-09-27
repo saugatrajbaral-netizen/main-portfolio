@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { X, Download, Landmark, ShieldCheck, Flag, Sparkles, ExternalLink } from 'lucide-react';
+import { X, Download, ShieldCheck, Sparkles, Flag, Award } from 'lucide-react';
 import NepalEmblem from './NepalEmblem';
 
-export default function NationalSymbolsModal({ isOpen, onClose }) {
+export default function NationalSymbolsModal({ isOpen, onClose, lang = 'en' }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -24,15 +24,60 @@ export default function NationalSymbolsModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const symbolsList = [
-    { title: 'National Flag', nepali: 'राष्ट्रिय झण्डा', desc: 'Double-pennant flag with radiant Sun and crescent Moon symbols.', icon: '🇳🇵' },
-    { title: 'National Weapon', nepali: 'खुकुरी (Khukuri)', desc: 'Legendary curved blade symbolizing valor, honor, and sovereign courage.', icon: '🗡️' },
-    { title: 'National Flower', nepali: 'लालीगुराँस (Rhododendron)', desc: 'Vibrant crimson blooms of the Himalayan mountains.', icon: '🌺' },
-    { title: 'National Bird', nepali: 'डाँफे (Himalayan Monal)', desc: 'Magnificent multi-hued high-altitude pheasant.', icon: '🦚' },
-    { title: 'National Emblem', nepali: 'निशान छाप (Nishan Chhap)', desc: 'Official seal featuring Mt. Everest, equality handshake, and national motto.', icon: '🏔️' },
-    { title: 'National Game', nepali: 'भलिबल (Volleyball)', desc: 'Officially declared national sport played across all seven provinces.', icon: '🏐' },
-    { title: 'National Animal', nepali: 'गाई (Cow)', desc: 'Sacred symbol of gentleness and constitutional emblem of Nepal.', icon: '🐄' },
-    { title: 'National Color', nepali: 'सिम्रिक (Crimson Red)', desc: 'Rich vermilion representing victory, vitality, and Rhododendron.', icon: '🔴' },
-    { title: 'National Dress', nepali: 'दौरा सुरुवाल (Daura Suruwal)', desc: 'Official traditional formal attire worn on civic and ceremonial occasions.', icon: '🥋' },
+    {
+      title: 'National Flag',
+      nepali: 'राष्ट्रिय झण्डा',
+      desc: lang === 'np' ? 'चन्द्र र सूर्य अंकित विश्वकै एकमात्र त्रिकोणात्मक राष्ट्रिय झण्डा।' : 'Double-pennant flag with radiant Sun and crescent Moon symbols.',
+      icon: '🇳🇵'
+    },
+    {
+      title: 'National Weapon',
+      nepali: 'खुकुरी (Khukuri)',
+      desc: lang === 'np' ? 'वीरता, स्वाभिमान र राष्ट्रिय गौरवको प्रतीक पारम्परिक हतियार।' : 'Legendary curved blade symbolizing valor, honor, and sovereign courage.',
+      icon: '🗡️'
+    },
+    {
+      title: 'National Flower',
+      nepali: 'लालीगुराँस (Rhododendron)',
+      desc: lang === 'np' ? 'उच्च पहाडी तथा हिमाली भेगमा फुल्ने गाढा रातो राष्ट्रिय फूल।' : 'Vibrant crimson blooms of the Himalayan mountains.',
+      icon: '🌺'
+    },
+    {
+      title: 'National Bird',
+      nepali: 'डाँफे (Himalayan Monal)',
+      desc: lang === 'np' ? 'नौ रङ्गी प्वाँख भएको हिमाली सौन्दर्यको प्रतीक चरा।' : 'Magnificent multi-hued high-altitude pheasant.',
+      icon: '🦚'
+    },
+    {
+      title: 'National Emblem',
+      nepali: 'निशान छाप (Nishan Chhap)',
+      desc: lang === 'np' ? 'सगरमाथा, महिला-पुरुष समानता र राष्ट्रिय आदर्श वाक्य अंकित छाप।' : 'Official seal featuring Mt. Everest, equality handshake, and national motto.',
+      icon: '🏔️'
+    },
+    {
+      title: 'National Game',
+      nepali: 'भलिबल (Volleyball)',
+      desc: lang === 'np' ? 'सातै प्रदेश र भौगोलिक विविधतामा लोकप्रिय घोषित राष्ट्रिय खेल।' : 'Officially declared national sport played across all seven provinces.',
+      icon: '🏐'
+    },
+    {
+      title: 'National Animal',
+      nepali: 'गाई (Cow)',
+      desc: lang === 'np' ? 'धार्मिक, सांस्कृतिक तथा संवैधानिक मान्यता प्राप्त राष्ट्रिय जनावर।' : 'Sacred symbol of gentleness and constitutional emblem of Nepal.',
+      icon: '🐄'
+    },
+    {
+      title: 'National Color',
+      nepali: 'सिम्रिक (Crimson Red)',
+      desc: lang === 'np' ? 'लालीगुराँस र विजयको प्रतिनिधित्व गर्ने गाढा रातो रङ्ग।' : 'Rich vermilion representing victory, vitality, and Rhododendron.',
+      icon: '🔴'
+    },
+    {
+      title: 'National Dress',
+      nepali: 'दौरा सुरुवाल (Daura Suruwal)',
+      desc: lang === 'np' ? 'औपचारिक राजकीय, संवैधानिक तथा सांस्कृतिक पोसाक।' : 'Official traditional formal attire worn on civic and ceremonial occasions.',
+      icon: '🥋'
+    },
   ];
 
   return (
@@ -45,18 +90,18 @@ export default function NationalSymbolsModal({ isOpen, onClose }) {
         aria-labelledby="symbols-title"
       >
         {/* Header */}
-        <div className="dialog-head" style={{ borderBottom: '2px solid #e2e8f0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <NepalEmblem size={52} variant="full" />
+        <div className="dialog-head symbols-dialog-head">
+          <div className="symbols-head-title-wrap">
+            <NepalEmblem size={44} variant="full" />
             <div>
-              <span className="eyebrow" style={{ color: 'var(--crimson)' }}>
-                Government of Nepal · Constitutional Identity
+              <span className="eyebrow symbols-eyebrow">
+                {lang === 'np' ? 'नेपाल सरकार · संवैधानिक पहिचान' : 'Government of Nepal · Constitutional Identity'}
               </span>
-              <h2 id="symbols-title" style={{ margin: '4px 0 2px', fontSize: '24px' }}>
-                National Symbols of Nepal (नेपालका राष्ट्रिय चिन्हहरू)
+              <h2 id="symbols-title" className="symbols-modal-heading">
+                {lang === 'np' ? 'नेपालका राष्ट्रिय चिन्हहरू तथा प्रतीक' : 'National Symbols of Nepal (राष्ट्रिय चिन्हहरू)'}
               </h2>
-              <div style={{ color: 'var(--slate)', fontSize: '12px', fontFamily: 'var(--app-font-mono)' }}>
-                Official State Insignia, Emblems & Constitutional Heritage
+              <div className="symbols-modal-sub">
+                {lang === 'np' ? 'संवैधानिक पहिचान, निसान छाप तथा राष्ट्रिय धरोहर' : 'Official State Insignia, Emblems & Constitutional Heritage'}
               </div>
             </div>
           </div>
@@ -84,22 +129,22 @@ export default function NationalSymbolsModal({ isOpen, onClose }) {
             </div>
             <div className="symbols-banner-motto">
               <div className="motto-row">
-                <strong>राष्ट्रिय गान:</strong> "सयौं थुँगा फूलका हामी एउटै माला नेपाली..."
+                <strong>{lang === 'np' ? 'राष्ट्रिय गान:' : 'National Anthem:'}</strong> "सयौं थुँगा फूलका हामी एउटै माला नेपाली..."
               </div>
               <div className="motto-row">
-                <strong>राष्ट्रिय बाणी:</strong> "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी"
+                <strong>{lang === 'np' ? 'राष्ट्रिय बाणी:' : 'National Motto:'}</strong> "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी"
               </div>
               <div className="motto-row">
-                <strong>सरकारी कामकाजी भाषा:</strong> नेपाली (देवनागरी लिपि)
+                <strong>{lang === 'np' ? 'सरकारी कामकाजको भाषा:' : 'Official Language:'}</strong> नेपाली (देवनागरी लिपि)
               </div>
             </div>
           </div>
 
           {/* Quick Fact Grid */}
           <div className="symbols-grid-panel">
-            <h3 style={{ fontSize: '16px', color: 'var(--navy)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <h3 className="symbols-catalog-heading">
               <ShieldCheck size={18} color="var(--gov-blue)" />
-              <span>Official Catalog of National Symbols</span>
+              <span>{lang === 'np' ? 'राष्ट्रिय चिन्हहरूको आधिकारिक विवरण' : 'Official Catalog of National Symbols'}</span>
             </h3>
 
             <div className="symbols-cards-grid">
@@ -107,7 +152,7 @@ export default function NationalSymbolsModal({ isOpen, onClose }) {
                 <div key={idx} className="symbol-item-card">
                   <div className="symbol-item-icon">
                     {item.title === 'National Emblem' ? (
-                      <NepalEmblem size={26} variant="full" />
+                      <NepalEmblem size={24} variant="full" />
                     ) : (
                       item.icon
                     )}
@@ -124,24 +169,23 @@ export default function NationalSymbolsModal({ isOpen, onClose }) {
         </div>
 
         {/* Footer Actions */}
-        <div className="dialog-actions" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="dialog-actions symbols-dialog-actions">
           <a
             href="/national-symbols-nepal.jpg"
             download="National-Symbols-of-Nepal.jpg"
-            className="button button-primary"
+            className="button button-primary symbols-download-btn"
             style={{ textDecoration: 'none' }}
           >
             <Download size={14} />
-            <span>Download Chart</span>
+            <span>{lang === 'np' ? 'चार्ट डाउनलोड' : 'Download Chart'}</span>
           </a>
 
           <button
             type="button"
-            className="button button-secondary"
-            style={{ color: 'var(--navy)', borderColor: '#cbd5e1' }}
+            className="button button-secondary symbols-close-btn"
             onClick={onClose}
           >
-            <span>Close Window</span>
+            <span>{lang === 'np' ? 'बन्द गर्नुहोस्' : 'Close Window'}</span>
           </button>
         </div>
       </div>

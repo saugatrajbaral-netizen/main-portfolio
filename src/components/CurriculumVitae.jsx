@@ -1,15 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FileText, Download, Eye, ExternalLink, ShieldCheck, Award, GraduationCap, Building } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
 
 export default function CurriculumVitae({ onOpenResume, lang = 'en' }) {
   const portfolio = getPortfolioData(lang);
   const { curriculumVitae, personal } = portfolio;
-
-  const handleDownloadCV = () => {
-    // Triggers download or opens the modal for comprehensive review
-    onOpenResume();
-  };
 
   return (
     <section id="cv" className="cv-editorial-section section-pad">
@@ -55,14 +51,22 @@ export default function CurriculumVitae({ onOpenResume, lang = 'en' }) {
                 <span>{lang === 'np' ? 'अनलाइन CV हेर्नुहोस्' : 'View CV Online'}</span>
               </button>
 
-              <button
-                type="button"
+              <a
+                href="/saugat-raj-baral-cv.pdf"
+                download="Saugat-Raj-Baral-CV.pdf"
                 className="button button-secondary cv-btn"
-                onClick={handleDownloadCV}
               >
                 <Download size={16} />
-                <span>{lang === 'np' ? 'CV डाउनलोड गर्नुहोस्' : 'Download CV (PDF)'}</span>
-              </button>
+                <span>{lang === 'np' ? 'CV डाउनलोड गर्नुहोस् (PDF)' : 'Download CV (PDF)'}</span>
+              </a>
+
+              <Link
+                to="/cv"
+                className="button button-secondary cv-btn cv-fullpage-link"
+              >
+                <FileText size={16} />
+                <span>{lang === 'np' ? 'पूर्ण CV पृष्ठ' : 'Full CV Page'}</span>
+              </Link>
             </div>
           </div>
         </div>
