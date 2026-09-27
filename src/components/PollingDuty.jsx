@@ -193,12 +193,19 @@ export default function PollingDuty({ lang = 'en' }) {
             </div>
 
             <div className="hero-img-container">
-              <img
-                src={heroPhoto.image}
-                alt={heroPhoto.title}
-                className="hero-main-documentary-img"
-                loading="lazy"
-              />
+              <picture className="hero-picture-wrap">
+                <source type="image/webp" srcSet={heroPhoto.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                <source type="image/jpeg" srcSet={heroPhoto.image} />
+                <img
+                  src={heroPhoto.image}
+                  alt={heroPhoto.title}
+                  className="hero-main-documentary-img"
+                  width={768}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="hero-img-hover-overlay">
                 <Maximize2 size={28} />
                 <span>{lang === 'np' ? 'क्लिक गरी पूर्ण तस्वीर हेर्नुहोस्' : 'Click to View Full Photo'}</span>
@@ -261,12 +268,19 @@ export default function PollingDuty({ lang = 'en' }) {
                 onClick={() => handleOpenLightbox(globalIndex)}
               >
                 <div className="supporting-img-wrap">
-                  <img
-                    src={photo.image}
-                    alt={photo.title}
-                    className="supporting-thumb-img"
-                    loading="lazy"
-                  />
+                  <picture className="supporting-picture-wrap">
+                    <source type="image/webp" srcSet={photo.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                    <source type="image/jpeg" srcSet={photo.image} />
+                    <img
+                      src={photo.image}
+                      alt={photo.title}
+                      className="supporting-thumb-img"
+                      width={400}
+                      height={300}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="supporting-hover-overlay">
                     <Maximize2 size={20} />
                   </div>
@@ -332,15 +346,20 @@ export default function PollingDuty({ lang = 'en' }) {
               </button>
 
               <div className="lightbox-img-viewport" onClick={toggleZoom}>
-                <img
-                  src={activePhoto.image}
-                  alt={activePhoto.title}
-                  className="lightbox-main-img"
-                  style={{
-                    transform: `scale(${zoomLevel})`,
-                    cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in'
-                  }}
-                />
+                <picture className="lightbox-picture-wrap">
+                  <source type="image/webp" srcSet={activePhoto.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                  <source type="image/jpeg" srcSet={activePhoto.image} />
+                  <img
+                    src={activePhoto.image}
+                    alt={activePhoto.title}
+                    className="lightbox-main-img"
+                    style={{
+                      transform: `scale(${zoomLevel})`,
+                      cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in'
+                    }}
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               <button

@@ -112,12 +112,19 @@ export default function OfficerProfileFrame({
         <div className="profile-glass-frame">
           {/* Authentic Real Photograph */}
           <div className="profile-img-viewport">
-            <img
-              src="/saugat-baral.jpg"
-              alt={`Official portrait of ${name} (${nepaliName})`}
-              className="profile-real-image"
-              loading="eager"
-            />
+            <picture className="profile-picture-wrap">
+              <source type="image/webp" srcSet="/saugat-baral-portrait.webp 640w, /saugat-baral.webp 1024w" />
+              <source type="image/jpeg" srcSet="/saugat-baral.jpg" />
+              <img
+                src="/saugat-baral.jpg"
+                alt={`Official portrait of ${name} (${nepaliName})`}
+                className="profile-real-image"
+                width={640}
+                height={800}
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
             {/* Soft subtle gradient overlay at very base of photo for seamless caption blend */}
             <div className="profile-img-light-gradient" aria-hidden="true" />
           </div>

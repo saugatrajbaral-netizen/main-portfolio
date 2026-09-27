@@ -24,12 +24,19 @@ export default function About({ lang = 'en' }) {
           <div className="about-portrait-col">
             <div className="about-portrait-showcase">
               <div className="portrait-image-frame">
-                <img
-                  src="/saugat-baral.jpg"
-                  alt={personal.name}
-                  className="portrait-main-img"
-                  loading="eager"
-                />
+                <picture className="portrait-picture-wrap">
+                  <source type="image/webp" srcSet="/saugat-baral-portrait.webp 640w, /saugat-baral.webp 1024w" />
+                  <source type="image/jpeg" srcSet="/saugat-baral.jpg" />
+                  <img
+                    src="/saugat-baral.jpg"
+                    alt={personal.name}
+                    className="portrait-main-img"
+                    width={640}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div className="portrait-subtle-glow" />
               </div>
 

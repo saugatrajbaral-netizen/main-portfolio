@@ -102,19 +102,27 @@ export default function Hero({ onOpenResume, lang = 'en' }) {
               
               {/* Rectangular Portrait Container */}
               <div className="editorial-portrait-frame">
-                <img
-                  src="/saugat-baral.jpg"
-                  alt={`Portrait of ${personal.name}`}
-                  className="editorial-portrait-image"
-                  loading="eager"
-                  onError={(e) => {
-                    // Fallback to stylized editorial placeholder
-                    e.currentTarget.style.display = 'none';
-                    if (e.currentTarget.nextElementSibling) {
-                      e.currentTarget.nextElementSibling.style.display = 'flex';
-                    }
-                  }}
-                />
+                <picture className="editorial-portrait-picture">
+                  <source type="image/webp" srcSet="/saugat-baral-portrait.webp 640w, /saugat-baral.webp 1024w" />
+                  <source type="image/jpeg" srcSet="/saugat-baral.jpg" />
+                  <img
+                    src="/saugat-baral.jpg"
+                    alt={`Portrait of ${personal.name}`}
+                    className="editorial-portrait-image"
+                    width={640}
+                    height={800}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    onError={(e) => {
+                      // Fallback to stylized editorial placeholder
+                      const picture = e.currentTarget.closest('picture');
+                      if (picture) picture.style.display = 'none';
+                      const placeholder = picture?.nextElementSibling;
+                      if (placeholder) placeholder.style.display = 'flex';
+                    }}
+                  />
+                </picture>
                 
                 {/* Fallback Placeholder Frame */}
                 <div className="editorial-portrait-placeholder" style={{ display: 'none' }}>

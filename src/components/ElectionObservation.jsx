@@ -240,12 +240,19 @@ export default function ElectionObservation({ lang = 'en' }) {
               className="featured-image-wrapper"
               onClick={() => handleOpenLightbox(activeIndex)}
             >
-              <img
-                src={currentItem.image}
-                alt={currentItem.imageAlt || currentItem.title}
-                className="featured-document-img"
-                loading="lazy"
-              />
+              <picture className="featured-document-picture">
+                <source type="image/webp" srcSet={currentItem.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                <source type="image/jpeg" srcSet={currentItem.image} />
+                <img
+                  src={currentItem.image}
+                  alt={currentItem.imageAlt || currentItem.title}
+                  className="featured-document-img"
+                  width={600}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="image-hover-overlay">
                 <div className="overlay-content">
                   <Maximize2 size={24} />
@@ -284,7 +291,11 @@ export default function ElectionObservation({ lang = 'en' }) {
                   className={`thumb-button ${idx === activeIndex ? 'is-active' : ''}`}
                   onClick={() => setActiveIndex(idx)}
                 >
-                  <img src={item.image} alt={item.title} className="thumb-img" />
+                  <picture className="thumb-picture">
+                    <source type="image/webp" srcSet={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                    <source type="image/jpeg" srcSet={item.image} />
+                    <img src={item.image} alt={item.title} className="thumb-img" width={64} height={64} loading="lazy" decoding="async" />
+                  </picture>
                   <span className="thumb-badge">0{idx + 1}</span>
                 </button>
               ))}
@@ -361,15 +372,20 @@ export default function ElectionObservation({ lang = 'en' }) {
               </button>
 
               <div className="lightbox-img-viewport" onClick={toggleZoom}>
-                <img
-                  src={activeLightboxItem.image}
-                  alt={activeLightboxItem.title}
-                  className="lightbox-main-img"
-                  style={{
-                    transform: `scale(${zoomLevel})`,
-                    cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in'
-                  }}
-                />
+                <picture className="lightbox-picture-wrap">
+                  <source type="image/webp" srcSet={activeLightboxItem.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                  <source type="image/jpeg" srcSet={activeLightboxItem.image} />
+                  <img
+                    src={activeLightboxItem.image}
+                    alt={activeLightboxItem.title}
+                    className="lightbox-main-img"
+                    style={{
+                      transform: `scale(${zoomLevel})`,
+                      cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in'
+                    }}
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               <button

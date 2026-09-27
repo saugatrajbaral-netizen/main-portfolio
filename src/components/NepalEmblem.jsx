@@ -84,16 +84,20 @@ export default function NepalEmblem({
   }
 
   return (
-    <img
-      src="/nepal-emblem-official.png"
-      alt={alt}
-      width={size}
-      height={size}
-      className={`nepal-emblem-img ${className}`}
-      style={combinedStyle}
-      loading="eager"
-      decoding="async"
-      onError={() => setHasError(true)}
-    />
+    <picture style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+      <source type="image/webp" srcSet="/nepal-emblem-official.webp" />
+      <source type="image/png" srcSet="/nepal-emblem-official.png" />
+      <img
+        src="/nepal-emblem-official.png"
+        alt={alt}
+        width={size}
+        height={size}
+        className={`nepal-emblem-img ${className}`}
+        style={combinedStyle}
+        loading="eager"
+        decoding="async"
+        onError={() => setHasError(true)}
+      />
+    </picture>
   );
 }

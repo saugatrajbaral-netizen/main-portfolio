@@ -991,6 +991,29 @@ a {
   border-radius: var(--radius-sm);
 }
 
+.editorial-portrait-picture,
+.portrait-picture-wrap,
+.profile-picture-wrap,
+.hero-picture-wrap,
+.supporting-picture-wrap,
+.featured-document-picture,
+.thumb-picture,
+.symbols-picture,
+.bg-national-emblem-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cv-head-avatar-picture,
+.parallax-emblem-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .editorial-portrait-image {
   width: 100%;
   height: 100%;

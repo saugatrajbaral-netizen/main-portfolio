@@ -121,11 +121,19 @@ export default function NationalSymbolsModal({ isOpen, onClose, lang = 'en' }) {
           {/* Main Visual Image Card */}
           <div className="symbols-image-panel">
             <div className="symbols-image-wrap">
-              <img
-                src="/national-symbols-nepal.jpg"
-                alt="National symbols of Nepal / नेपालका राष्ट्रिय चिन्हहरू"
-                className="symbols-full-img"
-              />
+              <picture className="symbols-picture">
+                <source type="image/webp" srcSet="/national-symbols-nepal.webp" />
+                <source type="image/jpeg" srcSet="/national-symbols-nepal.jpg" />
+                <img
+                  src="/national-symbols-nepal.jpg"
+                  alt="National symbols of Nepal / नेपालका राष्ट्रिय चिन्हहरू"
+                  className="symbols-full-img"
+                  width={405}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div className="symbols-banner-motto">
               <div className="motto-row">

@@ -141,13 +141,19 @@ export default function HomeParallaxEmblem({ lang = 'en' }) {
       <div ref={stageRef} className="parallax-emblem-stage">
         {/* Emblem Graphic */}
         <div className="parallax-emblem-img-container">
-          <img
-            src="/nepal-gov-logo.jpg"
-            alt="Government of Nepal Official Emblem"
-            className="parallax-emblem-img"
-            loading="eager"
-            decoding="async"
-          />
+          <picture className="parallax-emblem-picture">
+            <source type="image/webp" srcSet="/nepal-gov-logo.webp" />
+            <source type="image/png" srcSet="/nepal-gov-logo.png" />
+            <img
+              src="/nepal-gov-logo.png"
+              alt="Government of Nepal Official Emblem (1:1 HD)"
+              className="parallax-emblem-img"
+              width={340}
+              height={340}
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
 
           {/* Dynamic Light Sheen & Specular Glare */}
           <div ref={glareRef} className="parallax-specular-glare" />

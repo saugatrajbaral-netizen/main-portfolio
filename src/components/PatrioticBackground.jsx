@@ -106,12 +106,19 @@ export default function PatrioticBackground() {
           transform: `translate3d(-50%, calc(-50% - ${emblemParallax}px), 0)`
         }}
       >
-        <img
-          src="/national-emblem-nepal-hd.png"
-          alt=""
-          className="bg-national-emblem-hd-img"
-          loading="eager"
-        />
+        <picture className="bg-national-emblem-picture">
+          <source type="image/webp" srcSet="/national-emblem-nepal-hd.webp 1024w" />
+          <source type="image/png" srcSet="/national-emblem-nepal-hd.png" />
+          <img
+            src="/national-emblem-nepal-hd.png"
+            alt=""
+            className="bg-national-emblem-hd-img"
+            width={1024}
+            height={858}
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       </div>
 
       {/* Layer 5: Subtle Himalayan Skyline Horizon Silhouette */}

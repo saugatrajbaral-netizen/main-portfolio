@@ -48,11 +48,19 @@ export default function ResumeModal({ isOpen, onClose, onOpenNationalSymbols, la
       >
         <div className="dialog-head">
           <div className="cv-head-profile-strip">
-            <img
-              src="/saugat-baral.jpg"
-              alt={personal.name}
-              className="cv-head-avatar"
-            />
+            <picture className="cv-head-avatar-picture">
+              <source type="image/webp" srcSet="/saugat-baral-square.webp" />
+              <source type="image/jpeg" srcSet="/saugat-baral-square.jpg" />
+              <img
+                src="/saugat-baral-square.jpg"
+                alt={personal.name}
+                className="cv-head-avatar"
+                width={56}
+                height={56}
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
             <NepalEmblem size={44} variant="full" />
             <div>
               <span className="eyebrow">
