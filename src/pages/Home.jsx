@@ -20,14 +20,6 @@ export default function Home({ lang = 'en' }) {
         <div className="home-cover-layout">
           {/* Left Column: Minimal Typography & Editorial Gateway */}
           <div className="home-cover-text-col">
-            {/* National Insignia Badge */}
-            <div className="cover-insignia-badge">
-              <NepalEmblem size={22} variant="full" />
-              <span className="cover-insignia-text">
-                {lang === 'np' ? 'नेपाल सरकार · अर्थ मन्त्रालय' : 'Government of Nepal · Ministry of Finance'}
-              </span>
-            </div>
-
             {/* Officer Large Name */}
             <h1 className="cover-title">
               {personal.name}

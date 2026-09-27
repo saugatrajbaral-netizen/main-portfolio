@@ -28,16 +28,6 @@ export default function Hero({ onOpenResume, lang = 'en' }) {
         <div className="hero-editorial-layout">
           {/* Left Column: Typography & Narrative */}
           <div className="hero-editorial-text-col">
-            {/* Kicker Tag */}
-            <div className="hero-official-badge">
-              <div className="badge-emblem">
-                <NepalEmblem size={22} variant="full" />
-              </div>
-              <span className="badge-text">
-                {lang === 'np' ? 'नेपाल सरकार · अर्थ मन्त्रालय' : 'Government of Nepal · Ministry of Finance'}
-              </span>
-            </div>
-
             {/* Officer Name */}
             <div className="hero-officer-name">
               <span>{personal.name}</span>
