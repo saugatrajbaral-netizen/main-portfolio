@@ -131,78 +131,53 @@ export default function InternationalEngagements({ lang = 'en' }) {
             </div>
           </div>
 
-          {/* Right Column: Recommendation Letter Document Preview Card */}
+          {/* Right Column: Actual Recommendation Letter Document Viewer */}
           <div className="intl-preview-col">
-            <div
-              className="intl-doc-preview-wrapper"
-              onClick={() => setIsModalOpen(true)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setIsModalOpen(true);
-                }
-              }}
-              aria-label={lang === 'np' ? 'सिफारिस पत्र पूर्ण रूपमा हेर्न क्लिक गर्नुहोस्' : 'Click to view full recommendation letter'}
-            >
-              {/* Paper Document Preview Simulation */}
-              <div className="intl-preview-sheet">
-                {/* Letterhead Header */}
-                <div className="preview-letterhead">
-                  <div className="preview-logo-box">
-                    <svg className="preview-yunus-logo" viewBox="0 0 64 64" fill="none">
-                      <path d="M 32,58 L 32,12" stroke="#1e40af" strokeWidth="2.5" strokeLinecap="round" />
-                      <path d="M 32,48 C 22,48 14,40 14,32 C 22,32 30,36 32,48 Z" fill="#3b82f6" opacity="0.85" />
-                      <path d="M 32,36 C 24,36 18,28 18,20 C 24,20 30,24 32,36 Z" fill="#60a5fa" opacity="0.9" />
-                      <path d="M 32,44 C 42,44 50,36 50,28 C 42,28 34,32 32,44 Z" fill="#2563eb" opacity="0.85" />
-                      <path d="M 32,30 C 40,30 46,22 46,16 C 40,16 34,20 32,30 Z" fill="#1d4ed8" opacity="0.9" />
-                      <path d="M 32,18 C 28,10 32,4 32,4 C 32,4 36,10 32,18 Z" fill="#1e3a8a" />
-                    </svg>
-                  </div>
-                  <span className="preview-brand-name">Yunus Centre</span>
+            <div className="intl-doc-actual-card">
+              {/* Document Header Bar */}
+              <div className="intl-doc-top-bar">
+                <div className="intl-doc-file-info">
+                  <FileText size={14} className="text-crimson" />
+                  <span className="intl-doc-filename">yunus-centre-recommendation-letter.pdf</span>
                 </div>
-
-                <div className="preview-salutation">To Whom It May Concern</div>
-                <div className="preview-date">December 26, 2019</div>
-
-                <div className="preview-body-text">
-                  <p>
-                    Mr. Saugat Raj Baral attended a one-month Immersion Program in October 2019 at Yunus Centre. During the Program, Saugat was exposed to the concept of social business through various presentations, interactive meetings and field visits to social businesses companies in Bangladesh...
-                  </p>
-                </div>
-
-                <div className="preview-sig-block">
-                  <div className="preview-sincerely">Sincerely,</div>
-                  <div className="preview-sig-signature">
-                    <svg viewBox="0 0 200 50" fill="none" className="sig-preview-svg">
-                      <path
-                        d="M 10,35 C 20,20 35,15 50,32 C 60,42 70,22 80,25 C 92,28 102,45 115,22 C 124,8 135,30 148,24 C 162,18 176,38 192,28 M 25,45 C 70,43 125,45 180,42"
-                        stroke="#0f172a"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="preview-sig-name">Muhammad Yunus</div>
-                  <div className="preview-sig-title">Nobel Peace Prize Laureate 2006</div>
-                  <div className="preview-sig-sub">Founder, Grameen Bank · Chairman, Yunus Centre</div>
-                </div>
-
-                <div className="preview-footer-line">
-                  Grameen Bank Bhaban, Mirpur 2, Dhaka 1216, Bangladesh
+                <div className="intl-doc-top-actions">
+                  <button
+                    type="button"
+                    className="intl-doc-expand-btn"
+                    onClick={() => setIsModalOpen(true)}
+                    title={lang === 'np' ? 'पूरा सिफारिस पत्र हेर्नुहोस्' : 'Expand Full Document'}
+                  >
+                    <Eye size={13} />
+                    <span>{lang === 'np' ? 'ठूलो बनाउनुहोस्' : 'Expand'}</span>
+                  </button>
+                  <a
+                    href="/yunus-centre-recommendation-letter.pdf"
+                    download="Saugat-Raj-Baral-Yunus-Centre-Recommendation.pdf"
+                    className="intl-doc-dl-btn"
+                    title={lang === 'np' ? 'PDF डाउनलोड' : 'Download PDF'}
+                  >
+                    <Download size={13} />
+                  </a>
                 </div>
               </div>
 
-              {/* Hover Overlay Prompt */}
-              <div className="intl-preview-overlay">
-                <div className="intl-preview-overlay-btn">
-                  <Eye size={18} />
-                  <span>{lang === 'np' ? 'सिफारिस पत्र पूर्ण हेर्नुहोस्' : 'Click to View Full Letter'}</span>
+              {/* Real PDF Document View Frame */}
+              <div
+                className="intl-pdf-frame-wrapper"
+                onClick={() => setIsModalOpen(true)}
+                title={lang === 'np' ? 'पूर्ण सिफारिस पत्र हेर्न क्लिक गर्नुहोस्' : 'Click to view full recommendation letter'}
+              >
+                <iframe
+                  src="/yunus-centre-recommendation-letter.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+                  title="Yunus Centre Recommendation Letter PDF"
+                  className="intl-actual-doc-iframe"
+                />
+                <div className="intl-frame-click-overlay">
+                  <div className="intl-overlay-pill">
+                    <Eye size={14} />
+                    <span>{lang === 'np' ? 'पूर्ण सिफारिस पत्र हेर्न क्लिक गर्नुहोस्' : 'Click to View Full Document'}</span>
+                  </div>
                 </div>
-                <span className="intl-preview-overlay-sub">
-                  {lang === 'np' ? 'PDF जुम तथा डाउनलोड उपलब्ध' : 'High-definition zoom & PDF available'}
-                </span>
               </div>
             </div>
 
@@ -210,7 +185,7 @@ export default function InternationalEngagements({ lang = 'en' }) {
             <div className="intl-doc-caption">
               <div className="intl-caption-badge">
                 <ShieldCheck size={14} className="text-emerald" />
-                <span>{lang === 'np' ? 'प्रमाणित अभिलेख' : 'Verified Original Document'}</span>
+                <span>{lang === 'np' ? 'प्रमाणित मूल अभिलेख' : 'Verified Original Document'}</span>
               </div>
               <p className="intl-caption-text">
                 {lang === 'np'
