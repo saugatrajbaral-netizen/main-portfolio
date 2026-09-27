@@ -197,3 +197,179 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   IPHONE SE (375x667) & COMPACT MOBILE OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 480px) {
+  .container-wide,
+  .container-narrow {
+    padding-inline: 16px;
+  }
+
+  .site-header .header-inner {
+    padding-inline: 14px;
+    height: 52px;
+  }
+
+  .gov-top-inner-clean {
+    padding-inline: 12px;
+  }
+
+  .digital-clock-clean-topbar {
+    font-size: 9.5px;
+    gap: 4px;
+  }
+
+  .home-cover-page {
+    padding: 24px 0 40px;
+    min-height: auto;
+  }
+
+  .cover-title {
+    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  .cover-subname {
+    font-size: 0.85em;
+  }
+
+  .cover-role {
+    font-size: 0.875rem;
+  }
+
+  .cover-domain-strip {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .cover-lead-intro {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .cover-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cover-action-btn {
+    padding: 10px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .officer-profile-composite {
+    max-width: min(280px, 88vw);
+  }
+
+  .profile-glass-frame {
+    padding: 6px;
+  }
+
+  .profile-img-viewport {
+    aspect-ratio: 4 / 5;
+    max-height: 340px;
+  }
+
+  .profile-officer-caption {
+    padding: 8px 4px 2px;
+    gap: 8px;
+  }
+
+  .caption-officer-name {
+    font-size: 0.875rem;
+  }
+
+  .caption-officer-role {
+    font-size: 0.75rem;
+  }
+
+  /* About Page on 375px */
+  .about-portrait-showcase {
+    max-width: min(280px, 88vw);
+  }
+
+  .portrait-image-frame {
+    aspect-ratio: 4 / 5;
+    max-height: 330px;
+  }
+
+  .about-name-headline {
+    font-size: 1.65rem;
+  }
+
+  .about-prose-lead {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  /* Dialogs & Modals on iPhone SE 667px height */
+  .resume-dialog,
+  .symbols-dialog,
+  .blog-reader-modal,
+  .recommendation-modal-dialog {
+    width: 95vw !important;
+    max-height: 88vh !important;
+    margin: 4vh auto !important;
+    border-radius: 10px !important;
+  }
+
+  .resume-dialog-body,
+  .symbols-modal-content,
+  .blog-reader-content {
+    padding: 14px !important;
+  }
+
+  /* Footer on iPhone SE */
+  .site-footer {
+    padding: 32px 0 24px;
+  }
+
+  .footer-inner-clean {
+    padding-inline: 16px;
+    gap: 20px;
+  }
+
+  .footer-brand-title {
+    font-size: 1rem;
+  }
+
+  .footer-counter-pill {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Ultra-compact for 375px iPhone SE / 360px Android */
+  .container-wide,
+  .container-narrow {
+    padding-inline: 12px;
+  }
+
+  .site-header .header-inner {
+    padding-inline: 10px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+
+  .brand-role {
+    font-size: 8.5px;
+  }
+
+  .cover-title {
+    font-size: 1.75rem;
+  }
+
+  .officer-profile-composite,
+  .about-portrait-showcase {
+    max-width: min(260px, 92vw);
+  }
+
+  .profile-img-viewport,
+  .portrait-image-frame {
+    max-height: 310px;
+  }
+}
