@@ -2824,294 +2824,189 @@ a {
    MINIMAL EDITORIAL FOOTER (COMPACT & SLIM)
    ========================================================================== */
 /* ==========================================================================
-   GRAND INSTITUTIONAL FOOTER (4X SIZE WITH EXECUTIVE HARMONY)
+   COMPACT EXECUTIVE FOOTER (25% SIZE, SLEEK & COLOR-HARMONIZED)
    ========================================================================== */
-.site-grand-footer {
+.site-compact-footer {
   position: relative;
-  background: linear-gradient(180deg, #07152b 0%, #040d1a 60%, #02070e 100%);
+  background: linear-gradient(180deg, #07152b 0%, #030a14 100%);
   color: #ffffff;
   z-index: 2;
   overflow: hidden;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top-accent-strip {
-  height: 3px;
+  height: 2.5px;
   width: 100%;
   background: linear-gradient(90deg, #c41e3a 0%, #003893 35%, #d4af37 50%, #003893 65%, #c41e3a 100%);
 }
 
-.footer-grand-container {
-  padding-top: 48px;
-  padding-bottom: 32px;
+.footer-compact-container {
+  padding-top: 14px;
+  padding-bottom: 12px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 10px;
 }
 
-/* Row 1: Executive Identity & State Motto */
-.footer-hero-identity-row {
+/* Main Row: Brand Left, Quick Nav Center, Action Buttons Right */
+.footer-compact-main-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.footer-identity-left {
-  display: flex;
+.footer-compact-brand {
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-}
-
-.footer-emblem-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  gap: 9px;
   flex-shrink: 0;
 }
 
-.footer-identity-copy {
+.footer-compact-brand-text {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  line-height: 1.2;
 }
 
-.footer-officer-title-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.footer-officer-name {
+.footer-compact-name {
   font-family: var(--app-font-serif);
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
 
-.footer-officer-subname {
-  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
-  font-size: 0.95rem;
-  color: #fb7185;
-}
-
-.footer-officer-cadre {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
-  font-weight: 600;
+.footer-compact-role {
+  font-size: 0.6875rem;
+  font-weight: 500;
   color: #93c5fd;
 }
 
-.footer-office-location {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.75rem;
-  color: #cbd5e1;
-}
-
-.footer-identity-right {
+/* Center Horizontal Nav Links */
+.footer-compact-nav {
   display: flex;
   align-items: center;
-}
-
-.footer-motto-crest {
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 8px;
-  text-align: right;
-}
-
-.motto-sanskrit-quote {
-  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #fef08a;
-  letter-spacing: 0.02em;
-}
-
-.motto-sub-translation {
-  font-size: 0.725rem;
-  color: #cbd5e1;
-  margin-top: 3px;
-}
-
-/* Row 2: Four-Column Navigation Grid */
-.footer-columns-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-col-heading {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #f8fafc;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
-  padding-bottom: 6px;
-  border-bottom: 2px solid rgba(196, 30, 58, 0.6);
-  display: inline-block;
-}
-
-.footer-links-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.footer-links-list a {
-  font-size: 0.8125rem;
-  color: #94a3b8;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.footer-links-list a:hover {
-  color: #ffffff;
-  transform: translateX(3px);
-}
-
-.footer-ext-link {
-  color: #60a5fa !important;
-}
-
-.ext-icon {
-  opacity: 0.7;
-  transition: transform 0.2s ease;
-}
-
-.footer-ext-link:hover .ext-icon {
-  opacity: 1;
-  transform: translate(1px, -1px);
-}
-
-/* Row 3: Interactive Utility Row */
-.footer-utility-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.footer-utility-right {
+.footer-compact-nav a {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-compact-nav a:hover {
+  color: #ffffff;
+}
+
+.footer-nav-bullet {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.625rem;
+}
+
+/* Right Actions: View Counter & Buttons */
+.footer-compact-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.footer-symbols-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(196, 30, 58, 0.15);
-  border: 1px solid rgba(196, 30, 58, 0.4);
-  color: #fecdd3;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer-symbols-btn:hover {
-  background: var(--crimson);
-  color: #ffffff;
-  border-color: var(--crimson);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(196, 30, 58, 0.4);
-}
-
-.footer-back-to-top-btn {
+.footer-compact-symbols-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f1f5f9;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  background: rgba(196, 30, 58, 0.15);
+  border: 1px solid rgba(196, 30, 58, 0.4);
+  color: #fecdd3;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.6875rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.footer-back-to-top-btn:hover {
+.footer-compact-symbols-btn:hover {
+  background: var(--crimson, #c41e3a);
+  color: #ffffff;
+  border-color: var(--crimson, #c41e3a);
+  transform: translateY(-1px);
+}
+
+.symbols-flag-badge {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.footer-compact-top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-compact-top-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
   transform: translateY(-1px);
 }
 
-/* Row 4: Bottom Bar */
-.footer-copyright-bottom-row {
+/* Sub-row: Copyright & Sanskrit Motto */
+.footer-compact-sub-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.75rem;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.6875rem;
   color: #64748b;
   flex-wrap: wrap;
-  gap: 12px;
 }
 
-.footer-copy-text {
+.footer-compact-copy {
   color: #94a3b8;
 }
 
-.footer-affirmation-text {
-  color: #cbd5e1;
+.footer-compact-motto {
+  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
   font-style: italic;
+  color: #fef08a;
+  letter-spacing: 0.02em;
 }
 
-@media (max-width: 1024px) {
-  .footer-columns-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-hero-identity-row {
+@media (max-width: 900px) {
+  .footer-compact-main-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
-  .footer-motto-crest {
-    text-align: left;
+  .footer-compact-nav {
+    width: 100%;
+    justify-content: flex-start;
   }
-  .footer-columns-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-utility-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .footer-utility-right {
+  .footer-compact-actions {
+    width: 100%;
     justify-content: space-between;
+  }
+  .footer-compact-sub-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
 
