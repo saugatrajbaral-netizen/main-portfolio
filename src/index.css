@@ -4316,9 +4316,9 @@ a {
 .profile-glass-frame {
   position: relative;
   background: #ffffff;
-  padding: 10px 10px 12px;
+  padding: 8px;
   border: 1px solid var(--border-light);
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0 16px 40px rgba(0, 31, 63, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
@@ -4327,8 +4327,8 @@ a {
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 3px;
-  background: #001f3f;
+  border-radius: 6px;
+  background: #f8fafc;
 }
 
 .profile-real-image {

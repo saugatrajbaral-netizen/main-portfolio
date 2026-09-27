@@ -120,17 +120,6 @@ export default function Hero({ onOpenResume, lang = 'en' }) {
                   <div className="placeholder-title">{personal.name}</div>
                   <div className="placeholder-role">{personal.role}</div>
                 </div>
-
-                {/* Institutional Overlay Ribbon */}
-                <div className="portrait-institutional-ribbon">
-                  <div className="ribbon-emblem">
-                    <NepalEmblem size={18} variant="full" />
-                  </div>
-                  <div className="ribbon-text">
-                    <span className="ribbon-title">{personal.aside.designation}</span>
-                    <span className="ribbon-sub">{personal.aside.office}</span>
-                  </div>
-                </div>
               </div>
 
               {/* Digital Live Clock Card below portrait */}

@@ -125,27 +125,6 @@ export default function OfficerProfileFrame({
                 decoding="async"
               />
             </picture>
-            {/* Soft subtle gradient overlay at very base of photo for seamless caption blend */}
-            <div className="profile-img-light-gradient" aria-hidden="true" />
-          </div>
-
-          {/* Official Government Officer Caption Ribbon */}
-          <div className="profile-officer-caption">
-            <div className="caption-seal-col">
-              <NepalEmblem size={24} variant="full" />
-            </div>
-            <div className="caption-info-col">
-              <div className="caption-officer-name">
-                <span className="name-en">{name}</span>
-                {nepaliName && <span className="name-np">({nepaliName})</span>}
-              </div>
-              <div className="caption-officer-designation">
-                {lang === 'np' ? 'कर अधिकृत | नेपाल सरकार' : designation}
-              </div>
-              <div className="caption-officer-dept">
-                {lang === 'np' ? 'अर्थ मन्त्रालय · आन्तरिक राजस्व विभाग' : office}
-              </div>
-            </div>
           </div>
         </div>
       </div>
