@@ -615,6 +615,104 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Budget 2083/84 Reform Highlight Ribbon */
+.budget-reform-ribbon {
+  background: linear-gradient(135deg, rgba(0, 56, 147, 0.08) 0%, rgba(220, 20, 60, 0.06) 100%);
+  border: 1px solid rgba(0, 56, 147, 0.2);
+  border-left: 4px solid var(--crimson);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+[data-theme='dark'] .budget-reform-ribbon {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(96, 165, 250, 0.3);
+  border-left-color: #ef4444;
+}
+
+.reform-ribbon-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reform-pill-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--crimson);
+  color: #ffffff;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.reform-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reform-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+[data-theme='dark'] .reform-title {
+  color: #f1f5f9;
+}
+
+.reform-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* CGT Rate Highlight Badges */
+.cgt-rate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cgt-rate-badge.short-term {
+  background: rgba(220, 20, 60, 0.1);
+  color: var(--crimson);
+  border: 1px solid rgba(220, 20, 60, 0.25);
+}
+
+.cgt-rate-badge.long-term {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.cgt-final-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  background: rgba(0, 56, 147, 0.08);
+  color: var(--gov-blue);
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+[data-theme='dark'] .cgt-final-pill {
+  background: rgba(96, 165, 250, 0.15);
+  color: #93c5fd;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 960px) {
   .tax-metrics-bar {
@@ -651,6 +749,11 @@
 
   .tax-guide-panel {
     padding: 18px 14px;
+  }
+
+  .budget-reform-ribbon {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .official-links-banner {
