@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ShieldCheck, Paperclip, FileText, Loader2, ExternalLink, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ShieldCheck, Paperclip, FileText, Loader2, ExternalLink, X, MessageSquare } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
+import { FacebookIcon, WhatsAppIcon } from '../components/SocialIcons';
+import FacebookFeed from '../components/FacebookFeed';
 
 const RECIPIENT_EMAIL = 'saugatrajbaral@gmail.com';
 const SECURE_ENDPOINT = 'https://formsubmit.co/ajax/saugatrajbaral@gmail.com';
@@ -113,7 +115,7 @@ export default function ContactPage({ lang = 'en' }) {
 
       <div className="container-wide chapter-content-body">
         <div className="contact-editorial-grid">
-          {/* Left Column: Official Contact Channels */}
+          {/* Left Column: Official Contact Channels & Live Social Stream */}
           <div className="contact-info-col">
             <div className="contact-info-card">
               <h3 className="contact-card-title">
@@ -135,6 +137,28 @@ export default function ContactPage({ lang = 'en' }) {
                     <span className="contact-item-label">{lang === 'np' ? 'इमेल ठेगाना' : 'Email Address'}</span>
                     <span className="contact-item-val">{personal.email}</span>
                   </div>
+                </a>
+
+                {/* WhatsApp Direct Action Row */}
+                <a
+                  href={personal.whatsappUrl || "https://wa.me/9779806655678"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-whatsapp-row"
+                  title={lang === 'np' ? 'ह्वाट्सएपमा सिधै कुराकानी गर्नुहोस्' : 'Chat directly on WhatsApp'}
+                >
+                  <div className="whatsapp-left-content">
+                    <div className="contact-whatsapp-icon">
+                      <WhatsAppIcon size={16} />
+                    </div>
+                    <div className="contact-item-text">
+                      <span className="contact-item-label">WhatsApp</span>
+                      <span className="contact-item-val">{personal.whatsapp || "+977 9806655678"}</span>
+                    </div>
+                  </div>
+                  <span className="contact-whatsapp-action-btn">
+                    <span>{lang === 'np' ? 'ह्वाट्सएप' : 'Contact on WhatsApp'}</span>
+                  </span>
                 </a>
 
                 {/* Official Phone */}
@@ -177,6 +201,26 @@ export default function ContactPage({ lang = 'en' }) {
                 <span className="socials-label">{lang === 'np' ? 'सामाजिक सञ्जाल:' : 'Profiles:'}</span>
                 <div className="socials-links">
                   <a
+                    href="https://www.facebook.com/saugatraj.baral"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-pill-link facebook"
+                    title="Facebook Profile"
+                  >
+                    <FacebookIcon size={13} />
+                    <span>Facebook</span>
+                  </a>
+                  <a
+                    href="https://wa.me/9779806655678"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-pill-link whatsapp"
+                    title="WhatsApp Chat"
+                  >
+                    <WhatsAppIcon size={13} />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -212,6 +256,9 @@ export default function ContactPage({ lang = 'en' }) {
                 </span>
               </div>
             </div>
+
+            {/* Official Live Facebook Feed */}
+            <FacebookFeed lang={lang} />
           </div>
 
           {/* Right Column: Direct Official Send Email Form */}

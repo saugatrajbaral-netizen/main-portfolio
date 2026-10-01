@@ -6,6 +6,9 @@
 /* 1. Core Base, Design Tokens, Variables & Utilities */
 @import './styles/base.css';
 
+/* 2. Centralized Shared & Common UI Primitives */
+@import './styles/common.css';
+
 /* 2. Global Navigation & Sticky Header */
 @import './styles/header.css';
 
@@ -28,6 +31,7 @@
 @import './styles/contact.css';
 @import './styles/civic.css';
 @import './styles/taxpayer.css';
+@import './styles/training.css';
 
 /* 7. Responsive Media Queries & Print Styles */
 @import './styles/responsive.css';

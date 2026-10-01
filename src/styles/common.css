@@ -1,0 +1,801 @@
+/* ==========================================================================
+   SAUGAT RAJ BARAL · TAX OFFICER, GOVERNMENT OF NEPAL
+   CENTRALIZED COMMON & SHARED DESIGN PRIMITIVES (common.css)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. PAGE CHAPTER HEADERS, BREADCRUMBS & SECTION SHELL
+   ========================================================================== */
+.page-chapter-view {
+  padding-bottom: clamp(56px, 8vw, 88px);
+}
+
+.page-chapter-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  padding: clamp(32px, 5vw, 48px) 0 clamp(28px, 4vw, 40px);
+  margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+[data-theme='dark'] .page-chapter-header {
+  background: #090e17;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.chapter-breadcrumb,
+.chapter-breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.8125rem;
+  margin-bottom: 14px;
+}
+
+.breadcrumb-home,
+.breadcrumb-root-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-home:hover,
+.breadcrumb-root-link:hover {
+  color: var(--navy);
+}
+
+[data-theme='dark'] .breadcrumb-home:hover,
+[data-theme='dark'] .breadcrumb-root-link:hover {
+  color: #60a5fa;
+}
+
+.breadcrumb-sep,
+.breadcrumb-arrow {
+  color: var(--text-light);
+}
+
+.breadcrumb-current,
+.breadcrumb-active-tag {
+  color: var(--crimson);
+  font-weight: 600;
+}
+
+.chapter-kicker,
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.chapter-heading,
+.chapter-main-title {
+  font-family: var(--app-font-serif);
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+
+[data-theme='dark'] .chapter-heading,
+[data-theme='dark'] .chapter-main-title {
+  color: #f8fafc;
+}
+
+.chapter-subtitle,
+.chapter-lead-subtitle {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  line-height: 1.68;
+  color: var(--text-secondary);
+  max-width: 780px;
+}
+
+[data-theme='dark'] .chapter-subtitle,
+[data-theme='dark'] .chapter-lead-subtitle {
+  color: #94a3b8;
+}
+
+.chapter-divider,
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-light) 0%, transparent 100%);
+  margin-top: 24px;
+}
+
+.chapter-content-body {
+  margin-top: 0;
+}
+
+.chapter-section-block,
+.editorial-section-block {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: clamp(24px, 4vw, 36px);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme='dark'] .chapter-section-block,
+[data-theme='dark'] .editorial-section-block {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.section-label-tag,
+.section-kicker-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--crimson);
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.chapter-section-title {
+  font-family: var(--app-font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+[data-theme='dark'] .chapter-section-title {
+  color: #f1f5f9;
+}
+
+
+/* ==========================================================================
+   2. COMMON BADGES, PILLS, LABELS & KICKERS
+   ========================================================================== */
+.eyebrow {
+  color: var(--crimson);
+  font-family: var(--app-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.badge-pill,
+.status-pill,
+.category-pill,
+.tag-pill,
+.focus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.period-pill,
+.journey-period-pill {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+
+.period-pill.current,
+.journey-period-pill.current {
+  background: var(--crimson-soft);
+  color: var(--crimson);
+  border: 1px solid var(--crimson-border);
+}
+
+.period-pill.previous,
+.journey-period-pill.previous {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+}
+
+/* Editorial Kicker Tag System */
+.kicker-tag,
+.about-kicker-tag,
+.editorial-kicker-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.kicker-line,
+.about-kicker-line,
+.editorial-kicker-line {
+  width: 28px;
+  height: 2px;
+  background: var(--crimson);
+  opacity: 0.6;
+}
+
+.kicker-text,
+.about-kicker-text,
+.editorial-kicker-label {
+  font-family: var(--app-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Pulse dot */
+.pulse-dot,
+.status-dot,
+.live-clock-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+  animation: commonPulse 2s infinite;
+}
+
+@keyframes commonPulse {
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+
+/* ==========================================================================
+   3. COMMON BUTTONS & ACTION ELEMENTS
+   ========================================================================== */
+.button,
+.action-btn,
+.cover-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.button-primary,
+.action-btn.primary,
+.cover-action-btn.primary {
+  background: var(--navy);
+  color: #ffffff;
+  border-color: var(--navy);
+}
+
+.button-primary:hover,
+.action-btn.primary:hover,
+.cover-action-btn.primary:hover {
+  background: var(--gov-blue);
+  border-color: var(--gov-blue);
+  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.2);
+  transform: translateY(-1px);
+}
+
+.button-secondary,
+.action-btn.secondary,
+.cover-action-btn:not(.primary) {
+  background: #ffffff;
+  color: var(--navy);
+  border-color: var(--border-light);
+}
+
+.button-secondary:hover,
+.action-btn.secondary:hover,
+.cover-action-btn:not(.primary):hover {
+  background: var(--bg-subtle);
+  border-color: var(--navy);
+  transform: translateY(-1px);
+}
+
+.view-all-btn,
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gov-blue);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.view-all-btn:hover,
+.card-link:hover {
+  color: var(--crimson);
+  transform: translateX(2px);
+}
+
+[data-theme='dark'] .view-all-btn,
+[data-theme='dark'] .card-link {
+  color: #93c5fd;
+}
+
+[data-theme='dark'] .view-all-btn:hover,
+[data-theme='dark'] .card-link:hover {
+  color: #f87171;
+}
+
+.dialog-close,
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.dialog-close:hover,
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ==========================================================================
+   4. COMMON CARDS, SURFACES & CALLOUTS
+   ========================================================================== */
+.editorial-card,
+.card-interactive {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.editorial-card:hover,
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--navy);
+}
+
+[data-theme='dark'] .editorial-card,
+[data-theme='dark'] .card-interactive {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .editorial-card:hover,
+[data-theme='dark'] .card-interactive:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Pull quote block */
+.quote-box,
+.chapter-quote-box {
+  background: linear-gradient(135deg, rgba(0, 31, 63, 0.02) 0%, rgba(220, 20, 60, 0.03) 100%);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--crimson);
+  border-radius: var(--radius-sm);
+  padding: 24px 28px;
+  margin-block: 24px;
+}
+
+[data-theme='dark'] .quote-box,
+[data-theme='dark'] .chapter-quote-box {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(220, 20, 60, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: #ef4444;
+}
+
+.quote-text,
+.chapter-quote-text {
+  font-family: var(--app-font-serif);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+[data-theme='dark'] .quote-text,
+[data-theme='dark'] .chapter-quote-text {
+  color: #f1f5f9;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gov-blue);
+  text-align: right;
+}
+
+[data-theme='dark'] .quote-author {
+  color: #93c5fd;
+}
+
+/* Callout & Disclaimer boxes */
+.info-callout,
+.disclaimer-box,
+.reader-takeaways-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--gov-blue);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+[data-theme='dark'] .info-callout,
+[data-theme='dark'] .disclaimer-box,
+[data-theme='dark'] .reader-takeaways-box {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: #3b82f6;
+}
+
+
+/* ==========================================================================
+   5. UNIVERSAL MODAL & DIALOG SYSTEM PRIMITIVES
+   ========================================================================== */
+.modal-backdrop,
+.dialog-backdrop,
+.resume-dialog-backdrop,
+.symbols-dialog-backdrop,
+.blog-reader-backdrop,
+.lightbox-backdrop,
+.rec-letter-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 31, 63, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 24px);
+  animation: commonModalFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes commonModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-dialog,
+.dialog-shell,
+.resume-dialog,
+.symbols-dialog,
+.blog-reader-dialog,
+.lightbox-dialog,
+.rec-letter-modal-dialog {
+  background: #ffffff;
+  width: min(840px, 100%);
+  max-height: 92vh;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+  position: relative;
+  animation: commonModalSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes commonModalSlide {
+  from {
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+[data-theme='dark'] .modal-dialog,
+[data-theme='dark'] .dialog-shell,
+[data-theme='dark'] .resume-dialog,
+[data-theme='dark'] .symbols-dialog,
+[data-theme='dark'] .blog-reader-dialog,
+[data-theme='dark'] .lightbox-dialog,
+[data-theme='dark'] .rec-letter-modal-dialog {
+  background: #0b1322;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.modal-header,
+.dialog-head,
+.reader-top-bar,
+.symbols-dialog-head,
+.rec-modal-header {
+  padding: 14px 20px;
+  background: var(--navy);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .modal-header,
+[data-theme='dark'] .dialog-head,
+[data-theme='dark'] .reader-top-bar,
+[data-theme='dark'] .symbols-dialog-head,
+[data-theme='dark'] .rec-modal-header {
+  background: #060c16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-body,
+.dialog-content,
+.reader-content-body,
+.symbols-modal-content {
+  padding: clamp(20px, 3.5vw, 32px);
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  flex-grow: 1;
+}
+
+[data-theme='dark'] .modal-body,
+[data-theme='dark'] .dialog-content,
+[data-theme='dark'] .reader-content-body,
+[data-theme='dark'] .symbols-modal-content {
+  color: #e2e8f0;
+}
+
+.modal-footer,
+.dialog-actions,
+.symbols-dialog-actions {
+  padding: 14px 20px;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .modal-footer,
+[data-theme='dark'] .dialog-actions,
+[data-theme='dark'] .symbols-dialog-actions {
+  background: #080f1a;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==========================================================================
+   6. COMMON FORM PRIMITIVES
+   ========================================================================== */
+.form-input,
+.form-textarea,
+.email-form-input,
+.email-form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+[data-theme='dark'] .form-input,
+[data-theme='dark'] .form-textarea,
+[data-theme='dark'] .email-form-input,
+[data-theme='dark'] .email-form-textarea {
+  background: #131d2e;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.email-form-input:focus,
+.email-form-textarea:focus {
+  outline: none;
+  border-color: var(--gov-blue);
+  box-shadow: 0 0 0 3px rgba(0, 56, 147, 0.1);
+}
+
+[data-theme='dark'] .form-input:focus,
+[data-theme='dark'] .form-textarea:focus,
+[data-theme='dark'] .email-form-input:focus,
+[data-theme='dark'] .email-form-textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+
+/* ==========================================================================
+   7. COMMON CHECKLISTS, TIMELINES & RESPONSIBILITIES
+   ========================================================================== */
+.responsibilities-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+[data-theme='dark'] .responsibilities-title {
+  color: #f1f5f9;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.responsibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+[data-theme='dark'] .responsibility-item {
+  color: #94a3b8;
+}
+
+.resp-icon {
+  color: var(--crimson);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+
+/* ==========================================================================
+   8. CIVIC & INSTITUTIONAL EMBLEM CTA SYSTEM
+   ========================================================================== */
+.chapter-civic-cta {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.civic-cta-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  border-left: 4px solid var(--crimson);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(12, 35, 64, 0.04);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.civic-cta-button:hover {
+  background: #ffffff;
+  border-color: rgba(12, 35, 64, 0.24);
+  border-left-color: var(--crimson);
+  box-shadow: 0 6px 18px rgba(12, 35, 64, 0.08);
+  transform: translateY(-1px);
+}
+
+.civic-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.civic-emblem-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(12, 35, 64, 0.04);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.civic-cta-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.civic-cta-title {
+  font-family: var(--app-font-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.civic-cta-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.civic-cta-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gov-blue);
+  font-size: 11.5px;
+  font-weight: 600;
+  background: rgba(12, 35, 64, 0.05);
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.civic-cta-button:hover .civic-cta-action {
+  background: var(--gov-blue);
+  color: #ffffff;
+}
+
+.civic-cta-button:hover .civic-cta-arrow {
+  transform: translateX(3px);
+}
+
+[data-theme='dark'] .civic-cta-button {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+  border-color: rgba(255, 255, 255, 0.12);
+  border-left-color: #dc2626;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .civic-cta-button:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(255, 255, 255, 0.22);
+  border-left-color: #ef4444;
+}
+
+[data-theme='dark'] .civic-emblem-badge {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .civic-cta-title {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .civic-cta-sub {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .civic-cta-action {
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .civic-cta-button:hover .civic-cta-action {
+  background: #2563eb;
+  color: #ffffff;
+}

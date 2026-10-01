@@ -767,3 +767,211 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   TAXPAYER EDUCATION PROGRAMS (TANAHUN DISTRICT & DEVGHAT RURAL MUNICIPALITY)
+   ========================================================================== */
+.taxpayer-program-section {
+  margin-top: 10px;
+}
+
+/* Program Selector Tab Navigation */
+.taxpayer-program-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 6px;
+  background: rgba(0, 56, 147, 0.04);
+  border: 1px solid rgba(0, 56, 147, 0.12);
+  border-radius: 12px;
+}
+
+[data-theme='dark'] .taxpayer-program-nav {
+  background: rgba(15, 28, 46, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .taxpayer-program-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .taxpayer-program-nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.taxpayer-program-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  color: var(--text-primary, #0c2340);
+  min-width: 0;
+}
+
+[data-theme='dark'] .taxpayer-program-tab {
+  color: #f1f5f9;
+}
+
+.taxpayer-program-tab:hover {
+  background: rgba(0, 56, 147, 0.06);
+  border-color: rgba(0, 56, 147, 0.15);
+}
+
+[data-theme='dark'] .taxpayer-program-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.taxpayer-program-tab.active {
+  background: #ffffff;
+  border-color: rgba(0, 56, 147, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 56, 147, 0.08);
+}
+
+[data-theme='dark'] .taxpayer-program-tab.active {
+  background: #13243a;
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.program-tab-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(0, 56, 147, 0.08);
+  color: var(--gov-blue, #003893);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+[data-theme='dark'] .program-tab-icon-wrap {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.taxpayer-program-tab.active .program-tab-icon-wrap {
+  background: var(--gov-blue, #003893);
+  color: #ffffff;
+}
+
+[data-theme='dark'] .taxpayer-program-tab.active .program-tab-icon-wrap {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.program-tab-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.program-tab-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.program-tab-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.program-tab-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 56, 147, 0.08);
+  color: var(--gov-blue, #003893);
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .program-tab-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.taxpayer-program-tab.active .program-tab-badge {
+  background: rgba(220, 20, 60, 0.12);
+  color: #dc143c;
+}
+
+[data-theme='dark'] .taxpayer-program-tab.active .program-tab-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.program-tab-location {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #475569);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme='dark'] .program-tab-location {
+  color: #94a3b8;
+}
+
+/* Supporting Photos Grid for Taxpayer Program */
+.taxpayer-program-section .supporting-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1100px) {
+  .taxpayer-program-section .supporting-photos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .taxpayer-program-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .taxpayer-program-tab {
+    width: 100%;
+  }
+
+  .taxpayer-program-section .supporting-photos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .taxpayer-program-section .supporting-photos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

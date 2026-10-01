@@ -1,228 +1,42 @@
 /* ==========================================================================
-   CONTACT SECTION (LET'S CONNECT)
+   CHAPTER 8: CONTACT & OFFICIAL CORRESPONDENCE (contact.css)
    ========================================================================== */
-.contact-editorial-section {
-  background: #ffffff;
-  border-bottom: 1px solid var(--border-light);
+
+.contact-chapter-page {
+  background: var(--bg-page);
 }
 
-.contact-editorial-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(28px, 4vw, 48px);
-}
-
-.contact-info-card {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 28px;
-}
-
-.contact-card-title {
-  font-family: var(--app-font-serif);
-  font-size: 18.5px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-
-.contact-card-intro {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.contact-items-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.contact-item-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 12px;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
-}
-
-.contact-item-row:hover {
-  border-color: var(--navy);
-  transform: translateX(2px);
-}
-
-.contact-item-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--radius-sm);
-  background: #f1f5f9;
-  color: var(--crimson);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-item-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-item-label {
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--text-light);
-  text-transform: uppercase;
-}
-
-.contact-item-val {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.contact-item-sub {
-  font-size: 10.5px;
-  color: var(--text-muted);
-}
-
-.contact-socials-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-top: 1px solid var(--border-light);
-  padding-top: 14px;
-}
-
-.socials-label {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.socials-links {
-  display: flex;
-  gap: 6px;
-}
-
-.social-pill-link {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--navy);
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  padding: 3px 8px;
-  border-radius: 10px;
-  transition: all 0.2s ease;
-}
-
-.social-pill-link:hover {
-  background: var(--navy);
-  color: #ffffff;
-}
-
-/* Contact Form */
-.editorial-contact-form {
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
-}
-
-.form-group-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: 14px;
-}
-
-.form-label {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 9px 12px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  background: var(--bg-subtle);
-  color: var(--text-primary);
-  font-size: 12.5px;
-  outline: none;
-  transition: all 0.2s ease;
-}
-
-.form-input:focus, .form-textarea:focus {
-  background: #ffffff;
-  border-color: var(--gov-blue);
-  box-shadow: 0 0 0 3px rgba(0, 56, 147, 0.08);
-}
-
-.form-feedback-alert {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  margin-bottom: 14px;
-}
-
-.form-feedback-alert.success {
-  background: #f0fdf4;
-  color: #166534;
-  border: 1px solid #bbf7d0;
-}
-
-.form-feedback-alert.error {
-  background: #fef2f2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
-}
-
-.form-submit-btn {
-  width: 100%;
-  padding: 11px;
-}
-
-
-/* --- 11. CHAPTER 8: CONTACT PAGE STYLING --- */
 .contact-chapter-page .contact-editorial-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 36px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: flex-start;
 }
 
+/* 1. Official Contact Info Column */
 .contact-info-card {
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 36px;
+  padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--shadow-sm);
+}
+
+[data-theme='dark'] .contact-info-card {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .contact-card-title {
   font-family: var(--app-font-serif);
-  font-size: 1.375rem;
+  font-size: clamp(1.15rem, 2vw, 1.375rem);
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 8px;
+}
+
+[data-theme='dark'] .contact-card-title {
+  color: #f8fafc;
 }
 
 .contact-card-intro {
@@ -232,11 +46,15 @@
   margin-bottom: 28px;
 }
 
+[data-theme='dark'] .contact-card-intro {
+  color: #94a3b8;
+}
+
 .contact-items-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 28px;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
 .contact-item-row {
@@ -244,16 +62,27 @@
   align-items: flex-start;
   gap: 14px;
   text-decoration: none;
-  padding: 12px;
+  padding: 12px 14px;
   background: var(--bg-subtle);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
 }
 
 .contact-item-row:hover {
   border-color: var(--navy);
   background: #ffffff;
+  transform: translateX(2px);
+}
+
+[data-theme='dark'] .contact-item-row {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .contact-item-row:hover {
+  background: #1e293b;
+  border-color: #3b82f6;
 }
 
 .contact-item-icon {
@@ -266,6 +95,10 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+[data-theme='dark'] .contact-item-icon {
+  background: rgba(220, 20, 60, 0.2);
 }
 
 .contact-item-text {
@@ -285,6 +118,10 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--navy);
+}
+
+[data-theme='dark'] .contact-item-val {
+  color: #f1f5f9;
 }
 
 .contact-item-sub {
@@ -311,6 +148,7 @@
 .socials-links {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .social-pill-link {
@@ -331,6 +169,12 @@
   border-color: var(--navy);
 }
 
+[data-theme='dark'] .social-pill-link {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #93c5fd;
+}
+
 .contact-card-footer-note {
   display: flex;
   align-items: flex-start;
@@ -338,6 +182,8 @@
   font-size: 0.75rem;
   color: var(--text-muted);
   line-height: 1.45;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-hairline);
 }
 
 .note-shield-icon {
@@ -346,37 +192,113 @@
   margin-top: 2px;
 }
 
+/* 2. Direct Official Email Form */
 .contact-form-card {
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 36px;
+  padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--shadow-sm);
+}
+
+[data-theme='dark'] .contact-form-card {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.email-card-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.email-card-header-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 56, 147, 0.08);
+  color: var(--gov-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .email-card-header-icon {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
 }
 
 .form-card-title {
   font-family: var(--app-font-serif);
-  font-size: 1.375rem;
+  font-size: clamp(1.15rem, 2vw, 1.375rem);
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 6px;
+}
+
+[data-theme='dark'] .form-card-title {
+  color: #f8fafc;
 }
 
 .form-card-subtitle {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-muted);
-  margin-bottom: 24px;
+}
+
+.email-recipient-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+[data-theme='dark'] .email-recipient-box {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.recipient-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gov-blue);
+}
+
+[data-theme='dark'] .recipient-pill {
+  color: #93c5fd;
+}
+
+.recipient-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+[data-theme='dark'] .recipient-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
 }
 
 .form-feedback-alert {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  margin-bottom: 20px;
 }
 
 .form-feedback-alert.success {
@@ -394,13 +316,13 @@
 .editorial-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .form-row-dual {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .form-field-group {
@@ -417,26 +339,43 @@
   color: var(--text-secondary);
 }
 
-.form-input, .form-textarea {
-  padding: 10px 14px;
-  font-size: 0.875rem;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  background: var(--bg-subtle);
-  color: var(--text-primary);
-  outline: none;
-  font-family: var(--app-font-sans);
-  transition: all 0.15s ease;
+[data-theme='dark'] .form-label {
+  color: #cbd5e1;
 }
 
-.form-input:focus, .form-textarea:focus {
-  border-color: var(--gov-blue);
-  background: #ffffff;
-  box-shadow: 0 0 0 2px rgba(0, 56, 147, 0.1);
+.email-attachment-box {
+  padding: 10px 12px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+[data-theme='dark'] .email-attachment-box {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.attachment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.attachment-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .form-actions-bar {
-  margin-top: 8px;
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .form-submit-btn {
@@ -444,4 +383,344 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  flex: 1;
+  min-width: 170px;
+  justify-content: center;
+  padding: 12px 20px;
 }
+
+.form-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  justify-content: center;
+  padding: 12px 18px;
+}
+
+/* ==========================================================================
+   WHATSAPP CONTACT ACTIONS
+   ========================================================================== */
+
+.contact-whatsapp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  padding: 12px 14px;
+  background: rgba(37, 211, 102, 0.06);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.contact-whatsapp-row:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: #25d366;
+  transform: translateX(2px);
+}
+
+[data-theme='dark'] .contact-whatsapp-row {
+  background: rgba(37, 211, 102, 0.08);
+  border-color: rgba(37, 211, 102, 0.25);
+}
+
+[data-theme='dark'] .contact-whatsapp-row:hover {
+  background: rgba(37, 211, 102, 0.16);
+  border-color: #25d366;
+}
+
+.whatsapp-left-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+}
+
+.contact-whatsapp-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.contact-whatsapp-row:hover .contact-whatsapp-action-btn {
+  background: #1eb954;
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   OFFICIAL FACEBOOK LIVE FEED CONTAINER
+   ========================================================================== */
+
+.fb-feed-container {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+[data-theme='dark'] .fb-feed-container {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.fb-feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(24, 119, 242, 0.06) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+[data-theme='dark'] .fb-feed-header {
+  background: linear-gradient(135deg, rgba(24, 119, 242, 0.12) 0%, transparent 100%);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.fb-feed-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fb-brand-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1877f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(24, 119, 242, 0.35);
+}
+
+.fb-feed-title {
+  font-family: var(--app-font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+[data-theme='dark'] .fb-feed-title {
+  color: #f8fafc;
+}
+
+.fb-live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 1.8s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.fb-visit-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #1877f2;
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(24, 119, 242, 0.25);
+}
+
+.fb-visit-profile-btn:hover {
+  background: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
+}
+
+.fb-embed-wrapper {
+  position: relative;
+  background: var(--bg-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme='dark'] .fb-embed-wrapper {
+  background: #090e18;
+}
+
+.fb-iframe {
+  max-width: 100%;
+  min-height: 280px;
+}
+
+.fb-feed-direct-card {
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+[data-theme='dark'] .fb-feed-direct-card {
+  background: #0d1524;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.fb-direct-content {
+  max-width: 460px;
+}
+
+.fb-direct-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  margin-bottom: 3px;
+}
+
+.fb-handle {
+  font-weight: 700;
+  color: #1877f2;
+}
+
+.fb-dot {
+  color: var(--text-muted);
+}
+
+.fb-official-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(24, 119, 242, 0.08);
+  color: #1877f2;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.fb-direct-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+[data-theme='dark'] .fb-direct-desc {
+  color: #94a3b8;
+}
+
+.fb-view-posts-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(24, 119, 242, 0.08);
+  border: 1px solid rgba(24, 119, 242, 0.25);
+  color: #1877f2;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.fb-view-posts-btn:hover {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] .fb-view-posts-btn {
+  background: rgba(24, 119, 242, 0.15);
+  border-color: rgba(24, 119, 242, 0.35);
+  color: #93c5fd;
+}
+
+[data-theme='dark'] .fb-view-posts-btn:hover {
+  background: #1877f2;
+  color: #ffffff;
+}
+
+.social-pill-link.facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-pill-link.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #ffffff;
+}
+
+.social-pill-link.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-pill-link.whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+}
+

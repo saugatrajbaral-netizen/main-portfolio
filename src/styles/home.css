@@ -1,296 +1,473 @@
 /* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
-.hero-editorial-section {
-  position: relative;
-  background: #ffffff;
-  border-bottom: 1px solid var(--border-light);
-  padding-top: clamp(40px, 5vw, 64px);
-  padding-bottom: clamp(48px, 6vw, 76px);
-  overflow: hidden;
-}
-
-.hero-editorial-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(0, 31, 63, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 31, 63, 0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-  pointer-events: none;
-}
-
-.hero-watermark-emblem {
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.025;
-  pointer-events: none;
-}
-
-.hero-editorial-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: clamp(32px, 5vw, 60px);
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-official-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-light);
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 16px;
-}
-
-.badge-text {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--gov-blue);
-  letter-spacing: 0.02em;
-}
-
-.hero-officer-name {
-  font-family: var(--app-font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--crimson);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nepali-subname {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--text-muted);
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-.hero-editorial-headline {
-  font-family: var(--app-font-serif);
-  font-size: clamp(30px, 4vw, 46px);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-
-.hero-editorial-supporting {
-  font-family: var(--app-font-serif);
-  font-size: clamp(16px, 1.8vw, 18px);
-  font-style: italic;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 16px;
-  border-left: 2px solid var(--crimson);
-  padding-left: 14px;
-}
-
-.hero-editorial-paragraph {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  max-width: 580px;
-}
-
-.hero-editorial-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-.hero-status-strip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11.5px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.status-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.status-divider {
-  color: var(--border-light);
-}
-
-/* Rectangular Portrait Frame */
-.editorial-portrait-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: clamp(240px, 28vw, 320px);
-  margin-left: auto;
-}
-
-.portrait-red-accent-line {
-  position: absolute;
-  top: 12px;
-  left: -10px;
-  width: 3px;
-  height: calc(100% - 24px);
-  background: var(--crimson);
-  border-radius: 2px;
-  z-index: 2;
-}
-
-.editorial-portrait-frame {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  max-height: clamp(300px, 52vh, 440px);
-  background: #f8fafc;
-  border: 1px solid rgba(12, 35, 64, 0.1);
-  box-shadow: 
-    0 12px 30px -8px rgba(0, 31, 63, 0.08),
-    0 2px 6px rgba(0, 0, 0, 0.02);
-  overflow: hidden;
-  border-radius: clamp(10px, 1.5vw, 14px);
-}
-
-.editorial-portrait-picture,
-.portrait-picture-wrap,
-.profile-picture-wrap,
-.hero-picture-wrap,
-.supporting-picture-wrap,
-.featured-document-picture,
-.thumb-picture,
-.symbols-picture,
-.bg-national-emblem-picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.cv-head-avatar-picture,
-.parallax-emblem-picture {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.editorial-portrait-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 8%;
-  transform: scale(1.03);
-  display: block;
-  filter: brightness(1.03) contrast(1.02) saturate(1.02);
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.editorial-portrait-frame:hover .editorial-portrait-image {
-  transform: scale(1.06);
-  filter: brightness(1.05) contrast(1.02) saturate(1.04);
-}
-
-.portrait-institutional-ribbon {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(12, 35, 64, 0.90) 0%, rgba(12, 35, 64, 0.60) 65%, transparent 100%);
-  padding: 16px 12px 8px 12px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: #ffffff;
-}
-
-[data-theme='dark'] .editorial-portrait-frame {
-  background: #0f172a;
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
-}
-
-.ribbon-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.ribbon-title {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
-}
-
-.ribbon-sub {
-  font-size: 10.5px;
-  color: #cbd5e1;
-}
-
-.portrait-live-clock-card {
-  margin-top: 10px;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 6px 10px;
-  box-shadow: var(--shadow-sm);
-}
-
-.hero-scroll-indicator {
-  margin-top: 36px;
-  display: flex;
-  justify-content: center;
-}
-
-.scroll-indicator-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  color: var(--text-light);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  transition: color 0.2s ease;
-}
-
-.scroll-indicator-link:hover {
-  color: var(--navy);
-}
-
-
-/* ==========================================================================
-   MULTI-PAGE EDITORIAL ARCHITECTURE & CHAPTER STYLES
+   HOMEPAGE & EDITORIAL COVER EXPERIENCE (home.css)
    ========================================================================== */
 
-.site-main-content {
-  min-height: calc(100vh - 280px);
-}
-
-/* --- 1. COVER HOMEPAGE (Minimal, Intriguing, Editorial Cover) --- */
+/* 1. Cover Homepage Layout */
 .home-cover-page {
   position: relative;
   min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
-  padding: 64px 0 80px;
+  padding: clamp(48px, 7vw, 80px) 0;
   background: radial-gradient(circle at 80% 20%, rgba(220, 20, 60, 0.03) 0%, transparent 60%),
               radial-gradient(circle at 10% 80%, rgba(0, 31, 63, 0.02) 0%, transparent 50%),
               var(--bg-page);
   overflow: hidden;
+}
+
+.home-cover-container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-cover-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(24px, 4.5vw, 64px);
+  align-items: flex-start;
+}
+
+.home-cover-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-insignia-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cover-insignia-badge:hover {
+  background: #ffffff;
+  border-color: rgba(196, 30, 58, 0.35);
+  box-shadow: 0 4px 14px rgba(196, 30, 58, 0.12);
+  transform: translateY(-1px);
+}
+
+.cover-insignia-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gov-blue);
+  letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .cover-insignia-badge {
+  background: rgba(15, 23, 42, 0.75);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .cover-insignia-badge:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+[data-theme='dark'] .cover-insignia-text {
+  color: #cbd5e1;
+}
+
+.cover-title {
+  font-family: var(--app-font-serif);
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+[data-theme='dark'] .cover-title {
+  color: #f8fafc;
+}
+
+.cover-subname {
+  display: block;
+  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
+  font-size: 0.52em;
+  font-weight: 500;
+  color: var(--crimson);
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+
+.cover-role {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+[data-theme='dark'] .cover-role {
+  color: #e2e8f0;
+}
+
+.cover-domain-strip {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+
+[data-theme='dark'] .cover-domain-strip {
+  color: #94a3b8;
+}
+
+.cover-lead-intro {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+[data-theme='dark'] .cover-lead-intro {
+  color: #cbd5e1;
+}
+
+.cover-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.cover-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-action-btn:hover {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 31, 63, 0.15);
+}
+
+.cover-action-btn.primary {
+  background: linear-gradient(135deg, #001f3f 0%, #061833 100%);
+  color: #ffffff;
+  border-color: #001f3f;
+  box-shadow: 0 4px 14px rgba(0, 31, 63, 0.2);
+}
+
+.cover-action-btn.primary:hover {
+  background: linear-gradient(135deg, #c41e3a 0%, #a0152d 100%);
+  border-color: #c41e3a;
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.28);
+}
+
+[data-theme='dark'] .cover-action-btn {
+  background: rgba(15, 23, 42, 0.8);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme='dark'] .cover-action-btn:hover {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='dark'] .cover-action-btn.primary {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .cover-action-btn.primary:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-color: #ef4444;
+}
+
+.cover-philosophy-statement {
+  font-family: var(--app-font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--crimson);
+  letter-spacing: 0.04em;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(196, 30, 58, 0.2);
+  width: fit-content;
+}
+
+[data-theme='dark'] .cover-philosophy-statement {
+  color: #f87171;
+  border-top-color: rgba(239, 68, 68, 0.2);
+}
+
+/* 2. Officer Profile Composite Frame */
+.home-cover-portrait-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.officer-profile-composite {
+  position: relative;
+  width: 100%;
+  max-width: clamp(260px, 32vw, 420px);
+  margin: 0 auto;
+}
+
+/* Layer 1: Vector Backdrop Art */
+.profile-backdrop-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.art-himalaya-contour {
+  position: absolute;
+  top: -42px;
+  left: -28px;
+  right: -28px;
+  width: calc(100% + 56px);
+  height: auto;
+  opacity: 0.75;
+}
+
+.himalaya-path-pulse {
+  animation: himalayaPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes himalayaPulse {
+  0% { stroke: rgba(0, 56, 147, 0.16); }
+  100% { stroke: rgba(0, 56, 147, 0.32); }
+}
+
+.art-nepal-map-trace {
+  position: absolute;
+  bottom: -24px;
+  right: -32px;
+  width: 260px;
+  height: auto;
+  opacity: 0.6;
+}
+
+.art-digital-nodes-network {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
+}
+
+.node-pulse {
+  animation: nodeGlow 3s ease-in-out infinite alternate;
+}
+
+.node-pulse-delayed {
+  animation: nodeGlow 3s ease-in-out infinite alternate 1.5s;
+}
+
+@keyframes nodeGlow {
+  0% { opacity: 0.25; transform: scale(0.9); }
+  100% { opacity: 0.8; transform: scale(1.15); }
+}
+
+.profile-corner-dhaka {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 48px;
+  height: 48px;
+  background-image: radial-gradient(circle, rgba(220, 20, 60, 0.12) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+/* Layer 2: Frame Container & Portrait */
+.profile-frame-container {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-atmospheric-halo {
+  position: absolute;
+  inset: -16px;
+  background: radial-gradient(circle at 50% 35%, rgba(0, 56, 147, 0.08) 0%, rgba(220, 20, 60, 0.04) 50%, transparent 75%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.profile-crimson-offset-line {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1.5px solid rgba(220, 20, 60, 0.35);
+  border-radius: 8px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.officer-profile-composite:hover .profile-crimson-offset-line {
+  border-color: rgba(220, 20, 60, 0.6);
+  transform: translate(2px, 2px);
+}
+
+.profile-glass-frame {
+  position: relative;
+  background: #ffffff;
+  padding: clamp(6px, 1vw, 8px);
+  border: 1px solid var(--border-light);
+  border-radius: clamp(8px, 1.2vw, 10px);
+  box-shadow: 0 16px 40px rgba(0, 31, 63, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] .profile-glass-frame {
+  background: #0d1524;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.profile-img-viewport {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  max-height: clamp(300px, 52vh, 480px);
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.profile-real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  transform: scale(1.02);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.officer-profile-composite:hover .profile-real-image {
+  transform: scale(1.04);
+}
+
+.profile-officer-caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 6px 4px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 8px;
+}
+
+[data-theme='dark'] .profile-officer-caption {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.caption-seal-col {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-officer-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+[data-theme='dark'] .caption-officer-name {
+  color: #f8fafc;
+}
+
+.caption-officer-name .name-en {
+  margin-right: 6px;
+}
+
+.caption-officer-name .name-np {
+  font-family: 'Noto Serif Devanagari', var(--app-font-serif);
+  font-size: 0.875em;
+  font-weight: 600;
+  color: var(--crimson);
+}
+
+.caption-officer-designation {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gov-blue);
+  margin-top: 1px;
+}
+
+[data-theme='dark'] .caption-officer-designation {
+  color: #93c5fd;
+}
+
+.caption-officer-dept {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+[data-theme='dark'] .caption-officer-dept {
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .home-cover-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-cover-portrait-col {
+    order: -1;
+    margin-bottom: 12px;
+  }
+
+  .officer-profile-composite {
+    max-width: 320px;
+  }
+
+  .cover-actions-grid {
+    max-width: 100%;
+  }
 }

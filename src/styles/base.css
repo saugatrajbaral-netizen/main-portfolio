@@ -51,6 +51,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -61,6 +63,7 @@ body {
   font-family: var(--app-font-sans);
   line-height: 1.68;
   overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
 }
 
 button, a, input, textarea {
@@ -74,27 +77,59 @@ a {
 
 /* ==========================================================================
    GLOBAL IMAGE PROTECTION (ANTI-DOWNLOAD, NO-DRAG, NO LONG-PRESS CONTEXT MENU)
+   & ULTRA-CRISP HIGH-DPI RETINA RENDERING QUALITY
    ========================================================================== */
 img, 
 picture, 
 picture img,
+svg,
+canvas,
 .profile-real-image, 
 .portrait-main-img, 
 .editorial-portrait-image,
 .photo-img,
 .thumb-img,
 .gallery-modal-img,
+.journey-cover-img,
+.journey-thumb-img,
+.exp-lightbox-main-img,
+.training-cover-img,
+.training-lightbox-main-img,
+.taxpayer-gallery-img,
+.lightbox-media-main,
 .national-symbol-card-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none; /* Disables mobile long-press "Save Image" popup */
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important; /* Disables mobile long-press "Save Image" / "Download" menu */
+  
+  /* High-DPI Sharpness & Quality Rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Smooth Fluid UI Interaction Easings */
+a, 
+button, 
+.cover-action-btn, 
+.journey-card, 
+.training-card, 
+.education-detail-card, 
+.exp-lightbox-nav-btn,
+.social-pill-link,
+.contact-whatsapp-row {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ::selection {

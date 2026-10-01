@@ -38,11 +38,14 @@ export const portfolioDataEn = {
     email: "saugatrajbaral@gmail.com",
     officialPhone: "+977 9851455777",
     personalPhone: "+977 9806655678",
+    whatsapp: "+977 9806655678",
+    whatsappUrl: "https://wa.me/9779806655678",
     
     socials: {
+      facebook: "https://www.facebook.com/saugatraj.baral",
+      whatsapp: "https://wa.me/9779806655678",
       linkedin: "https://linkedin.com/in/saugatrajbaral",
       twitter: "https://twitter.com/saugatrajbaral",
-      facebook: "https://facebook.com/saugatrajbaral",
       email: "mailto:saugatrajbaral@gmail.com"
     },
 
@@ -129,18 +132,57 @@ export const portfolioDataEn = {
     },
     {
       id: "gandaki-admin-officer",
-      period: "Previous",
-      role: "Administrative Officer, 7th Level",
-      institution: "Ministry of Economic Affairs — Gandaki Province",
-      office: "Provincial Government of Nepal",
-      jurisdiction: "Gandaki Province",
-      overview: "Coordinated provincial fiscal planning, program evaluation, inter-governmental budget execution, and administrative compliance across provincial departments.",
+      period: "6 Months",
+      role: "Administrative Officer",
+      institution: "Ministry of Economic Affairs — Gandaki Province Government",
+      office: "Budget and Program Section",
+      jurisdiction: "Gandaki Province, Pokhara",
+      area: "Budget & Planning / Budget and Program Section",
+      overview: "Served as an Administrative Officer in the Budget and Program Section, contributing to government budgeting, program planning, budget analysis, coordination, and public financial management at the provincial level.",
       responsibilities: [
-        "Provincial budget formulation & expenditure planning",
-        "Inter-governmental program coordination & monitoring",
-        "Public administration & civil service procedural oversight",
-        "Provincial financial management & resource allocation",
-        "Fiscal transfers and expenditure tracking"
+        "Provincial budget formulation, fiscal analysis & program planning",
+        "Inter-governmental program coordination & fiscal monitoring",
+        "Public financial management & resource allocation reviews",
+        "Administrative compliance & civil service procedural oversight",
+        "Provincial fiscal transfers, expenditure tracking & budget evaluation"
+      ],
+      gallery: [
+        {
+          id: "gandaki-1",
+          src: "/gandaki-ministry-team-official.jpg",
+          title: "Ministry of Economic Affairs — Official Delegation & Leadership",
+          caption: "Official group photograph in front of the Ministry of Economic Affairs, Gandaki Province Government, Pokhara with provincial leadership and officials.",
+          tag: "Official Delegation",
+          isCover: true
+        },
+        {
+          id: "gandaki-2",
+          src: "/gandaki-ministry-felicitation-meeting.jpg",
+          title: "Official Felicitation & Ministerial Meeting",
+          caption: "Formal reception and felicitation ceremony in the Ministry's conference hall with honorable leadership and administrative colleagues.",
+          tag: "Official Ceremony"
+        },
+        {
+          id: "gandaki-3",
+          src: "/gandaki-ministry-officer-desk.jpg",
+          title: "Administrative Officer — Executive Consultation",
+          caption: "Administrative Officer Saugat Raj Baral attending high-level provincial budget consultations and planning reviews.",
+          tag: "Executive Review"
+        },
+        {
+          id: "gandaki-4",
+          src: "/gandaki-ministry-budget-evaluation-presentation.jpg",
+          title: "Budget & Program Evaluation Workshop",
+          caption: "Facilitating an interactive presentation on evaluation frameworks, performance indicators, and fiscal program assessment.",
+          tag: "Workshop & Presentation"
+        },
+        {
+          id: "gandaki-5",
+          src: "/gandaki-gpta-training-academy.jpg",
+          title: "Gandaki Province Training Academy (GPTA)",
+          caption: "Participation in provincial administrative governance, leadership, and public administration training in Pokhara.",
+          tag: "Training & Capacity"
+        }
       ]
     }
   ],
@@ -340,6 +382,275 @@ export const portfolioDataEn = {
     ]
   },
 
+  taxpayerEducationProgram: {
+    sectionKicker: "COMMUNITY ENGAGEMENT & OUTREACH",
+    sectionTitle: "Taxpayer Education Program — Devghat Rural Municipality",
+    subtitle: "Tax Literacy, Statutory Compliance & Local Community Outreach",
+    badgeLabel: "Field Taxpayer Awareness",
+    program: "Taxpayer Education Program",
+    nepaliTitle: "कर साक्षरता एवं कर सम्बन्धी हालको कानूनी व्यवस्था सम्बन्धी अभिमुखीकरण कार्यक्रम",
+    location: "Devghat Rural Municipality, Tanahun, Nepal",
+    venue: "City Hall, Devghat Rural Municipality",
+    role: "Facilitator / Tax Officer",
+    organizer: "Devghat Rural Municipality (Office of the Rural Municipal Executive)",
+    technicalSupport: "Inland Revenue Office (IRO), Damauli, Tanahun",
+    theme: "Taxpayer awareness, tax compliance, taxpayer rights and responsibilities, and interaction with local taxpayers.",
+    description: "Conducted a taxpayer education and awareness program at Devghat Rural Municipality, Tanahun, focusing on tax compliance, taxpayer rights and responsibilities, and awareness of Nepal’s tax administration and services.",
+    specifications: [
+      { label: "Program Title", value: "Taxpayer Education & Orientation Program" },
+      { label: "Official Role", value: "Facilitator / Tax Officer" },
+      { label: "Location / Venue", value: "City Hall, Devghat Rural Municipality, Tanahun" },
+      { label: "Organizing Body", value: "Devghat Rural Municipality (Office of Municipal Executive)" },
+      { label: "Technical Support", value: "Inland Revenue Office (IRO), Damauli, Tanahun" },
+      { label: "Core Theme", value: "Tax compliance, taxpayer rights & duties, and direct taxpayer interaction" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-devghat-session.jpg",
+      title: "Taxpayer Education & Compliance Orientation Session",
+      caption: "Facilitating an interactive orientation session on tax compliance, taxpayer rights and responsibilities, and Nepal's tax administration for local entrepreneurs and citizens at City Hall, Devghat Rural Municipality.",
+      role: "Facilitator / Tax Officer",
+      location: "City Hall, Devghat Rural Municipality, Tanahun",
+      authority: "Inland Revenue Office, Damauli & Devghat Rural Municipality",
+      badge: "Featured Main Photograph"
+    },
+    supportingGallery: [
+      {
+        id: "devghat-official-banner",
+        image: "/taxpayer-devghat-banner.jpg",
+        title: "Official Program Banner & Institutional Framework",
+        role: "Institutional Verification",
+        location: "City Hall, Devghat, Tanahun",
+        authority: "Devghat Rural Municipality & IRO Damauli",
+        description: "Official program banner for 'कर साक्षरता एवं कर सम्बन्धी हालको कानूनी व्यवस्था सम्बन्धी अभिमुखीकरण कार्यक्रम' organized by Devghat Rural Municipality with technical support from Inland Revenue Office, Damauli.",
+        badge: "Official Program Banner"
+      },
+      {
+        id: "devghat-interactive-audience",
+        image: "/taxpayer-devghat-presentation.jpg",
+        title: "Local Taxpayers & Stakeholder Engagement",
+        role: "Citizen Interaction",
+        location: "Devghat Rural Municipality, Tanahun",
+        authority: "Community Outreach Session",
+        description: "Direct dialogue and Q&A session with local taxpayers, business community leaders, and representatives addressing PAN registration, online tax filing, and statutory tax provisions.",
+        badge: "Stakeholder Engagement"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramTanahun: {
+    id: "tanahun-chamber-program",
+    sectionKicker: "TAXPAYER EDUCATION & CIVIC ENGAGEMENT",
+    sectionTitle: "Taxpayer Education Program – Tanahun",
+    subtitle: "Finance Act 2083 Statutory Amendments, Concession Facilities & Taxpayer Interaction",
+    badgeLabel: "District Outreach Program",
+    program: "Taxpayer Education Program – Tanahun",
+    nepaliTitle: "आर्थिक ऐन, २०८३ ले गरेका संशोधन एवं छुट सुविधा सम्बन्धी करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम",
+    location: "Tanahun, Nepal",
+    venue: "Tanahun Chamber of Commerce & Industry Hall, Damauli",
+    date: "2083/04/08 BS",
+    role: "Facilitator / Tax Officer",
+    organizer: "Inland Revenue Office, Damauli & Tanahun Chamber of Commerce & Industry",
+    technicalSupport: "Inland Revenue Office (IRO), Damauli, Tanahun",
+    theme: "Taxpayer awareness, tax compliance, taxpayer rights and responsibilities, and interaction with local taxpayers.",
+    description: "Conducted a comprehensive taxpayer education and interaction program in Tanahun focusing on the statutory amendments and tax concession provisions introduced by the Finance Act 2083, organized jointly with the Tanahun Chamber of Commerce & Industry.",
+    motto: "कर प्रणालीको सार, लगानीको आधार",
+    specifications: [
+      { label: "Program Title", value: "Taxpayer Education & Interaction Program – Tanahun" },
+      { label: "Focus / Scope", value: "Finance Act 2083 Amendments & Statutory Tax Concessions" },
+      { label: "Official Role", value: "Keynote Facilitator / Tax Officer" },
+      { label: "Location & Venue", value: "Tanahun Chamber of Commerce & Industry Hall, Damauli" },
+      { label: "Joint Organizers", value: "Inland Revenue Office (IRO), Damauli & Tanahun Chamber of Commerce & Industry" },
+      { label: "Core Objective", value: "Taxpayer compliance, statutory orientation, and local stakeholder discourse" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-tanahun-stage-presentation.jpg",
+      title: "Finance Act 2083 Statutory Orientation & Presentation",
+      caption: "Tax Officer Saugat Raj Baral delivering the keynote presentation on statutory amendments and tax concession facilities under the Finance Act 2083 at the Tanahun Chamber of Commerce & Industry Hall, Damauli.",
+      role: "Keynote Facilitator / Tax Officer",
+      location: "Tanahun Chamber of Commerce & Industry Hall, Damauli, Tanahun",
+      authority: "Inland Revenue Office, Damauli & Tanahun Chamber of Commerce & Industry",
+      badge: "Featured Main Photograph"
+    },
+    supportingGallery: [
+      {
+        id: "tanahun-official-banner",
+        image: "/taxpayer-tanahun-official-banner.jpg",
+        title: "Official Program Banner & Co-Organizers",
+        role: "Official State Framework",
+        location: "Damauli, Tanahun",
+        authority: "Inland Revenue Office Damauli & Tanahun Chamber of Commerce & Industry",
+        description: "Official event banner for 'आर्थिक ऐन, २०८३ ले गरेका संशोधन एवं छुट सुविधा सम्बन्धी करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम' organized jointly by IRO Damauli and Tanahun Chamber of Commerce & Industry.",
+        badge: "Official Program Banner"
+      },
+      {
+        id: "tanahun-audience-interaction",
+        image: "/taxpayer-tanahun-audience-interaction.jpg",
+        title: "Direct Stakeholder Interaction & Consultation",
+        role: "Taxpayer Consultation",
+        location: "Tanahun Chamber of Commerce & Industry Hall",
+        authority: "Field Citizen Consultation",
+        description: "Interactive session addressing inquiries from local traders, business owners, and corporate representatives on tax rates, return filing deadlines, and tax concessions.",
+        badge: "Interactive Consultation"
+      },
+      {
+        id: "tanahun-hall-attendees",
+        image: "/taxpayer-tanahun-hall-attendees.jpg",
+        title: "District Business Community & Taxpayer Participation",
+        role: "Auditorium Attendance",
+        location: "Damauli, Tanahun",
+        authority: "District Taxpayer Assembly",
+        description: "Full auditorium attendance of entrepreneurs, enterprise accountants, and district business delegates actively participating in the tax education orientation.",
+        badge: "Stakeholder Assembly"
+      },
+      {
+        id: "tanahun-appreciation-memento",
+        image: "/taxpayer-tanahun-appreciation-memento.jpg",
+        title: "Presentation of Token of Appreciation / Memento",
+        role: "Institutional Honor",
+        location: "Tanahun Chamber of Commerce & Industry, Damauli",
+        authority: "Tanahun Chamber of Commerce & Industry Leadership",
+        description: "Formal presentation of token of love and appreciation memento to Tax Officer Saugat Raj Baral by Tanahun Chamber of Commerce & Industry leadership in recognition of facilitative tax education.",
+        badge: "Institutional Recognition"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramShuklagandaki: {
+    id: "shuklagandaki-program",
+    sectionKicker: "MUNICIPAL TAXPAYER OUTREACH & EDUCATION",
+    sectionTitle: "Taxpayer Education Program – Shuklagandaki",
+    subtitle: "Fiscal Year 2083/084 Tax Policy, Statutory Provisions & Taxpayer Interaction",
+    badgeLabel: "Municipal Outreach Initiative",
+    program: "Taxpayer Education Program – Shuklagandaki",
+    nepaliTitle: "आ.व. २०८३/०८४ को कर नीति तथा कर सम्बन्धी व्यवस्थापन बारे जानकारीमूलक करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम",
+    location: "Shuklagandaki, Tanahun, Nepal",
+    venue: "Bright House Party Palace, Dulegaunda, Tanahun",
+    date: "2083 Shrawan 15 BS",
+    role: "Keynote Facilitator / Tax Officer",
+    organizer: "Shuklagandaki Nagar Chamber of Commerce & Industry & Inland Revenue Office, Damauli",
+    technicalSupport: "Inland Revenue Office (IRO), Damauli, Tanahun",
+    theme: "Taxpayer awareness, tax compliance, taxpayer rights and responsibilities, and interaction with local taxpayers.",
+    description: "Conducted an intensive taxpayer education and interactive orientation program in Shuklagandaki Municipality focusing on Fiscal Year 2083/084 tax policy, statutory amendments, VAT/Excise compliance, and practical tax management for local enterprises.",
+    specifications: [
+      { label: "Program Title", value: "Taxpayer Education & Interaction Program – Shuklagandaki" },
+      { label: "Focus / Scope", value: "FY 2083/084 Tax Policies, Concessions & Sectoral Tax Administration" },
+      { label: "Official Role", value: "Keynote Facilitator / Tax Officer" },
+      { label: "Location & Venue", value: "Bright House Party Palace, Dulegaunda, Shuklagandaki, Tanahun" },
+      { label: "Joint Organizers", value: "Shuklagandaki Nagar Chamber of Commerce & Industry & IRO Damauli" },
+      { label: "Program Date & Time", value: "2083 Shrawan 15 BS (11:00 AM)" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-shuklagandaki-podium-interaction.jpg",
+      title: "Keynote Facilitation on Fiscal Year 2083/084 Tax Policies",
+      caption: "Tax Officer Saugat Raj Baral delivering the keynote facilitation on FY 2083/084 tax policies, statutory requirements, and administrative procedures before local entrepreneurs and taxpayers at Bright House Party Palace, Dulegaunda.",
+      role: "Keynote Facilitator / Tax Officer",
+      location: "Bright House Party Palace, Dulegaunda, Shuklagandaki, Tanahun",
+      authority: "Shuklagandaki Nagar Chamber of Commerce & Industry & IRO Damauli",
+      badge: "Featured Main Photograph"
+    },
+    supportingGallery: [
+      {
+        id: "shuklagandaki-official-banner",
+        image: "/taxpayer-shuklagandaki-official-banner.jpg",
+        title: "Official Program Banner & Co-Organizers",
+        role: "Institutional State Framework",
+        location: "Dulegaunda, Shuklagandaki, Tanahun",
+        authority: "Shuklagandaki Nagar Chamber of Commerce & Industry & IRO Damauli",
+        description: "Official event banner for 'आ.व. २०८३/०८४ को कर नीति तथा कर सम्बन्धी व्यवस्थापन बारे जानकारीमूलक करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम' organized jointly by Shuklagandaki Nagar Chamber of Commerce & Industry and Inland Revenue Office, Damauli on 2083 Shrawan 15 BS.",
+        badge: "Official Program Banner"
+      },
+      {
+        id: "shuklagandaki-presentation-session",
+        image: "/taxpayer-shuklagandaki-presentation-session.jpg",
+        title: "Interactive Presentation & Projection Session",
+        role: "Tax Policy Orientation",
+        location: "Dulegaunda, Shuklagandaki",
+        authority: "Field Taxpayer Awareness Session",
+        description: "Delivering an in-depth slide presentation explaining tax exemptions, billing procedures, return submission deadlines, and compliance rules for municipal businesses.",
+        badge: "Presentation Session"
+      },
+      {
+        id: "shuklagandaki-compliance-briefing",
+        image: "/taxpayer-shuklagandaki-compliance-briefing.jpg",
+        title: "Sectoral & Enterprise Compliance Consultation",
+        role: "Commercial Tax Advisory",
+        location: "Bright House Party Palace, Dulegaunda",
+        authority: "Direct Taxpayer Dialogue",
+        description: "Comprehensive guidance on PAN/VAT registration, hotel and retail compliance regulations, excise licensing, and direct interaction answering taxpayer inquiries.",
+        badge: "Compliance Consultation"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramLamjung: {
+    id: "lamjung-cci-program",
+    sectionKicker: "DISTRICT TAXPAYER OUTREACH & AWARENESS",
+    sectionTitle: "Taxpayer Education Program – Lamjung CCI",
+    subtitle: "Direct Taxpayer Dialogue, Statutory Q&A Session & Fiscal Literacy",
+    badgeLabel: "Chamber of Commerce Collaboration",
+    program: "Taxpayer Education Program – Lamjung CCI",
+    nepaliTitle: "करदाता र आन्तरिक राजस्व कार्यालयबीच अन्तरक्रिया तथा प्रश्नोत्तर कार्यक्रम",
+    location: "Lamjung, Nepal",
+    venue: "Lamjung Chamber of Commerce & Industry Hall, Besisahar, Lamjung",
+    date: "2083 Bhadra 17 BS (Wednesday)",
+    role: "Keynote Facilitator / Tax Officer",
+    organizer: "Lamjung Chamber of Commerce & Industry (CCI)",
+    technicalSupport: "Inland Revenue Office (IRO), Damauli, Tanahun",
+    theme: "Taxpayer awareness, tax compliance, taxpayer rights and responsibilities, and interaction with local taxpayers.",
+    description: "Conducted an interactive taxpayer education and Q&A orientation program in Lamjung in collaboration with the Lamjung Chamber of Commerce & Industry (CCI), focusing on direct stakeholder dialogue, tax filing clarity, statutory rights, and voluntary tax compliance.",
+    specifications: [
+      { label: "Program Title", value: "Taxpayer Education & Interaction Program – Lamjung CCI" },
+      { label: "Scope & Nature", value: "Direct Stakeholder Discourse, Tax Laws & Q&A Consultation" },
+      { label: "Official Role", value: "Keynote Facilitator / Tax Officer" },
+      { label: "Location & Venue", value: "Lamjung Chamber of Commerce & Industry Hall, Lamjung, Nepal" },
+      { label: "Organizing Body", value: "Lamjung Chamber of Commerce & Industry (CCI)" },
+      { label: "Technical Support", value: "Inland Revenue Office (IRO), Damauli" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-lamjung-interaction-hall.jpg",
+      title: "Interactive Tax Education & Stakeholder Q&A Session",
+      caption: "Tax Officer Saugat Raj Baral addressing the taxpayer audience and business community delegates during the interactive orientation program at the Lamjung Chamber of Commerce & Industry Hall.",
+      role: "Keynote Facilitator / Tax Officer",
+      location: "Lamjung Chamber of Commerce & Industry Hall, Lamjung",
+      authority: "Lamjung Chamber of Commerce & Industry & IRO Damauli",
+      badge: "Featured Main Photograph"
+    },
+    supportingGallery: [
+      {
+        id: "lamjung-token-presentation",
+        image: "/taxpayer-lamjung-token-presentation.jpg",
+        title: "Presentation of Token of Appreciation / Memento",
+        role: "Institutional Recognition",
+        location: "Lamjung CCI, Lamjung",
+        authority: "Lamjung Chamber of Commerce & Industry Leadership",
+        description: "Lamjung Chamber of Commerce & Industry leadership presenting the traditional handcrafted token of love / appreciation memento to Tax Officer Saugat Raj Baral in honor of his facilitative tax awareness presentation.",
+        badge: "Appreciation Memento"
+      },
+      {
+        id: "lamjung-stage-felicitation",
+        image: "/taxpayer-lamjung-stage-felicitation.jpg",
+        title: "Stage Ceremony & Program Coordination",
+        role: "Institutional Felicitation",
+        location: "Lamjung CCI Auditorium",
+        authority: "Joint State-Chamber Dialogue",
+        description: "Official stage ceremony with chamber executives and revenue officials during the memento exchange and closing remarks of the tax literacy symposium.",
+        badge: "Official Felicitation"
+      },
+      {
+        id: "lamjung-dignitaries-group",
+        image: "/taxpayer-lamjung-dignitaries-group.jpg",
+        title: "Organizers & Tax Officials Assembly",
+        role: "Institutional Collaboration",
+        location: "Lamjung, Nepal",
+        authority: "Lamjung CCI & Inland Revenue Office",
+        description: "Commemorative assembly of Lamjung Chamber of Commerce & Industry leadership, guest dignitaries, and Tax Officer Saugat Raj Baral holding traditional tokens of appreciation.",
+        badge: "Dignitaries Assembly"
+      }
+    ]
+  },
+
+
+
   education: [
     {
       degree: "Bachelor of Business Administration (BBA) — Finance",
@@ -381,48 +692,8 @@ export const portfolioDataEn = {
     { name: "Economic Policy", desc: "Trade competitiveness, formalization of enterprises, and inclusive economic growth." }
   ],
 
-  publications: [
-    {
-      id: "pub-cbms-forensics-2025",
-      year: "2025",
-      category: "Journal Article",
-      type: "Tax Forensics & Digital Systems",
-      title: "Digital Transformation in Revenue Administration: CBMS, Electronic Invoicing, and Machine-Assisted Tax Forensics",
-      publisher: "Journal of Fiscal Governance and Public Administration, Vol. 4(1), pp. 18–34",
-      description: "An empirical investigation into real-time billing data synchronization via CBMS and its efficacy in curbing VAT invoice frauds and shadow transactions across Nepal.",
-      citation: "Baral, S. R. (2025). Digital Transformation in Revenue Administration: CBMS, Electronic Invoicing, and Machine-Assisted Tax Forensics. Journal of Fiscal Governance and Public Administration, 4(1), 18–34."
-    },
-    {
-      id: "pub-fiscal-fed-2024",
-      year: "2024",
-      category: "Policy Working Paper",
-      type: "Fiscal Federalism",
-      title: "Fiscal Federalism in Nepal: Inter-Governmental Revenue Sharing, Equalization Grants, and Sub-National Resource Mobilization",
-      publisher: "Nepalese Journal of Public Finance & Economic Policy, Vol. 8(2), pp. 45–68",
-      description: "An analytical study of vertical and horizontal fiscal imbalances under the 2015 Constitution, proposing formula-based equalization models for municipal revenue mobilization.",
-      citation: "Baral, S. R. (2024). Fiscal Federalism in Nepal: Inter-Governmental Revenue Sharing, Equalization Grants, and Sub-National Resource Mobilization. Nepalese Journal of Public Finance & Economic Policy, 8(2), 45–68."
-    },
-    {
-      id: "pub-crypto-sovereignty-2024",
-      year: "2024",
-      category: "Symposium Monograph",
-      type: "Monetary Law & Digital Assets",
-      title: "Taxing the Digital Frontier: Cryptocurrencies, Virtual Assets, and Central Bank Monetary Sovereignty in Nepal",
-      publisher: "National Policy Forum Working Series, Issue 12, pp. 1–22",
-      description: "Constitutional and statutory appraisal of foreign exchange controls, anti-money laundering frameworks (FATF/CARF), and potential taxation paradigms for virtual assets in developing economies.",
-      citation: "Baral, S. R. (2024). Taxing the Digital Frontier: Cryptocurrencies, Virtual Assets, and Central Bank Monetary Sovereignty in Nepal. National Policy Forum Working Series, 12, 1–22."
-    },
-    {
-      id: "pub-sme-compliance-2024",
-      year: "2024",
-      category: "Institutional Report",
-      type: "Income Tax Administration",
-      title: "Income Tax Architecture for SMEs: Withholding Taxes (TDS), Deductible Allowances, and Risk-Based Audit Selection",
-      publisher: "Revenue Review, Vol. 6(1), pp. 52–67",
-      description: "Examining statutory deduction principles under Income Tax Act 2058, evaluating presumptive taxation regimes for micro-enterprises, and standardizing objective audit criteria.",
-      citation: "Baral, S. R. (2024). Income Tax Architecture for SMEs: Withholding Taxes, Deductible Allowances, and Risk-Based Audit Selection. Revenue Review, 6(1), 52–67."
-    }
-  ],
+  publications: [],
+
 
   talksMedia: [
     {
@@ -573,6 +844,69 @@ export const portfolioDataEn = {
       "Mountain Liaison Officer Training — Nepal Academy of Tourism and Hotel Management (NATHM)",
       "Participated in seminars, conferences, workshops and professional forums on tax administration, revenue policy, fiscal policy, public finance and contemporary economic issues."
     ],
+    professionalTrainings: [
+      {
+        id: "nasc-bat",
+        institution: "Nepal Administrative Staff College (NASC)",
+        program: "Basic Administrative Training",
+        duration: "4 Months",
+        location: "Jawalakhel, Lalitpur",
+        badge: "Public Administration & Governance",
+        description: "A professional development program focused on strengthening administrative skills, public service delivery, leadership, coordination, and practical governance knowledge.",
+        coverImage: "/nasc-bat-convocation-award.jpg",
+        gallery: [
+          {
+            id: "nasc-1",
+            src: "/nasc-bat-convocation-award.jpg",
+            title: "39th BAT Convocation Ceremony — Degree Awarding",
+            caption: "Receiving the Basic Administrative Training diploma from distinguished dignitaries at the NASC Convocation Hall in Jawalakhel.",
+            tag: "Convocation Ceremony",
+            isCover: true
+          },
+          {
+            id: "nasc-2",
+            src: "/nasc-bat-cohort-activity.jpg",
+            title: "Officer Trainee Cohort — Leadership & Field Session",
+            caption: "Fellow officer participants during institutional field excursions and administrative leadership development activities.",
+            tag: "Cohort Engagement"
+          }
+        ]
+      },
+      {
+        id: "pfmtc-pfm",
+        institution: "Public Financial Management Training Center (PFMTC)",
+        program: "Public Financial Management Training",
+        duration: "Specialized Revenue & PFM Track",
+        location: "Kathmandu, Nepal",
+        badge: "Public Finance, Accounting & Revenue",
+        description: "Training focused on public financial management, government accounting, budgeting, financial procedures, fiscal accountability, and effective use of public resources.",
+        coverImage: "/pfmtc-ird-training-session.jpg",
+        gallery: [
+          {
+            id: "pfmtc-1",
+            src: "/pfmtc-ird-training-session.jpg",
+            title: "Inland Revenue Department — PFM & Revenue Administration",
+            caption: "Strategic training session and high-level briefing at the Inland Revenue Department (IRD Lazimpat) with official PFMTC credentials.",
+            tag: "Revenue Administration",
+            isCover: true
+          },
+          {
+            id: "pfmtc-2",
+            src: "/pfmtc-excise-inspection-field.jpg",
+            title: "Balaju Excise Unit Office — Field Compliance Inspection",
+            caption: "On-site practical training and factory audit inspection at the Inland Revenue Office Balaju Excise Unit.",
+            tag: "Field Compliance"
+          },
+          {
+            id: "pfmtc-3",
+            src: "/pfmtc-customs-department-session.jpg",
+            title: "Department of Customs — Fiscal Planning & Policy Briefing",
+            caption: "Executive briefing on customs administration, trade facilitation, and public financial systems at the Department of Customs, Tripureshwor.",
+            tag: "Customs & Fiscal Policy"
+          }
+        ]
+      }
+    ],
     internationalExposure: [
       "International exposure across 15 countries in Europe and Asia, providing first-hand exposure to diverse economic, social and institutional environments.",
       "Regular engagement with taxpayers, businesses, professional stakeholders and government institutions through public outreach, policy communication and government programs."
@@ -632,11 +966,14 @@ export const portfolioDataNp = {
     email: "saugatrajbaral@gmail.com",
     officialPhone: "+९७७ ९८५१४५५७७७",
     personalPhone: "+९७७ ९८०६६५५६७८",
+    whatsapp: "+९७७ ९८०६६५५६७८",
+    whatsappUrl: "https://wa.me/9779806655678",
     
     socials: {
+      facebook: "https://www.facebook.com/saugatraj.baral",
+      whatsapp: "https://wa.me/9779806655678",
       linkedin: "https://linkedin.com/in/saugatrajbaral",
       twitter: "https://twitter.com/saugatrajbaral",
-      facebook: "https://facebook.com/saugatrajbaral",
       email: "mailto:saugatrajbaral@gmail.com"
     },
 
@@ -723,18 +1060,57 @@ export const portfolioDataNp = {
     },
     {
       id: "gandaki-admin-officer",
-      period: "यसअघि",
-      role: "प्रशासन अधिकृत, सातौं तह",
-      institution: "आर्थिक मामिला मन्त्रालय — गण्डकी प्रदेश",
-      office: "प्रदेश सरकार, नेपाल",
-      jurisdiction: "गण्डकी प्रदेश",
-      overview: "प्रादेशिक बजेट तर्जुमा, आयोजना समन्वय, अन्तर-सरकारी वित्तीय हस्तान्तरण अनुगमन तथा प्रशासनिक सुशासनको कार्यसम्पादन।",
+      period: "६ महिना",
+      role: "प्रशासन अधिकृत",
+      institution: "आर्थिक मामिला मन्त्रालय — गण्डकी प्रदेश सरकार",
+      office: "बजेट तथा कार्यक्रम महाशाखा",
+      jurisdiction: "गण्डकी प्रदेश, पोखरा",
+      area: "बजेट तथा योजना / बजेट तथा कार्यक्रम महाशाखा",
+      overview: "बजेट तथा कार्यक्रम महाशाखामा प्रशासन अधिकृतको रूपमा प्रादेशिक बजेट तर्जुमा, कार्यक्रम योजना, बजेट विश्लेषण, अन्तर-निकाय समन्वय तथा सार्वजनिक वित्तीय व्यवस्थापनमा महत्वपूर्ण योगदान।",
       responsibilities: [
-        "प्रादेशिक बजेट तर्जुमा तथा खर्च योजना निर्माण",
-        "अन्तर-सरकारी कार्यक्रम समन्वय तथा अनुगमन",
-        "सार्वजनिक प्रशासन तथा निजामती कार्यविधि कार्यान्वयन",
-        "प्रादेशिक वित्तीय व्यवस्थापन तथा स्रोत विनियोजन",
-        "वित्तीय हस्तान्तरण तथा खर्च पुनरावलोकन"
+        "प्रादेशिक बजेट तर्जुमा, वित्तीय विश्लेषण तथा कार्यक्रम योजना",
+        "अन्तर-सरकारी कार्यक्रम समन्वय तथा वित्तीय अनुगमन",
+        "सार्वजनिक वित्तीय व्यवस्थापन तथा स्रोत विनियोजन पुनरावलोकन",
+        "प्रशासनिक सुशासन तथा निजामती कार्यविधि कार्यान्वयन",
+        "वित्तीय हस्तान्तरण, खर्च अनुगमन तथा बजेट मूल्यांकन"
+      ],
+      gallery: [
+        {
+          id: "gandaki-1",
+          src: "/gandaki-ministry-team-official.jpg",
+          title: "आर्थिक मामिला मन्त्रालय — आधिकारिक टोली तथा नेतृत्व",
+          caption: "गण्डकी प्रदेश सरकार, आर्थिक मामिला मन्त्रालय, पोखरा अगाडि मन्त्री, सचिव तथा कर्मचारी समूहको आधिकारिक तस्वीर।",
+          tag: "आधिकारिक टोली",
+          isCover: true
+        },
+        {
+          id: "gandaki-2",
+          src: "/gandaki-ministry-felicitation-meeting.jpg",
+          title: "आधिकारिक बधाई तथा मन्त्रालय बैठक",
+          caption: "मन्त्रालयको सभाकक्षमा आयोजित औपचारिक स्वागत, बधाई तथा कार्यक्रम बैठक।",
+          tag: "औपचारिक बैठक"
+        },
+        {
+          id: "gandaki-3",
+          src: "/gandaki-ministry-officer-desk.jpg",
+          title: "प्रशासन अधिकृत — मन्त्रालय बैठक कक्ष",
+          caption: "आर्थिक मामिला मन्त्रालयको बजेट परामर्श तथा प्रादेशिक योजना समीक्षा सत्रमा प्रशासन अधिकृत सौगात राज बराल।",
+          tag: "कार्य सम्पादन"
+        },
+        {
+          id: "gandaki-4",
+          src: "/gandaki-ministry-budget-evaluation-presentation.jpg",
+          title: "बजेट तथा कार्यक्रम मूल्यांकन कार्यशाला",
+          caption: "कार्यक्रम तथा बजेट मूल्यांकन, नतिजामूलक सूचकहरू तथा कार्यसम्पादन सुधार सम्बन्धी प्रस्तुतीकरण सहजीकरण।",
+          tag: "प्रस्तुतीकरण तथा कार्यशाला"
+        },
+        {
+          id: "gandaki-5",
+          src: "/gandaki-gpta-training-academy.jpg",
+          title: "गण्डकी प्रदेश प्रशिक्षण प्रतिष्ठान (GPTA)",
+          caption: "गण्डकी प्रदेश प्रशिक्षण प्रतिष्ठान, पोखरामा आयोजित प्रादेशिक सुशासन तथा प्रशासनिक क्षमता विकास तालिम।",
+          tag: "तालिम तथा क्षमता विकास"
+        }
       ]
     }
   ],
@@ -934,6 +1310,275 @@ export const portfolioDataNp = {
     ]
   },
 
+  taxpayerEducationProgram: {
+    sectionKicker: "नागरिक तथा करदाता सचेतना",
+    sectionTitle: "कर साक्षरता कार्यक्रम — देवघाट गाउँपालिका, तनहुँ",
+    subtitle: "कर सचेतना, कर सहभागिता, करदाता अधिकार तथा कानुनी अभिमुखीकरण",
+    badgeLabel: "करदाता सचेतना कार्यक्रम",
+    program: "कर साक्षरता एवं कर सम्बन्धी कानूनी अभिमुखीकरण कार्यक्रम",
+    nepaliTitle: "कर साक्षरता एवं कर सम्बन्धी हालको कानूनी व्यवस्था सम्बन्धी अभिमुखीकरण कार्यक्रम",
+    location: "देवघाट गाउँपालिका, तनहुँ, नेपाल",
+    venue: "सिटीहल, देवघाट गाउँपालिका, तनहुँ",
+    role: "सहजकर्ता / कर अधिकृत",
+    organizer: "देवघाट गाउँपालिका (गाउँ कार्यपालिकाको कार्यालय, देवघाट)",
+    technicalSupport: "आन्तरिक राजस्व कार्यालय, दमौली, तनहुँ",
+    theme: "कर सचेतना, कर अनुपालन, करदाताको अधिकार तथा कर्तव्य र स्थानीय करदाताहरूसँग अन्तरक्रिया।",
+    description: "देवघाट गाउँपालिका, तनहुँमा कर अनुपालन, करदाताको अधिकार तथा कर्तव्य र नेपालको कर प्रशासन तथा सेवाहरूबारे सचेतना अभिवृद्धि गर्ने उद्देश्यले कर साक्षरता तथा अभिमुखीकरण कार्यक्रम सञ्चालन।",
+    specifications: [
+      { label: "कार्यक्रमको नाम", value: "कर साक्षरता एवं कर सम्बन्धी हालको कानूनी व्यवस्था सम्बन्धी अभिमुखीकरण" },
+      { label: "जिम्मेवारी / भूमिका", value: "सहजकर्ता / कर अधिकृत" },
+      { label: "स्थान तथा हल", value: "सिटीहल, देवघाट गाउँपालिका, तनहुँ" },
+      { label: "आयोजक निकाय", value: "देवघाट गाउँपालिका (गाउँ कार्यपालिकाको कार्यालय, देवघाट)" },
+      { label: "प्राविधिक सहयोग", value: "आन्तरिक राजस्व कार्यालय, दमौली, तनहुँ" },
+      { label: "मुख्य विषयवस्तु", value: "कर अनुपालन, करदाता अधिकार र कर्तव्य, र स्थानीय करदाताहरूसँग अन्तरक्रिया" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-devghat-session.jpg",
+      title: "कर साक्षरता तथा कानुनी व्यवस्था सम्बन्धी अभिमुखीकरण सत्र",
+      caption: "देवघाट गाउँपालिकाको सिटीहलमा स्थानीय व्यवसायी तथा करदाताहरूलाई कर कानुन, करदाताको अधिकार र दायित्वबारे सहजीकरण गर्दै कर अधिकृत सौगात राज बराल।",
+      role: "सहजकर्ता / कर अधिकृत",
+      location: "सिटीहल, देवघाट गाउँपालिका, तनहुँ",
+      authority: "आन्तरिक राजस्व कार्यालय दमौली एवं देवघाट गाउँपालिका",
+      badge: "प्रमुख तस्बिर"
+    },
+    supportingGallery: [
+      {
+        id: "devghat-official-banner",
+        image: "/taxpayer-devghat-banner.jpg",
+        title: "कार्यक्रमको आधिकारिक ब्यानर",
+        role: "आधिकारिक कार्यक्रम विवरण",
+        location: "सिटीहल, देवघाट, तनहुँ",
+        authority: "देवघाट गाउँपालिका तथा आ.रा.का. दमौली",
+        description: "देवघाट गाउँपालिकाको आयोजना तथा आन्तरिक राजस्व कार्यालय दमौलीको प्राविधिक सहयोगमा सञ्चालित कर साक्षरता कार्यक्रमको आधिकारिक ब्यानर।",
+        badge: "कार्यक्रम ब्यानर"
+      },
+      {
+        id: "devghat-interactive-audience",
+        image: "/taxpayer-devghat-presentation.jpg",
+        title: "स्थानीय करदाता तथा व्यवसायीहरूको सहभागिता",
+        role: "करदाता अन्तरक्रिया",
+        location: "देवघाट गाउँपालिका, तनहुँ",
+        authority: "कर सचेतना कार्यक्रम",
+        description: "स्थानीय करदाता, व्यवसायी तथा सरोकारवालाहरूसँग स्थायी लेखा नम्बर (PAN), कर दाखिला र कर छुट सम्बन्धी प्रत्यक्ष छलफल तथा परामर्श।",
+        badge: "करदाता सहभागिता"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramTanahun: {
+    id: "tanahun-chamber-program",
+    sectionKicker: "नागरिक तथा करदाता सचेतना",
+    sectionTitle: "करदाता शिक्षा तथा अन्तरक्रिया कार्यक्रम – तनहुँ",
+    subtitle: "आर्थिक ऐन, २०८३ ले गरेका संशोधन, छुट सुविधा तथा करदाता अभिमुखीकरण",
+    badgeLabel: "जिल्लास्तरीय करदाता सचेतना",
+    program: "करदाता शिक्षा तथा अन्तरक्रिया कार्यक्रम – तनहुँ",
+    nepaliTitle: "आर्थिक ऐन, २०८३ ले गरेका संशोधन एवं छुट सुविधा सम्बन्धी करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम",
+    location: "तनहुँ, नेपाल",
+    venue: "तनहुँ उद्योग वाणिज्य संघको सभाहल, दमौली",
+    date: "२०८३/०४/०८ गते",
+    role: "मुख्य सहजकर्ता / कर अधिकृत",
+    organizer: "आन्तरिक राजस्व कार्यालय दमौली तथा तनहुँ उद्योग वाणिज्य संघ दमौली",
+    technicalSupport: "आन्तरिक राजस्व कार्यालय, दमौली, तनहुँ",
+    theme: "कर सचेतना, कर अनुपालन, करदाताको अधिकार तथा कर्तव्य र स्थानीय करदाताहरूसँग अन्तरक्रिया।",
+    description: "आन्तरिक राजस्व कार्यालय दमौली र तनहुँ उद्योग वाणिज्य संघको संयुक्त आयोजनामा आर्थिक ऐन, २०८३ ले गरेका कानुनी संशोधन तथा छुट सुविधा सम्बन्धी विस्तृत करदाता शिक्षा तथा अन्तरक्रिया कार्यक्रम सञ्चालन।",
+    motto: "कर प्रणालीको सार, लगानीको आधार",
+    specifications: [
+      { label: "कार्यक्रमको नाम", value: "आर्थिक ऐन, २०८३ संशोधन एवं छुट सुविधा सम्बन्धी करदाता शिक्षा तथा अन्तरक्रिया" },
+      { label: "मुख्य विषयवस्तु", value: "आर्थिक ऐन २०८३ का कानुनी संशोधन, नयाँ कर दर तथा छुट सुविधाहरू" },
+      { label: "जिम्मेवारी / भूमिका", value: "मुख्य सहजकर्ता / कर अधिकृत" },
+      { label: "स्थान तथा हल", value: "तनहुँ उद्योग वाणिज्य संघको सभाहल, दमौली, तनहुँ" },
+      { label: "संयुक्त आयोजक", value: "आन्तरिक राजस्व कार्यालय दमौली तथा तनहुँ उद्योग वाणिज्य संघ दमौली" },
+      { label: "कार्यक्रमको सार", value: "कर प्रणालीको सार, लगानीको आधार" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-tanahun-stage-presentation.jpg",
+      title: "आर्थिक ऐन, २०८३ सम्बन्धी कार्यपत्र प्रस्तुति तथा अभिमुखीकरण",
+      caption: "तनहुँ उद्योग वाणिज्य संघको सभाहलमा आयोजित कार्यक्रममा आर्थिक ऐन, २०८३ का नवीनतम संशोधन तथा कर छुट सुविधाहरूबारे कार्यपत्र प्रस्तुत गर्दै कर अधिकृत सौगात राज बराल।",
+      role: "मुख्य सहजकर्ता / कर अधिकृत",
+      location: "तनहुँ उद्योग वाणिज्य संघको सभाहल, दमौली, तनहुँ",
+      authority: "आन्तरिक राजस्व कार्यालय दमौली एवं तनहुँ उद्योग वाणिज्य संघ",
+      badge: "प्रमुख तस्बिर"
+    },
+    supportingGallery: [
+      {
+        id: "tanahun-official-banner",
+        image: "/taxpayer-tanahun-official-banner.jpg",
+        title: "कार्यक्रमको आधिकारिक ब्यानर",
+        role: "आधिकारिक कार्यक्रम विवरण",
+        location: "दमौली, तनहुँ",
+        authority: "आ.रा.का. दमौली तथा तनहुँ उद्योग वाणिज्य संघ",
+        description: "आन्तरिक राजस्व कार्यालय दमौली र तनहुँ उद्योग वाणिज्य संघको संयुक्त आयोजनामा सम्पन्न कार्यक्रमको आधिकारिक ब्यानर।",
+        badge: "कार्यक्रम ब्यानर"
+      },
+      {
+        id: "tanahun-audience-interaction",
+        image: "/taxpayer-tanahun-audience-interaction.jpg",
+        title: "करदाताहरूसँग प्रत्यक्ष संवाद तथा परामर्श",
+        role: "करदाता अन्तरक्रिया",
+        location: "तनहुँ उद्योग वाणिज्य संघको सभाहल",
+        authority: "करदाता संवाद सत्र",
+        description: "स्थानीय उद्योगी, व्यवसायी तथा करदाताहरूद्वारा सोधिएका कर प्रक्रिया, विवरण दाखिला तथा कर छुट सम्बन्धी जिज्ञासाहरूको प्रत्यक्ष समाधान।",
+        badge: "करदाता अन्तरक्रिया"
+      },
+      {
+        id: "tanahun-hall-attendees",
+        image: "/taxpayer-tanahun-hall-attendees.jpg",
+        title: "जिल्लास्तरीय उद्योगी-व्यवसायीहरूको व्यापक सहभागिता",
+        role: "सरोकारवाला सहभागिता",
+        location: "दमौली, तनहुँ",
+        authority: "जिल्लास्तरीय करदाता भेला",
+        description: "तनहुँ जिल्लाका उद्योगी, व्यापारी, लेखा व्यवसायी तथा सर्वसाधारण करदाताहरूको उत्साहजनक एवं भव्य सहभागिता।",
+        badge: "भव्य सहभागिता"
+      },
+      {
+        id: "tanahun-appreciation-memento",
+        image: "/taxpayer-tanahun-appreciation-memento.jpg",
+        title: "मायाको चिनो / सम्मान पत्र हस्तान्तरण",
+        role: "संस्थागत सम्मान",
+        location: "तनहुँ उद्योग वाणिज्य संघ, दमौली",
+        authority: "तनहुँ उद्योग वाणिज्य संघ नेतृत्व",
+        description: "करदाता शिक्षा तथा सहजीकरणमा पुर्‍याएको उत्कृष्ट योगदानको कदर गर्दै तनहुँ उद्योग वाणिज्य संघको नेतृत्वद्वारा कर अधिकृत सौगात राज बराललाई मायाको चिनो प्रदान।",
+        badge: "संस्थागत सम्मान"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramShuklagandaki: {
+    id: "shuklagandaki-program",
+    sectionKicker: "नगरस्तरीय करदाता सचेतना तथा शिक्षा",
+    sectionTitle: "करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम – शुक्लागण्डकी",
+    subtitle: "आ.व. २०८३/०८४ को कर नीति तथा कर सम्बन्धी व्यवस्थापन बारे जानकारीमूलक अन्तरक्रिया",
+    badgeLabel: "नगरस्तरीय कर सचेतना",
+    program: "करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम – शुक्लागण्डकी",
+    nepaliTitle: "आ.व. २०८३/०८४ को कर नीति तथा कर सम्बन्धी व्यवस्थापन बारे जानकारीमूलक करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम",
+    location: "शुक्लागण्डकी, तनहुँ, नेपाल",
+    venue: "ब्राइट हाउस पार्टी प्यालेस, दुलेगौँडा, तनहुँ",
+    date: "२०८३ श्रावण १५ गते",
+    role: "मुख्य सहजकर्ता / कर अधिकृत",
+    organizer: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ तथा आन्तरिक राजस्व कार्यालय, दमौली",
+    technicalSupport: "आन्तरिक राजस्व कार्यालय, दमौली, तनहुँ",
+    theme: "कर सचेतना, कर अनुपालन, करदाताको अधिकार तथा कर्तव्य र स्थानीय करदाताहरूसँग अन्तरक्रिया।",
+    description: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ र आन्तरिक राजस्व कार्यालय दमौलीको संयुक्त आयोजनामा आ.व. २०८३/०८४ को कर नीति, कानुनी व्यवस्था, भ्याट/अन्तःशुल्क प्रक्रिया तथा कर व्यवस्थापन सम्बन्धी प्रभावकारी करदाता शिक्षा तथा अन्तरक्रिया कार्यक्रम सञ्चालन।",
+    specifications: [
+      { label: "कार्यक्रमको नाम", value: "आ.व. २०८३/०८४ कर नीति तथा कर सम्बन्धी व्यवस्थापन बारे करदाता शिक्षा" },
+      { label: "मुख्य विषयवस्तु", value: "नयाँ कर नीति, कानुनी छुट सुविधा, बिलिङ तथा कर दाखिला प्रक्रिया" },
+      { label: "जिम्मेवारी / भूमिका", value: "मुख्य सहजकर्ता / कर अधिकृत" },
+      { label: "स्थान तथा हल", value: "ब्राइट हाउस पार्टी प्यालेस, दुलेगौँडा, शुक्लागण्डकी, तनहुँ" },
+      { label: "संयुक्त आयोजक", value: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ तथा आन्तरिक राजस्व कार्यालय दमौली" },
+      { label: "मिति तथा समय", value: "२०८३ श्रावण १५ गते (बिहान ११:०० बजे)" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-shuklagandaki-podium-interaction.jpg",
+      title: "आ.व. २०८३/०८४ को कर नीति सम्बन्धी मुख्य सहजीकरण",
+      caption: "ब्राइट हाउस पार्टी प्यालेस, दुलेगौँडामा आयोजित कार्यक्रममा शुक्लागण्डकीका उद्योगी, व्यवसायी तथा करदाताहरूलाई नयाँ कर नीति तथा कानुनी व्यवस्थाबारे सहजीकरण गर्दै कर अधिकृत सौगात राज बराल।",
+      role: "मुख्य सहजकर्ता / कर अधिकृत",
+      location: "ब्राइट हाउस पार्टी प्यालेस, दुलेगौँडा, तनहुँ",
+      authority: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ एवं आ.रा.का. दमौली",
+      badge: "प्रमुख तस्बिर"
+    },
+    supportingGallery: [
+      {
+        id: "shuklagandaki-official-banner",
+        image: "/taxpayer-shuklagandaki-official-banner.jpg",
+        title: "कार्यक्रमको आधिकारिक ब्यानर",
+        role: "आधिकारिक कार्यक्रम विवरण",
+        location: "दुलेगौँडा, शुक्लागण्डकी, तनहुँ",
+        authority: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ तथा आ.रा.का. दमौली",
+        description: "शुक्लागण्डकी नगर उद्योग वाणिज्य संघ र आन्तरिक राजस्व कार्यालय दमौलीको संयुक्त आयोजनामा सम्पन्न करदाता शिक्षा तथा अन्तरक्रिया कार्यक्रमको आधिकारिक ब्यानर (२०८३ श्रावण १५ गते)।",
+        badge: "कार्यक्रम ब्यानर"
+      },
+      {
+        id: "shuklagandaki-presentation-session",
+        image: "/taxpayer-shuklagandaki-presentation-session.jpg",
+        title: "कार्यपत्र प्रस्तुति तथा प्राविधिक सहजीकरण",
+        role: "कर नीति अभिमुखीकरण",
+        location: "दुलेगौँडा, शुक्लागण्डकी",
+        authority: "करदाता सचेतना सत्र",
+        description: "कर छुट सुविधा, बिल बिजक जारी गर्ने विधि, स्थायी लेखा नम्बर (PAN) तथा अनलाइन कर प्रणाली सम्बन्धी विस्तृत कार्यपत्र प्रस्तुति।",
+        badge: "प्रस्तुति सत्र"
+      },
+      {
+        id: "shuklagandaki-compliance-briefing",
+        image: "/taxpayer-shuklagandaki-compliance-briefing.jpg",
+        title: "होटल, व्यवसाय तथा क्षेत्रगत कर परामर्श",
+        role: "व्यावसायिक कर परामर्श",
+        location: "ब्राइट हाउस पार्टी प्यालेस, दुलेगौँडा",
+        authority: "प्रत्यक्ष करदाता अन्तरक्रिया",
+        description: "होटल, पसल तथा स्थानीय व्यवसाय सञ्चालकहरूका जिज्ञासा समाधान गर्दै अन्तःशुल्क, मूल्य अभिवृद्धि कर (VAT) र आयकर सम्बन्धी प्रत्यक्ष परामर्श।",
+        badge: "क्षेत्रगत परामर्श"
+      }
+    ]
+  },
+
+  taxpayerEducationProgramLamjung: {
+    id: "lamjung-cci-program",
+    sectionKicker: "जिल्लास्तरीय करदाता सचेतना तथा संवाद",
+    sectionTitle: "करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम – लमजुङ",
+    subtitle: "करदाता र आन्तरिक राजस्व कार्यालयबीच अन्तरक्रिया तथा प्रश्नोत्तर कार्यक्रम",
+    badgeLabel: "उद्योग वाणिज्य संघ सहकार्य",
+    program: "करदाता शिक्षा एवं अन्तरक्रिया कार्यक्रम – लमजुङ",
+    nepaliTitle: "करदाता र आन्तरिक राजस्व कार्यालयबीच अन्तरक्रिया तथा प्रश्नोत्तर कार्यक्रम",
+    location: "लमजुङ, नेपाल",
+    venue: "लमजुङ उद्योग वाणिज्य संघको सभाहल, बेसीशहर, लमजुङ",
+    date: "२०८३ भाद्र १७ गते, बुधबार",
+    role: "मुख्य सहजकर्ता / कर अधिकृत",
+    organizer: "लमजुङ उद्योग वाणिज्य संघ",
+    technicalSupport: "आन्तरिक राजस्व कार्यालय, दमौली, तनहुँ",
+    theme: "कर सचेतना, कर अनुपालन, करदाताको अधिकार तथा कर्तव्य र स्थानीय करदाताहरूसँग अन्तरक्रिया।",
+    description: "लमजुङ उद्योग वाणिज्य संघको आयोजना तथा आन्तरिक राजस्व कार्यालय दमौलीको सहजीकरणमा करदाता र कर प्रशासनबीच प्रत्यक्ष संवाद, करदाताका जिज्ञासा समाधान, कर कानुन तथा करदाताका अधिकार र कर्तव्यबारे प्रभावकारी अन्तरक्रिया तथा प्रश्नोत्तर कार्यक्रम सम्पन्न।",
+    specifications: [
+      { label: "कार्यक्रमको नाम", value: "करदाता र आन्तरिक राजस्व कार्यालयबीच अन्तरक्रिया तथा प्रश्नोत्तर कार्यक्रम" },
+      { label: "मुख्य विषयवस्तु", value: "करदाता प्रत्यक्ष संवाद, कर सचेतना, कर छुट तथा कानुनी परामर्श" },
+      { label: "जिम्मेवारी / भूमिका", value: "मुख्य सहजकर्ता / कर अधिकृत" },
+      { label: "स्थान तथा हल", value: "लमजुङ उद्योग वाणिज्य संघको सभाहल, बेसीशहर, लमजुङ" },
+      { label: "आयोजक निकाय", value: "लमजुङ उद्योग वाणिज्य संघ" },
+      { label: "सहजीकरण निकाय", value: "आन्तरिक राजस्व कार्यालय, दमौली" }
+    ],
+    heroPhoto: {
+      image: "/taxpayer-lamjung-interaction-hall.jpg",
+      title: "करदाता तथा व्यवसायीहरूसँग प्रत्यक्ष अन्तरक्रिया सत्र",
+      caption: "लमजुङ उद्योग वाणिज्य संघको सभाहलमा आयोजित कार्यक्रममा लमजुङका उद्योगी, व्यवसायी तथा करदाताहरूका जिज्ञासाको प्रत्यक्ष समाधान तथा कर सहजीकरण गर्दै कर अधिकृत सौगात राज बराल।",
+      role: "मुख्य सहजकर्ता / कर अधिकृत",
+      location: "लमजुङ उद्योग वाणिज्य संघको सभाहल, लमजुङ",
+      authority: "लमजुङ उद्योग वाणिज्य संघ एवं आ.रा.का. दमौली",
+      badge: "प्रमुख तस्बिर"
+    },
+    supportingGallery: [
+      {
+        id: "lamjung-token-presentation",
+        image: "/taxpayer-lamjung-token-presentation.jpg",
+        title: "मायाको चिनो / सम्मान उपहार हस्तान्तरण",
+        role: "संस्थागत सम्मान",
+        location: "लमजुङ उद्योग वाणिज्य संघ, लमजुङ",
+        authority: "लमजुङ उद्योग वाणिज्य संघ नेतृत्व",
+        description: "करदाता शिक्षा तथा सहजीकरणमा पुर्‍याएको उत्कृष्ट योगदानको कदर गर्दै लमजुङ उद्योग वाणिज्य संघका पदाधिकारीद्वारा कर अधिकृत सौगात राज बराललाई परम्परागत काष्ठकला निर्मित मायाको चिनो प्रदान।",
+        badge: "मायाको चिनो"
+      },
+      {
+        id: "lamjung-stage-felicitation",
+        image: "/taxpayer-lamjung-stage-felicitation.jpg",
+        title: "मञ्चीय सम्मान तथा अन्तरक्रिया समापन",
+        role: "मञ्चीय सहजीकरण",
+        location: "लमजुङ उ.वा. संघ सभाहल",
+        authority: "कर प्रशासन एवं उद्योग वाणिज्य संघ संवाद",
+        description: "कार्यक्रमको समापन सत्रमा उद्योग वाणिज्य संघका नेतृत्व तथा कर अधिकृतबीच मायाको चिनो आदानप्रदान र संस्थागत सहकार्यको क्षण।",
+        badge: "मञ्चीय सम्मान"
+      },
+      {
+        id: "lamjung-dignitaries-group",
+        image: "/taxpayer-lamjung-dignitaries-group.jpg",
+        title: "आयोजक तथा अतिथि मञ्चीय समूह तस्बिर",
+        role: "संस्थागत सहकार्य",
+        location: "बेसीशहर, लमजुङ",
+        authority: "लमजुङ उ.वा. संघ एवं आन्तरिक राजस्व कार्यालय",
+        description: "लमजुङ उद्योग वाणिज्य संघका पदाधिकारी, अतिथि महानुभाव तथा कर अधिकृत सौगात राज बराल मायाको चिनो सहितको सामूहिक तस्बिर।",
+        badge: "सामूहिक तस्बिर"
+      }
+    ]
+  },
+
+
+
   education: [
     {
       degree: "व्यवसाय प्रशासनमा स्नातक (BBA) — वित्त",
@@ -975,48 +1620,8 @@ export const portfolioDataNp = {
     { name: "आर्थिक नीति", desc: "व्यापार प्रतिस्पर्धात्मकता, व्यवसाय औपचारिकीकरण र समावेशी विकास।" }
   ],
 
-  publications: [
-    {
-      id: "pub-cbms-forensics-2025",
-      year: "सन् २०२५",
-      category: "अनुसन्धानमूलक लेख",
-      type: "डिजिटल कर प्रणाली तथा फोरेन्सिक्स",
-      title: "राजस्व प्रशासनमा डिजिटल रूपान्तरण: CBMS, विद्युतीय बिजक र स्वचालित कर परीक्षण",
-      publisher: "वित्तीय सुशासन तथा सार्वजनिक प्रशासन जर्नल, अङ्क ४(१), पृष्ठ १८–३४",
-      description: "केन्द्रीय बिजक अनुगमन प्रणाली (CBMS) मार्फत वास्तविक समयको डाटा संकलन र मूल्य अभिवृद्धि कर चुहावट नियन्त्रणमा यसको प्रभावकारिताको विश्लेषण।",
-      citation: "बराल, सौगात राज (२०२५) । राजस्व प्रशासनमा डिजिटल रूपान्तरण: CBMS, विद्युतीय बिजक र स्वचालित कर परीक्षण । वित्तीय सुशासन तथा सार्वजनिक प्रशासन जर्नल, ४(१), १८–३४ ।"
-    },
-    {
-      id: "pub-fiscal-fed-2024",
-      year: "सन् २०२४",
-      category: "नीतिगत कार्यपत्र",
-      type: "वित्तीय संघीयता",
-      title: "नेपालमा वित्तीय संघीयता: अन्तर-सरकारी राजस्व बाँडफाँड, समानीकरण अनुदान र स्थानीय स्रोत परिचालन",
-      publisher: "नेपाली सार्वजनिक वित्त तथा आर्थिक नीति समीक्षा, अङ्क ८(२), पृष्ठ ४५–६८",
-      description: "नेपालको संविधान २०७२ अन्तर्गत संघ, प्रदेश र स्थानीय तहबीचको वित्तीय असन्तुलन र स्थानीय तहमा आन्तरिक राजस्व परिचालनका सम्भावनाहरूको अध्ययन।",
-      citation: "बराल, सौगात राज (२०२४) । नेपालमा वित्तीय संघीयता: अन्तर-सरकारी राजस्व बाँडफाँड, समानीकरण अनुदान र स्थानीय स्रोत परिचालन । नेपाली सार्वजनिक वित्त तथा आर्थिक नीति समीक्षा, ८(२), ४५–६८ ।"
-    },
-    {
-      id: "pub-crypto-sovereignty-2024",
-      year: "सन् २०२४",
-      category: "विचार गोष्ठी कार्यपत्र",
-      type: "मौद्रिक कानुन तथा भर्चुअल सम्पत्ति",
-      title: "डिजिटल अर्थतन्त्र र कर नीति: क्रिप्टोकरेन्सी, भर्चुअल सम्पत्ति तथा केन्द्रीय बैंकको मौद्रिक सार्वभौमसत्ता",
-      publisher: "राष्ट्रिय नीति मञ्च कार्यपत्र शृंखला, अङ्क १२, पृष्ठ १–२२",
-      description: "विदेशी विनिमय ऐन तथा नेपाल राष्ट्र बैंक ऐन अन्तर्गत भर्चुअल सम्पत्तिको नियमन, पुँजी पलायन नियन्त्रण र अन्तर्राष्ट्रिय कर मापदण्ड (FATF) बारे विश्लेषण।",
-      citation: "बराल, सौगात राज (२०२४) । डिजिटल अर्थतन्त्र र कर नीति: क्रिप्टोकरेन्सी, भर्चुअल सम्पत्ति तथा केन्द्रीय बैंकको मौद्रिक सार्वभौमसत्ता । राष्ट्रिय नीति मञ्च कार्यपत्र शृंखला, १२, १–२२ ।"
-    },
-    {
-      id: "pub-sme-compliance-2024",
-      year: "सन् २०२४",
-      category: "संस्थागत प्रतिवेदन",
-      type: "आयकर प्रशासन",
-      title: "साना तथा मझौला उद्योगका लागि आयकर संरचना: स्रोतमा कर कट्टी (TDS), खर्च कट्टी र जोखिममा आधारित कर परीक्षण",
-      publisher: "राजस्व समीक्षा, अङ्क ६(१), पृष्ठ ५२–६७",
-      description: "आयकर ऐन २०५८ का व्यवस्था, साना व्यवसायीहरूका लागि कर परिपालना लागत न्यूनीकरण र वस्तुपरक कर परीक्षण मापदण्डबारे अनुसन्धान।",
-      citation: "बराल, सौगात राज (२०२४) । साना तथा मझौला उद्योगका लागि आयकर संरचना: स्रोतमा कर कट्टी (TDS), खर्च कट्टी र जोखिममा आधारित कर परीक्षण । राजस्व समीक्षा, ६(१), ५२–६७ ।"
-    }
-  ],
+  publications: [],
+
 
   talksMedia: [
     {
@@ -1166,6 +1771,69 @@ export const portfolioDataNp = {
       "सार्वजनिक वित्तीय व्यवस्थापन तालिम — PFMTC, काठमाडौं।",
       "पर्वतारोहण सम्पर्क अधिकृत तालिम — नेपाल पर्यटन तथा होटल व्यवस्थापन प्रतिष्ठान (NATHM)।",
       "कर प्रशासन, राजस्व नीति, वित्तीय नीति, सार्वजनिक वित्त र समसामयिक आर्थिक विषयमा विभिन्न राष्ट्रिय/अन्तर्राष्ट्रिय गोष्ठी, सम्मेलन र कार्यशालाहरूमा सहभागिता।"
+    ],
+    professionalTrainings: [
+      {
+        id: "nasc-bat",
+        institution: "नेपाल प्रशासनिक प्रशिक्षण प्रतिष्ठान (NASC)",
+        program: "आधारभूत प्रशासन प्रशिक्षण (Basic Administrative Training)",
+        duration: "४ महिना",
+        location: "जावलाखेल, ललितपुर",
+        badge: "सार्वजनिक प्रशासन तथा सुशासन",
+        description: "प्रशासकीय सीप, सार्वजनिक सेवा प्रवाह, नेतृत्व क्षमता, समन्वय र व्यावहारिक सुशासन ज्ञान सुदृढीकरणमा केन्द्रित व्यावसायिक विकास कार्यक्रम।",
+        coverImage: "/nasc-bat-convocation-award.jpg",
+        gallery: [
+          {
+            id: "nasc-1",
+            src: "/nasc-bat-convocation-award.jpg",
+            title: "३९औं आधारभूत प्रशासन प्रशिक्षण दीक्षान्त समारोह — प्रमाणपत्र ग्रहण",
+            caption: "जावलाखेल स्थित प्रतिष्ठानको दीक्षान्त सभाहलमा प्रमुख अतिथि तथा विशिष्ट व्यक्तित्वहरूबाट आधारभूत प्रशासन प्रशिक्षणको दीक्षान्त प्रमाणपत्र ग्रहण गर्दै।",
+            tag: "दीक्षान्त समारोह",
+            isCover: true
+          },
+          {
+            id: "nasc-2",
+            src: "/nasc-bat-cohort-activity.jpg",
+            title: "अधिकृत प्रशिक्षार्थी समूह — नेतृत्व तथा स्थलगत अन्तरक्रिया",
+            caption: "तालिमका सहकर्मी अधिकृतहरूसँग संस्थागत भ्रमण तथा नेतृत्व विकास अन्तरक्रिया सत्र।",
+            tag: "अधिकृत समूह"
+          }
+        ]
+      },
+      {
+        id: "pfmtc-pfm",
+        institution: "सार्वजनिक वित्तीय व्यवस्थापन तालिम केन्द्र (PFMTC)",
+        program: "सार्वजनिक वित्तीय व्यवस्थापन तालिम (PFM Training)",
+        duration: "विशेषीकृत राजस्व तथा PFM कार्यक्रम",
+        location: "काठमाडौं, नेपाल",
+        badge: "सार्वजनिक वित्त, लेखा तथा राजस्व",
+        description: "सार्वजनिक वित्तीय व्यवस्थापन, सरकारी लेखा प्रणाली, बजेट तर्जुमा, वित्तीय कार्यविधि, वित्तीय उत्तरदायित्व र सार्वजनिक स्रोतको प्रभावकारी उपयोगमा केन्द्रित तालिम।",
+        coverImage: "/pfmtc-ird-training-session.jpg",
+        gallery: [
+          {
+            id: "pfmtc-1",
+            src: "/pfmtc-ird-training-session.jpg",
+            title: "आन्तरिक राजस्व विभाग — PFM तथा राजस्व प्रशासन प्रशिक्षण",
+            caption: "आन्तरिक राजस्व विभाग (लाजिम्पाट) मा आयोजित सार्वजनिक वित्तीय व्यवस्थापन तथा राजस्व रणनीति सम्बन्धी उच्चस्तरीय प्रशिक्षण सत्र।",
+            tag: "राजस्व प्रशासन",
+            isCover: true
+          },
+          {
+            id: "pfmtc-2",
+            src: "/pfmtc-excise-inspection-field.jpg",
+            title: "बालाजु अन्तःशुल्क इकाई कार्यालय — स्थलगत अनुगमन तथा निरीक्षण",
+            caption: "आन्तरिक राजस्व कार्यालय बालाजु मातहत अन्तःशुल्क इकाईमा स्थलगत अडिट तथा अनुगमन अभ्यास।",
+            tag: "स्थलगत अनुगमन"
+          },
+          {
+            id: "pfmtc-3",
+            src: "/pfmtc-customs-department-session.jpg",
+            title: "भन्सार विभाग — वित्तीय योजना तथा नीतिगत विमर्श",
+            caption: "भन्सार विभाग (त्रिपुरेश्वर) को सभाकक्षमा भन्सार प्रशासन, व्यापार सहजीकरण तथा वित्तीय व्यवस्थापन सम्बन्धी समीक्षा बैठक।",
+            tag: "भन्सार तथा वित्तीय नीति"
+          }
+        ]
+      }
     ],
     internationalExposure: [
       "युरोप र एसियाका १५ भन्दा बढी देशहरूमा अन्तर्राष्ट्रिय भ्रमण तथा अध्ययन अनुभव, जसले विविध आर्थिक, सामाजिक र संस्थागत वातावरण बुझ्न सघाएको छ।",

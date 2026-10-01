@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../components/PageHeader';
 import { GraduationCap, BookOpen, Scale, Award, CheckCircle2, Star, BookMarked } from 'lucide-react';
 import { getPortfolioData } from '../data/portfolioData';
+import TrainingSection from '../components/TrainingSection';
 
 export default function EducationPage({ lang = 'en' }) {
   const portfolio = getPortfolioData(lang);
@@ -23,17 +24,18 @@ export default function EducationPage({ lang = 'en' }) {
   return (
     <div className="page-chapter-view education-chapter-page">
       <PageHeader
-        chapter={lang === 'np' ? 'शिक्षा' : 'Education'}
-        kicker={lang === 'np' ? 'तेस्रो अध्याय' : 'Chapter 3 · Academic Scholarship'}
-        title={lang === 'np' ? 'शैक्षिक पृष्ठभूमि तथा प्राज्ञिक अनुसन्धान' : 'Academic Profile & Education'}
+        chapter={lang === 'np' ? 'शिक्षा तथा तालिम' : 'Education & Training'}
+        kicker={lang === 'np' ? 'तेस्रो अध्याय' : 'Chapter 3 · Academic & Professional Development'}
+        title={lang === 'np' ? 'शैक्षिक पृष्ठभूमि तथा संस्थागत तालिम' : 'Academic Profile & Professional Training'}
         subtitle={lang === 'np'
-          ? 'वित्तीय अर्थशास्त्र, सार्वजनिक प्रशासन र कानुनी शिक्षाको सुदृढ आधार, जसले सार्वजनिक सेवामा विश्लेषणात्मक दक्षता प्रदान गर्दछ।'
-          : 'Detailed academic background spanning corporate finance, public administration governance, and fiscal jurisprudence.'}
+          ? 'वित्तीय अर्थशास्त्र, सार्वजनिक प्रशासन र कानुनी शिक्षाको सुदृढ आधार तथा नेपाल सरकार अन्तर्गतका उच्चस्तरीय संस्थागत तालिमहरू।'
+          : 'Detailed academic background spanning corporate finance, public administration governance, and institutional civil service training programs.'}
         lang={lang}
       />
 
-      <div className="container-narrow chapter-content-body">
-        <div className="education-cards-column">
+      <div className="container-wide chapter-content-body">
+        {/* Academic Degrees Column */}
+        <div className="education-cards-column" style={{ maxWidth: '880px', margin: '0 auto' }}>
           {education.map((item, idx) => {
             const Icon = getIcon(item.icon);
             return (
@@ -67,6 +69,11 @@ export default function EducationPage({ lang = 'en' }) {
               </article>
             );
           })}
+        </div>
+
+        {/* Unified Training & Professional Development Section (NASC & PFMTC Side-by-Side) */}
+        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
+          <TrainingSection lang={lang} />
         </div>
       </div>
     </div>

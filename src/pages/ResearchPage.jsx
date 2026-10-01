@@ -67,44 +67,67 @@ export default function ResearchPage({ lang = 'en' }) {
         </div>
 
         {/* Research Articles Grid */}
-        <div className="research-cards-grid">
-          {filteredPosts.map((post) => (
-            <article key={post.id} className="research-article-card">
-              <div className="article-card-top">
-                <span className="article-category-badge">{post.category}</span>
-                <span className="article-read-time">
-                  <Clock size={12} />
-                  <span>{post.readTime}</span>
-                </span>
-              </div>
+        {filteredPosts.length > 0 ? (
+          <div className="research-cards-grid">
+            {filteredPosts.map((post) => (
+              <article key={post.id} className="research-article-card">
+                <div className="article-card-top">
+                  <span className="article-category-badge">{post.category}</span>
+                  <span className="article-read-time">
+                    <Clock size={12} />
+                    <span>{post.readTime}</span>
+                  </span>
+                </div>
 
-              <h2 className="article-card-title">
-                <Link to={`/research/${post.slug}`}>
-                  {post.title}
-                </Link>
-              </h2>
+                <h2 className="article-card-title">
+                  <Link to={`/research/${post.slug}`}>
+                    {post.title}
+                  </Link>
+                </h2>
 
-              <div className="article-card-meta">
-                <span className="article-date">
-                  <Calendar size={12} />
-                  <span>{post.publishedDate}</span>
-                </span>
-              </div>
+                <div className="article-card-meta">
+                  <span className="article-date">
+                    <Calendar size={12} />
+                    <span>{post.publishedDate}</span>
+                  </span>
+                </div>
 
-              <p className="article-card-summary">{post.summary}</p>
+                <p className="article-card-summary">{post.summary}</p>
 
-              <div className="article-card-footer">
-                <Link to={`/research/${post.slug}`} className="read-more-btn">
-                  <span>{lang === 'np' ? 'पूरा लेख पढ्नुहोस्' : 'Read Article'}</span>
-                  <ArrowRight size={13} />
-                </Link>
-              </div>
+                <div className="article-card-footer">
+                  <Link to={`/research/${post.slug}`} className="read-more-btn">
+                    <span>{lang === 'np' ? 'पूरा लेख पढ्नुहोस्' : 'Read Article'}</span>
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
 
-              <div className="article-card-accent-bar" />
-            </article>
-          ))}
-        </div>
+                <div className="article-card-accent-bar" />
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="empty-content-state" style={{
+            background: 'var(--card-bg, #ffffff)',
+            border: '1px solid rgba(12, 35, 64, 0.12)',
+            borderRadius: '12px',
+            padding: '54px 24px',
+            textAlign: 'center',
+            margin: '24px 0 40px',
+            boxShadow: '0 4px 16px rgba(0, 35, 80, 0.04)'
+          }}>
+            <BookOpen size={40} className="text-gov-blue" style={{ margin: '0 auto 16px', opacity: 0.8 }} />
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary, #0c2340)' }}>
+              {lang === 'np' ? 'कुनै अनुसन्धान वा लेख सामग्री उपलब्ध छैन' : 'No Research Articles Currently Available'}
+            </h3>
+            <p style={{ color: 'var(--text-secondary, #475569)', maxWidth: '520px', margin: '0 auto', fontSize: '0.95rem' }}>
+              {lang === 'np' 
+                ? 'अनुसन्धान, विचार तथा नीतिगत लेखन सामग्रीहरू छिट्टै अद्यावधिक गरिनेछ।' 
+                : 'Research papers, commentary, and policy analyses will be updated soon.'}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 }
+

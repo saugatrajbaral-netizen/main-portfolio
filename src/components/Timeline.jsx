@@ -49,6 +49,11 @@ export default function Timeline({ lang = 'en' }) {
                     </span>
                     <h3 className="journey-role">{item.role}</h3>
                     <div className="journey-institution">{item.institution}</div>
+                    {item.area && (
+                      <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '3px', fontWeight: 500 }}>
+                        {item.area}
+                      </div>
+                    )}
                   </div>
 
                   <div className="journey-header-meta">

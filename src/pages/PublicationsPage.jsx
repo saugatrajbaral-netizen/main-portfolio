@@ -28,56 +28,79 @@ export default function PublicationsPage({ lang = 'en' }) {
       />
 
       <div className="container-narrow chapter-content-body">
-        <div className="bibliography-list">
-          {publications.map((pub, idx) => (
-            <article key={pub.id || idx} className="bibliography-item">
-              <div className="bibliography-meta-col">
-                <span className="pub-year">{pub.year}</span>
-                <span className="pub-category-tag">{pub.category}</span>
-                <span className="pub-type">{pub.type}</span>
-              </div>
-
-              <div className="bibliography-content-col">
-                <h2 className="pub-title">{pub.title}</h2>
-                <div className="pub-publisher">{pub.publisher}</div>
-                <p className="pub-desc">{pub.description}</p>
-                
-                <div className="pub-citation-box">
-                  <code>{pub.citation}</code>
-                  <button
-                    type="button"
-                    className="copy-citation-btn"
-                    onClick={() => handleCopyCitation(pub.id, pub.citation)}
-                    title="Copy APA Citation"
-                  >
-                    {copiedId === pub.id ? (
-                      <>
-                        <Check size={12} color="#16a34a" />
-                        <span style={{ color: '#16a34a' }}>{lang === 'np' ? 'कपि भयो' : 'Copied'}</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy size={12} />
-                        <span>{lang === 'np' ? 'उद्धरण कपि' : 'Copy Citation'}</span>
-                      </>
-                    )}
-                  </button>
+        {publications && publications.length > 0 ? (
+          <div className="bibliography-list">
+            {publications.map((pub, idx) => (
+              <article key={pub.id || idx} className="bibliography-item">
+                <div className="bibliography-meta-col">
+                  <span className="pub-year">{pub.year}</span>
+                  <span className="pub-category-tag">{pub.category}</span>
+                  <span className="pub-type">{pub.type}</span>
                 </div>
-              </div>
 
-              <div className="bibliography-action-col">
-                <Link
-                  to="/research"
-                  className="button-editorial-link"
-                >
-                  <FileText size={13} />
-                  <span>{lang === 'np' ? 'पूर्ण पाठ पढ्नुहोस्' : 'Read Article'}</span>
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+                <div className="bibliography-content-col">
+                  <h2 className="pub-title">{pub.title}</h2>
+                  <div className="pub-publisher">{pub.publisher}</div>
+                  <p className="pub-desc">{pub.description}</p>
+                  
+                  <div className="pub-citation-box">
+                    <code>{pub.citation}</code>
+                    <button
+                      type="button"
+                      className="copy-citation-btn"
+                      onClick={() => handleCopyCitation(pub.id, pub.citation)}
+                      title="Copy APA Citation"
+                    >
+                      {copiedId === pub.id ? (
+                        <>
+                          <Check size={12} color="#16a34a" />
+                          <span style={{ color: '#16a34a' }}>{lang === 'np' ? 'कपि भयो' : 'Copied'}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={12} />
+                          <span>{lang === 'np' ? 'उद्धरण कपि' : 'Copy Citation'}</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bibliography-action-col">
+                  <Link
+                    to="/research"
+                    className="button-editorial-link"
+                  >
+                    <FileText size={13} />
+                    <span>{lang === 'np' ? 'पूर्ण पाठ पढ्नुहोस्' : 'Read Article'}</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="empty-content-state" style={{
+            background: 'var(--card-bg, #ffffff)',
+            border: '1px solid rgba(12, 35, 64, 0.12)',
+            borderRadius: '12px',
+            padding: '54px 24px',
+            textAlign: 'center',
+            margin: '24px 0 40px',
+            boxShadow: '0 4px 16px rgba(0, 35, 80, 0.04)'
+          }}>
+            <BookMarked size={40} className="text-gov-blue" style={{ margin: '0 auto 16px', opacity: 0.8 }} />
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary, #0c2340)' }}>
+              {lang === 'np' ? 'कुनै प्रकाशनहरू उपलब्ध छैनन्' : 'No Publications Currently Available'}
+            </h3>
+            <p style={{ color: 'var(--text-secondary, #475569)', maxWidth: '520px', margin: '0 auto', fontSize: '0.95rem' }}>
+              {lang === 'np' 
+                ? 'नीतिगत कार्यपत्र, प्रतिवेदन तथा प्रकाशनहरू छिट्टै अद्यावधिक गरिनेछ।' 
+                : 'Scholarly working papers, policy briefs, and publications will be updated soon.'}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
