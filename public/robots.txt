@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saugatrajbaral.com.np/sitemap.xml
