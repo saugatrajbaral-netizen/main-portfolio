@@ -3,6 +3,12 @@
   command = "npm run build"
   publish = "dist"
 
+# Do NOT serve index.html for missing static assets — return genuine 404
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 404
+
 # SPA Fallback for React Router
 [[redirects]]
   from = "/*"
