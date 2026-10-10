@@ -22,7 +22,6 @@ import {
   Copy,
   Check
 } from 'lucide-react';
-import NepalEmblem from '../components/NepalEmblem';
 import { 
   MEDIA_CATEGORIES, 
   FEATURED_STORY, 
@@ -82,6 +81,25 @@ export default function MediaPage({ lang = 'en' }) {
 
   return (
     <div className="page-chapter-view media-chapter-page">
+      {/* Primary Full-Width Boudhanath Stupa Photograph Landscape Backdrop */}
+      <div className="media-boudhanath-backdrop" aria-hidden="true">
+        <picture className="media-boudhanath-picture">
+          <source type="image/webp" srcSet="/boudhanath-stupa-media.webp" />
+          <source type="image/jpeg" srcSet="/boudhanath-stupa-media.jpg" />
+          <img
+            src="/boudhanath-stupa-media.jpg"
+            alt="Aerial panoramic view of sacred Boudhanath Stupa in Kathmandu at sunset"
+            className="media-boudhanath-img"
+            width={1024}
+            height={575}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
+        <div className="media-boudhanath-overlay" />
+      </div>
+
       <PageHeader
         chapter={lang === 'np' ? 'मिडिया तथा जनहित बहसहरू' : 'Media & Public Interest Archive'}
         kicker={lang === 'np' ? 'छैटौं अध्याय' : 'Chapter 6 · Public Engagements & Discourse'}
@@ -99,10 +117,6 @@ export default function MediaPage({ lang = 'en' }) {
             ========================================================================= */}
         <section className="featured-media-section" aria-label="Featured Story">
           <div className="featured-editorial-card">
-            <div className="featured-card-watermark" aria-hidden="true">
-              <NepalEmblem size={220} variant="full" />
-            </div>
-
             <div className="featured-card-topbar">
               <span className="featured-pil-badge">
                 <Scale size={13} />

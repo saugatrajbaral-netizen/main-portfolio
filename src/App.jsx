@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import ResumeModal from './components/ResumeModal';
-import NationalSymbolsModal from './components/NationalSymbolsModal';
 import PatrioticBackground from './components/PatrioticBackground';
+
+// Lazy-loaded Modals to ensure zero initial load penalty
+const ResumeModal = lazy(() => import('./components/ResumeModal'));
+const NationalSymbolsModal = lazy(() => import('./components/NationalSymbolsModal'));
 
 // Lazy-loaded Multi-Page Routes for Maximum Speed & Fast Initial Load
 const Home = lazy(() => import('./pages/Home'));
@@ -122,7 +124,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <div className="site-shell">
         {/* Subtle Government of Nepal Background Theme (Himalayas, Map, Lattice & Nodes) */}
@@ -261,22 +263,30 @@ export default function App() {
         />
 
         {/* Interactive Full CV Reader Modal */}
-        <ResumeModal
-          isOpen={isResumeOpen}
-          onClose={() => setIsResumeOpen(false)}
-          onOpenNationalSymbols={() => {
-            setIsResumeOpen(false);
-            setIsSymbolsOpen(true);
-          }}
-          lang={lang}
-        />
+        {isResumeOpen && (
+          <Suspense fallback={null}>
+            <ResumeModal
+              isOpen={isResumeOpen}
+              onClose={() => setIsResumeOpen(false)}
+              onOpenNationalSymbols={() => {
+                setIsResumeOpen(false);
+                setIsSymbolsOpen(true);
+              }}
+              lang={lang}
+            />
+          </Suspense>
+        )}
 
         {/* National Symbols Civic Modal */}
-        <NationalSymbolsModal
-          isOpen={isSymbolsOpen}
-          onClose={() => setIsSymbolsOpen(false)}
-          lang={lang}
-        />
+        {isSymbolsOpen && (
+          <Suspense fallback={null}>
+            <NationalSymbolsModal
+              isOpen={isSymbolsOpen}
+              onClose={() => setIsSymbolsOpen(false)}
+              lang={lang}
+            />
+          </Suspense>
+        )}
       </div>
     </Router>
   );

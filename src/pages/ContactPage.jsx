@@ -103,6 +103,25 @@ export default function ContactPage({ lang = 'en' }) {
 
   return (
     <div className="page-chapter-view contact-chapter-page">
+      {/* Sagarmatha (Mount Everest) Himalayan Peak Landscape Backdrop */}
+      <div className="contact-sagarmatha-backdrop" aria-hidden="true">
+        <picture className="contact-sagarmatha-picture">
+          <source type="image/webp" srcSet="/sagarmatha-himal-contact.webp" />
+          <source type="image/jpeg" srcSet="/sagarmatha-himal-contact.jpg" />
+          <img
+            src="/sagarmatha-himal-contact.jpg"
+            alt="Sagarmatha Himalayan Peak against Sunset Clouds"
+            className="contact-sagarmatha-img"
+            width={1000}
+            height={652}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
+        <div className="contact-sagarmatha-overlay" />
+      </div>
+
       <PageHeader
         chapter={lang === 'np' ? 'सम्पर्क' : 'Contact'}
         kicker={lang === 'np' ? 'अन्तिम खण्ड' : 'Correspondence & Inquiries'}

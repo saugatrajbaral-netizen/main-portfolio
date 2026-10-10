@@ -39,12 +39,19 @@ export default function VisualStory({ lang = 'en' }) {
               onClick={() => setActivePhoto(item)}
             >
               <div className="story-image-wrap">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="story-img"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcSet={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                  <source type="image/jpeg" srcSet={item.image} />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="story-img"
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
                 <div className="story-overlay">
                   <div className="story-zoom-icon">
                     <Maximize2 size={20} />
@@ -88,7 +95,11 @@ export default function VisualStory({ lang = 'en' }) {
               <X size={24} />
             </button>
             <div className="lightbox-image-wrap">
-              <img src={activePhoto.image} alt={activePhoto.title} />
+              <picture>
+                <source type="image/webp" srcSet={activePhoto.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                <source type="image/jpeg" srcSet={activePhoto.image} />
+                <img src={activePhoto.image} alt={activePhoto.title} decoding="async" />
+              </picture>
             </div>
             <div className="lightbox-caption">
               <div className="lightbox-badge">{activePhoto.category}</div>

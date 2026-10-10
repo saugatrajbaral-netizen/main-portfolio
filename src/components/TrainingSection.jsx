@@ -102,12 +102,19 @@ export default function TrainingSection({ lang = 'en' }) {
               tabIndex={0}
               aria-label={`View ${item.program} gallery`}
             >
-              <img
-                src={item.coverImage}
-                alt={item.program}
-                className="training-cover-img"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/webp" srcSet={item.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                <source type="image/jpeg" srcSet={item.coverImage} />
+                <img
+                  src={item.coverImage}
+                  alt={item.program}
+                  className="training-cover-img"
+                  loading="lazy"
+                  decoding="async"
+                  width={560}
+                  height={370}
+                />
+              </picture>
               <div className="training-cover-overlay">
                 <div className="training-overlay-top">
                   <span className="training-cover-badge">{item.badge}</span>
@@ -209,11 +216,16 @@ export default function TrainingSection({ lang = 'en' }) {
               </button>
             )}
 
-            <img
-              src={activeGallery[activePhotoIdx]?.src}
-              alt={activeGallery[activePhotoIdx]?.title}
-              className="training-lightbox-main-img"
-            />
+            <picture>
+              <source type="image/webp" srcSet={activeGallery[activePhotoIdx]?.src ? activeGallery[activePhotoIdx].src.replace(/\.(jpg|jpeg|png)$/i, '.webp') : ''} />
+              <source type="image/jpeg" srcSet={activeGallery[activePhotoIdx]?.src} />
+              <img
+                src={activeGallery[activePhotoIdx]?.src}
+                alt={activeGallery[activePhotoIdx]?.title}
+                className="training-lightbox-main-img"
+                decoding="async"
+              />
+            </picture>
 
             {activeGallery.length > 1 && (
               <button
@@ -248,7 +260,10 @@ export default function TrainingSection({ lang = 'en' }) {
                     onClick={() => setActivePhotoIdx(tIdx)}
                     aria-label={`Jump to photo ${tIdx + 1}`}
                   >
-                    <img src={photo.src} alt="" />
+                    <picture>
+                      <source type="image/webp" srcSet={photo.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                      <img src={photo.src} alt="" loading="lazy" decoding="async" width={48} height={36} />
+                    </picture>
                   </button>
                 ))}
               </div>

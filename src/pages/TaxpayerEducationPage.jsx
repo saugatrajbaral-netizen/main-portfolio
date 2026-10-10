@@ -9,6 +9,25 @@ export default function TaxpayerEducationPage({ lang = 'en' }) {
 
   return (
     <div className="taxpayer-education-page">
+      {/* Lumbini Sacred Heritage Background (Full-Width Responsive Landscape) */}
+      <div className="taxpayer-lumbini-backdrop" aria-hidden="true">
+        <picture className="taxpayer-lumbini-picture">
+          <source type="image/webp" srcSet="/lumbini-mayadevi-temple.webp" />
+          <source type="image/png" srcSet="/lumbini-mayadevi-temple.png" />
+          <img
+            src="/lumbini-mayadevi-temple.png"
+            alt="Mayadevi Temple and Holy Pond in Lumbini, Nepal"
+            className="taxpayer-lumbini-img"
+            width={740}
+            height={493}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
+        <div className="taxpayer-lumbini-overlay" />
+      </div>
+
       {/* Institutional Hero Banner */}
       <section className="taxpayer-hero-section">
         <div className="container-wide">

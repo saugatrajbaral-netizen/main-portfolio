@@ -14,21 +14,27 @@ import { useLocation } from 'react-router-dom';
 
 export default function PatrioticBackground() {
   const location = useLocation();
+  const isMediaPage = location.pathname.startsWith('/media');
+  const isCvPage = location.pathname.startsWith('/cv');
+  const isTaxpayerEducationPage = location.pathname.startsWith('/taxpayer-education');
+  const isContactPage = location.pathname.startsWith('/contact');
   const [scrollY, setScrollY] = useState(0);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const shouldHide = isMediaPage || isCvPage || isTaxpayerEducationPage || isContactPage;
 
   // Check reduced motion preference
   useEffect(() => {
+    if (shouldHide) return;
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReduceMotion(mediaQuery.matches);
     const handler = (e) => setReduceMotion(e.matches);
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
-  }, []);
+  }, [shouldHide]);
 
   // Smooth subtle parallax scroll handler
   useEffect(() => {
-    if (reduceMotion) return;
+    if (reduceMotion || shouldHide) return;
 
     let animationFrameId = null;
     const handleScroll = () => {
@@ -44,7 +50,12 @@ export default function PatrioticBackground() {
       window.removeEventListener('scroll', handleScroll);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, [reduceMotion]);
+  }, [reduceMotion, shouldHide]);
+
+  // Return null on pages with dedicated heritage backdrops so their backgrounds render cleanly without conflicting layers
+  if (shouldHide) {
+    return null;
+  }
 
   // Very gentle parallax offsets (max 20px)
   const emblemParallax = reduceMotion ? 0 : Math.min(scrollY * 0.02, 22);

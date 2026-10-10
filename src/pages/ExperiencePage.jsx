@@ -178,12 +178,19 @@ export default function ExperiencePage({ lang = 'en' }) {
                           tabIndex={0}
                           aria-label={item.gallery[0].title}
                         >
-                          <img
-                            src={item.gallery[0].src}
-                            alt={item.gallery[0].title}
-                            className="journey-cover-img"
-                            loading="lazy"
-                          />
+                          <picture>
+                            <source type="image/webp" srcSet={item.gallery[0].src.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                            <source type="image/jpeg" srcSet={item.gallery[0].src} />
+                            <img
+                              src={item.gallery[0].src}
+                              alt={item.gallery[0].title}
+                              className="journey-cover-img"
+                              loading="lazy"
+                              decoding="async"
+                              width={600}
+                              height={400}
+                            />
+                          </picture>
                           <div className="journey-cover-overlay">
                             <div className="journey-cover-top">
                               <span className="journey-cover-tag">{item.gallery[0].tag || 'Cover Photo'}</span>
@@ -214,12 +221,19 @@ export default function ExperiencePage({ lang = 'en' }) {
                               tabIndex={0}
                               aria-label={photo.title}
                             >
-                              <img
-                                src={photo.src}
-                                alt={photo.title}
-                                className="journey-thumb-img"
-                                loading="lazy"
-                              />
+                              <picture>
+                                <source type="image/webp" srcSet={photo.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                                <source type="image/jpeg" srcSet={photo.src} />
+                                <img
+                                  src={photo.src}
+                                  alt={photo.title}
+                                  className="journey-thumb-img"
+                                  loading="lazy"
+                                  decoding="async"
+                                  width={200}
+                                  height={150}
+                                />
+                              </picture>
                               {isLast ? (
                                 <div className="journey-thumb-more-overlay">
                                   <span className="journey-more-count">+{remainingCount + 1}</span>
@@ -293,11 +307,16 @@ export default function ExperiencePage({ lang = 'en' }) {
               </button>
             )}
 
-            <img
-              src={activeGallery[activePhotoIdx]?.src}
-              alt={activeGallery[activePhotoIdx]?.title}
-              className="exp-lightbox-main-img"
-            />
+            <picture>
+              <source type="image/webp" srcSet={activeGallery[activePhotoIdx]?.src ? activeGallery[activePhotoIdx].src.replace(/\.(jpg|jpeg|png)$/i, '.webp') : ''} />
+              <source type="image/jpeg" srcSet={activeGallery[activePhotoIdx]?.src} />
+              <img
+                src={activeGallery[activePhotoIdx]?.src}
+                alt={activeGallery[activePhotoIdx]?.title}
+                className="exp-lightbox-main-img"
+                decoding="async"
+              />
+            </picture>
 
             {activeGallery.length > 1 && (
               <button
@@ -332,7 +351,10 @@ export default function ExperiencePage({ lang = 'en' }) {
                     onClick={() => setActivePhotoIdx(tIdx)}
                     aria-label={`Jump to photo ${tIdx + 1}`}
                   >
-                    <img src={photo.src} alt="" />
+                    <picture>
+                      <source type="image/webp" srcSet={photo.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                      <img src={photo.src} alt="" loading="lazy" decoding="async" width={48} height={36} />
+                    </picture>
                   </button>
                 ))}
               </div>

@@ -288,12 +288,19 @@ export default function TaxpayerEducationProgram({ lang = 'en', defaultProgram =
           </div>
 
           <div className="hero-img-container">
-            <img 
-              src={heroPhoto.image} 
-              alt={heroPhoto.title}
-              className="hero-main-documentary-img"
-              loading="lazy"
-            />
+            <picture>
+              <source type="image/webp" srcSet={heroPhoto.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+              <source type="image/jpeg" srcSet={heroPhoto.image} />
+              <img 
+                src={heroPhoto.image} 
+                alt={heroPhoto.title}
+                className="hero-main-documentary-img"
+                loading="lazy"
+                decoding="async"
+                width={720}
+                height={480}
+              />
+            </picture>
             <div className="hero-img-hover-overlay">
               <Maximize2 size={24} />
               <span>{lang === 'np' ? 'तस्बिर हेर्न क्लिक गर्नुहोस्' : 'Click to View Full Photograph'}</span>
@@ -327,12 +334,19 @@ export default function TaxpayerEducationProgram({ lang = 'en', defaultProgram =
               onClick={() => handleOpenLightbox(pIdx)}
             >
               <div className="supporting-img-wrap">
-                <img 
-                  src={photo.image} 
-                  alt={photo.title}
-                  className="supporting-thumb-img"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcSet={photo.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                  <source type="image/jpeg" srcSet={photo.image} />
+                  <img 
+                    src={photo.image} 
+                    alt={photo.title}
+                    className="supporting-thumb-img"
+                    loading="lazy"
+                    decoding="async"
+                    width={360}
+                    height={240}
+                  />
+                </picture>
                 <div className="supporting-hover-overlay">
                   <Maximize2 size={18} />
                 </div>
@@ -393,13 +407,18 @@ export default function TaxpayerEducationProgram({ lang = 'en', defaultProgram =
               </button>
 
               <div className="lightbox-img-viewport">
-                <img 
-                  src={activePhoto.image} 
-                  alt={activePhoto.title}
-                  className="lightbox-main-img"
-                  style={{ transform: `scale(${zoomLevel})`, cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in' }}
-                  onClick={toggleZoom}
-                />
+                <picture>
+                  <source type="image/webp" srcSet={activePhoto.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} />
+                  <source type="image/jpeg" srcSet={activePhoto.image} />
+                  <img 
+                    src={activePhoto.image} 
+                    alt={activePhoto.title}
+                    className="lightbox-main-img"
+                    style={{ transform: `scale(${zoomLevel})`, cursor: zoomLevel > 1 ? 'zoom-out' : 'zoom-in' }}
+                    onClick={toggleZoom}
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               <button 

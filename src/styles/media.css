@@ -2,8 +2,90 @@
    CHAPTER 6: MEDIA & PUBLIC INTEREST ARCHIVE (PIL, DISCOURSE, COVERAGE) (media.css)
    ========================================================================== */
 
+/* ==========================================================================
+   TALKS & MEDIA DEDICATED BOUDHANATH STUPA BACKGROUND SYSTEM
+   Theme: Sacred UNESCO World Heritage Boudhanath Stupa at Golden Sunset
+   Features:
+   1. Primary Full-Width Boudhanath Stupa Landscape Backdrop
+   2. Ultra-subtle non-intrusive transparent veil (preserves 100% stupa clarity & sunset lighting)
+   3. Frosted editorial glass cards with high-contrast typography
+   4. Responsive coverage across desktop, tablet, and mobile
+   ========================================================================== */
+
 .media-chapter-page {
-  background: var(--bg-page);
+  position: relative;
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+.media-chapter-page .page-chapter-header {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='dark'] .media-chapter-page .page-chapter-header {
+  background: rgba(9, 14, 23, 0.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.media-chapter-page .chapter-content-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Master Fixed Boudhanath Stupa Backdrop */
+.media-boudhanath-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+
+.media-boudhanath-picture,
+.media-boudhanath-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+  filter: saturate(1.05) contrast(1.03);
+  transition: filter 0.3s ease;
+}
+
+/* Ultra-subtle transparent veil preserving stupa architecture, mandala base & golden sunset */
+.media-boudhanath-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.16) 65%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+[data-theme='dark'] .media-boudhanath-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 24, 0.22) 0%,
+    rgba(8, 14, 24, 0.07) 25%,
+    rgba(8, 14, 24, 0.26) 65%,
+    rgba(8, 14, 24, 0.52) 100%
+  );
 }
 
 /* 1. Featured Editorial Story Banner */
@@ -13,13 +95,15 @@
 
 .featured-editorial-card {
   position: relative;
-  background: linear-gradient(135deg, #001730 0%, #002b5e 55%, #051937 100%);
-  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: linear-gradient(135deg, rgba(0, 23, 48, 0.88) 0%, rgba(0, 43, 94, 0.84) 55%, rgba(5, 25, 55, 0.88) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: var(--radius-md);
   padding: clamp(24px, 4vw, 40px);
   color: #ffffff;
   overflow: hidden;
-  box-shadow: 0 16px 36px -12px rgba(0, 31, 63, 0.45);
+  box-shadow: 0 16px 36px -12px rgba(0, 31, 63, 0.35);
 }
 
 .featured-editorial-card::before {
@@ -162,29 +246,34 @@
 }
 
 .pil-case-card {
-  background: #ffffff;
-  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-md);
   padding: clamp(24px, 4vw, 36px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 12px 30px -10px rgba(0, 31, 63, 0.08);
   transition: all 0.25s ease;
   position: relative;
 }
 
 .pil-case-card:hover {
-  box-shadow: var(--shadow-card);
-  border-color: var(--navy);
+  box-shadow: 0 16px 36px -10px rgba(0, 31, 63, 0.14);
+  border-color: var(--gov-blue);
   transform: translateY(-2px);
 }
 
 [data-theme='dark'] .pil-case-card {
-  background: #0d1524;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(11, 20, 34, 0.84);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme='dark'] .pil-case-card:hover {
   border-color: #3b82f6;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
 }
 
 .pil-case-card-header {
@@ -457,25 +546,35 @@
 }
 
 .media-article-card {
-  background: #ffffff;
-  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-sm);
   padding: 22px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 24px -6px rgba(0, 31, 63, 0.06);
   transition: all 0.2s ease;
 }
 
 .media-article-card:hover {
-  box-shadow: var(--shadow-card);
-  border-color: var(--navy);
+  box-shadow: 0 14px 30px -6px rgba(0, 31, 63, 0.12);
+  border-color: var(--gov-blue);
   transform: translateY(-2px);
 }
 
 [data-theme='dark'] .media-article-card {
-  background: #0d1524;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(11, 20, 34, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .media-article-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.5);
 }
 
 .media-card-pub-line {
@@ -696,8 +795,19 @@
   color: #93c5fd;
 }
 
-/* Responsive Media Styles */
+/* ==========================================================================
+   BOUDHANATH STUPA RESPONSIVE POSITIONING & VIEWPORT OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .media-boudhanath-img {
+    object-position: center 42%;
+  }
+}
+
 @media (max-width: 960px) {
+  .media-boudhanath-img {
+    object-position: center 38%;
+  }
   .media-articles-grid,
   .home-media-preview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -705,30 +815,35 @@
 }
 
 @media (max-width: 768px) {
+  .media-boudhanath-img {
+    object-position: 50% 36%;
+  }
   .featured-editorial-card {
     padding: 24px 20px;
   }
-
   .pil-case-card {
     padding: 20px 16px;
   }
-
   .coverage-links-grid {
     grid-template-columns: 1fr;
   }
-
   .media-articles-grid,
   .home-media-preview-grid {
     grid-template-columns: 1fr;
   }
-
   .archive-control-bar {
     flex-direction: column;
     align-items: stretch;
   }
-
   .archive-search-box {
     width: 100%;
     min-width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .media-boudhanath-img {
+    object-position: 50% 32%;
+  }
+}
+

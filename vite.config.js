@@ -9,8 +9,18 @@ export default defineConfig({
     open: true
   },
   build: {
-    target: 'esnext',
+    target: 'es2020',
     cssCodeSplit: true,
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-nepali': ['nepali-date-converter'],
+          'vendor-icons': ['lucide-react']
+        }
+      }
+    }
   }
 });
+
