@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import AnalyticsTracker from './components/AnalyticsTracker';
 import PatrioticBackground from './components/PatrioticBackground';
+import { trackEvent } from './utils/analytics';
 
 // Lazy-loaded Modals to ensure zero initial load penalty
 const ResumeModal = lazy(() => import('./components/ResumeModal'));
@@ -58,6 +60,21 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [lang, setLang] = useState('en'); // 'en' | 'np'
+
+  const handleOpenResume = () => {
+    setIsResumeOpen(true);
+    trackEvent('view_resume_modal');
+  };
+
+  const handleOpenSymbols = () => {
+    setIsSymbolsOpen(true);
+    trackEvent('view_national_symbols');
+  };
+
+  const handleSetLang = (newLang) => {
+    setLang(newLang);
+    trackEvent('toggle_language', { language: newLang });
+  };
 
   // Comprehensive Anti-Download & Anti-Drag Image Protection System
   useEffect(() => {
@@ -126,15 +143,16 @@ export default function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
+      <AnalyticsTracker />
       <div className="site-shell">
         {/* Subtle Government of Nepal Background Theme (Himalayas, Map, Lattice & Nodes) */}
         <PatrioticBackground />
 
         {/* Sticky Header with Route Navigation & Live Digital Clock */}
         <Navbar
-          onOpenResume={() => setIsResumeOpen(true)}
+          onOpenResume={handleOpenResume}
           lang={lang}
-          setLang={setLang}
+          setLang={handleSetLang}
         />
 
         {/* Route-driven Multi-Page Content with Smooth Suspense Transition */}
@@ -146,8 +164,8 @@ export default function App() {
                 element={
                   <Home
                     lang={lang}
-                    onOpenResume={() => setIsResumeOpen(true)}
-                    onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                    onOpenResume={handleOpenResume}
+                    onOpenNationalSymbols={handleOpenSymbols}
                   />
                 }
               />
@@ -156,7 +174,7 @@ export default function App() {
                 element={
                   <AboutPage
                     lang={lang}
-                    onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                    onOpenNationalSymbols={handleOpenSymbols}
                   />
                 }
               />
@@ -221,7 +239,7 @@ export default function App() {
                 element={
                   <CvPage
                     lang={lang}
-                    onOpenResume={() => setIsResumeOpen(true)}
+                    onOpenResume={handleOpenResume}
                   />
                 }
               />
@@ -247,8 +265,8 @@ export default function App() {
                 element={
                   <Home
                     lang={lang}
-                    onOpenResume={() => setIsResumeOpen(true)}
-                    onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+                    onOpenResume={handleOpenResume}
+                    onOpenNationalSymbols={handleOpenSymbols}
                   />
                 }
               />
@@ -258,7 +276,7 @@ export default function App() {
 
         {/* Editorial Institutional Footer */}
         <Footer
-          onOpenNationalSymbols={() => setIsSymbolsOpen(true)}
+          onOpenNationalSymbols={handleOpenSymbols}
           lang={lang}
         />
 
