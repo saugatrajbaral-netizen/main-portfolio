@@ -1,9 +1,9 @@
 /**
  * Google Analytics 4 (GA4) Utility
- * Measurement ID: G-4MQCVK85B0
+ * Measurement ID: G-22EVZHMVDM
  */
 
-export const GA_MEASUREMENT_ID = 'G-4MQCVK85B0';
+export const GA_MEASUREMENT_ID = 'G-22EVZHMVDM';
 
 /**
  * Log a custom event to Google Analytics
